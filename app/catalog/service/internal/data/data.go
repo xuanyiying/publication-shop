@@ -2,20 +2,20 @@ package data
 
 import (
 	"context"
-	"github.com/go-kratos/beer-shop/app/catalog/service/internal/data/ent/migrate"
+	"github.com/go-kratos/publication-shop/app/catalog/service/internal/data/ent/migrate"
 
-	"github.com/go-kratos/beer-shop/app/catalog/service/internal/data/ent"
 	"github.com/go-kratos/kratos/v2/log"
+	"github.com/go-kratos/publication-shop/app/catalog/service/internal/data/ent"
 	"github.com/google/wire"
 
-	"github.com/go-kratos/beer-shop/app/catalog/service/internal/conf"
+	"github.com/go-kratos/publication-shop/app/catalog/service/internal/conf"
 
 	// init mysql driver
 	_ "github.com/go-sql-driver/mysql"
 )
 
 // ProviderSet is data providers.
-var ProviderSet = wire.NewSet(NewData, NewEntClient, NewBeerRepo)
+var ProviderSet = wire.NewSet(NewData, NewEntClient, NewPublicationRepo)
 
 // Data .
 type Data struct {

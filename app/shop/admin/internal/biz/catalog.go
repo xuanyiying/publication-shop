@@ -10,7 +10,7 @@ type Image struct {
 	URL string
 }
 
-type Beer struct {
+type Publication struct {
 	Id          int64
 	Name        string
 	Description string
@@ -19,8 +19,8 @@ type Beer struct {
 }
 
 type CatalogRepo interface {
-	GetBeer(ctx context.Context, id int64) (*Beer, error)
-	ListBeer(ctx context.Context, pageNum, pageSize int64) ([]*Beer, error)
+	GetPublication(ctx context.Context, id int64) (*Publication, error)
+	ListPublication(ctx context.Context, pageNum, pageSize int64) ([]*Publication, error)
 }
 
 type CatalogUseCase struct {
@@ -29,13 +29,13 @@ type CatalogUseCase struct {
 }
 
 func NewCatalogUseCase(repo CatalogRepo, logger log.Logger) *CatalogUseCase {
-	return &CatalogUseCase{repo: repo, log: log.NewHelper(log.With(logger, "module", "usecase/beer"))}
+	return &CatalogUseCase{repo: repo, log: log.NewHelper(log.With(logger, "module", "usecase/Publication"))}
 }
 
-func (uc *CatalogUseCase) GetBeer(ctx context.Context, id int64) (*Beer, error) {
-	return uc.repo.GetBeer(ctx, id)
+func (uc *CatalogUseCase) GetPublication(ctx context.Context, id int64) (*Publication, error) {
+	return uc.repo.GetPublication(ctx, id)
 }
 
-func (uc *CatalogUseCase) ListBeer(ctx context.Context, pageNum, pageSize int64) ([]*Beer, error) {
-	return uc.repo.ListBeer(ctx, pageNum, pageSize)
+func (uc *CatalogUseCase) ListPublication(ctx context.Context, pageNum, pageSize int64) ([]*Publication, error) {
+	return uc.repo.ListPublication(ctx, pageNum, pageSize)
 }

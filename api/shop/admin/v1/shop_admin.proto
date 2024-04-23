@@ -22,29 +22,29 @@ service ShopAdmin {
         };
     }
 
-    rpc ListBeer (ListBeerReq) returns (ListBeerReply) {
+    rpc ListPublication (ListPublicationReq) returns (ListPublicationReply) {
         option (google.api.http) = {
-            get: "/admin/v1/catalog/beers"
+            get: "/admin/v1/catalog/Publications"
         };
     }
 
-    rpc CreateBeer (CreateBeerReq) returns (CreateBeerReply) {
+    rpc CreatePublication (CreatePublicationReq) returns (CreatePublicationReply) {
         option (google.api.http) = {
-            post: "/admin/v1/catalog/beers"
+            post: "/admin/v1/catalog/Publications"
             body: "*"
         };
     }
 
-    rpc UpdateBeer (UpdateBeerReq) returns (UpdateBeerReply) {
+    rpc UpdatePublication (UpdatePublicationReq) returns (UpdatePublicationReply) {
         option (google.api.http) = {
-            put: "/admin/v1/catalog/beers/{id}"
+            put: "/admin/v1/catalog/Publications/{id}"
             body: "*"
         };
     }
 
-    rpc DeleteBeer (DeleteBeerReq) returns (DeleteBeerReply) {
+    rpc DeletePublication (DeletePublicationReq) returns (DeletePublicationReply) {
         option (google.api.http) = {
-            delete: "/admin/v1/catalog/beers/{id}"
+            delete: "/admin/v1/catalog/Publications/{id}"
         };
     }
 
@@ -234,13 +234,13 @@ message DeleteCardReply {
     bool ok = 1;
 }
 
-message ListBeerReq {
+message ListPublicationReq {
     int64 page_num = 1;
     int64 page_size = 2;
 }
 
-message ListBeerReply {
-    message Beer {
+message ListPublicationReply {
+    message Publication {
         message Image {
             string url = 1;
         }
@@ -250,14 +250,14 @@ message ListBeerReply {
         int64 count = 4;
         repeated Image image = 5;
     }
-    repeated Beer results = 1;
+    repeated Publication results = 1;
 }
 
-message GetBeerReq {
+message GetPublicationReq {
     int64 id = 1;
 }
 
-message GetBeerReply {
+message GetPublicationReply {
     message Image {
         string url = 1;
     }
@@ -310,7 +310,7 @@ message GetOrderReply {
 
 }
 
-message CreateBeerReq {
+message CreatePublicationReq {
     message Image {
         string url = 1;
     }
@@ -320,11 +320,11 @@ message CreateBeerReq {
     repeated Image image = 4;
 }
 
-message CreateBeerReply {
+message CreatePublicationReply {
 
 }
 
-message UpdateBeerReq {
+message UpdatePublicationReq {
     message Image {
         string url = 1;
     }
@@ -335,15 +335,15 @@ message UpdateBeerReq {
     repeated Image image = 5;
 }
 
-message UpdateBeerReply {
+message UpdatePublicationReply {
 
 }
 
-message DeleteBeerReq {
+message DeletePublicationReq {
     int64 id = 1;
 }
 
-message DeleteBeerReply {
+message DeletePublicationReply {
 
 }
 

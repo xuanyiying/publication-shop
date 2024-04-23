@@ -7,7 +7,7 @@ import (
 	"github.com/Shopify/sarama"
 	"github.com/go-kratos/kratos/v2/log"
 
-	"github.com/go-kratos/beer-shop/app/shipping/service/internal/biz"
+	"github.com/go-kratos/publication-shop/app/shipping/service/internal/biz"
 )
 
 var _ biz.ShippingRepo = (*shippingRepo)(nil)

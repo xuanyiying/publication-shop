@@ -9,7 +9,7 @@ import {
 import Home from "./pages/Home"
 import Login from "./pages/Login";
 import Register from "./pages/Register";
-import BeerDetail from "./pages/BeerDetail";
+import PublicationDetail from "./pages/PublicationDetail";
 import OrderList from "./pages/OrderList";
 import Checkout from "./pages/Checkout";
 import Nav from "./components/Nav";
@@ -20,8 +20,8 @@ function App() {
             <Router>
                 <Nav/>
                 <Switch>
-                    <Route path="/beer/:id">
-                        <BeerDetail/>
+                    <Route path="/Publication/:id">
+                        <PublicationDetail/>
                     </Route>
                     <Route path="/login">
                         <Login/>

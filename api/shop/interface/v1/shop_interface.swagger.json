@@ -84,14 +84,14 @@
         ]
       }
     },
-    "/v1/catalog/beers": {
+    "/v1/catalog/Publications": {
       "get": {
-        "operationId": "ShopInterface_ListBeer",
+        "operationId": "ShopInterface_ListPublication",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/v1ListBeerReply"
+              "$ref": "#/definitions/v1ListPublicationReply"
             }
           },
           "default": {
@@ -122,14 +122,14 @@
         ]
       }
     },
-    "/v1/catalog/beers/{id}": {
+    "/v1/catalog/Publications/{id}": {
       "get": {
-        "operationId": "ShopInterface_GetBeer",
+        "operationId": "ShopInterface_GetPublication",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/v1GetBeerReply"
+              "$ref": "#/definitions/v1GetPublicationReply"
             }
           },
           "default": {
@@ -559,7 +559,7 @@
         }
       }
     },
-    "ListBeerReplyBeer": {
+    "ListPublicationReplyPublication": {
       "type": "object",
       "properties": {
         "id": {
@@ -579,12 +579,12 @@
         "image": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/ListBeerReplyBeerImage"
+            "$ref": "#/definitions/ListPublicationReplyPublicationImage"
           }
         }
       }
     },
-    "ListBeerReplyBeerImage": {
+    "ListPublicationReplyPublicationImage": {
       "type": "object",
       "properties": {
         "url": {
@@ -765,7 +765,7 @@
         }
       }
     },
-    "v1GetBeerReply": {
+    "v1GetPublicationReply": {
       "type": "object",
       "properties": {
         "id": {
@@ -785,12 +785,12 @@
         "image": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/v1GetBeerReplyImage"
+            "$ref": "#/definitions/v1GetPublicationReplyImage"
           }
         }
       }
     },
-    "v1GetBeerReplyImage": {
+    "v1GetPublicationReplyImage": {
       "type": "object",
       "properties": {
         "url": {
@@ -827,13 +827,13 @@
         }
       }
     },
-    "v1ListBeerReply": {
+    "v1ListPublicationReply": {
       "type": "object",
       "properties": {
         "results": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/ListBeerReplyBeer"
+            "$ref": "#/definitions/ListPublicationReplyPublication"
           }
         }
       }

@@ -1,3 +1,3 @@
-* [Beer Shop](README.md)
+* [Publication Shop](README.md)
   * [Design](design.md)
-  * [Interface API](https://go-kratos.github.io/beer-shop/api.html)
+  * [Interface API](https://go-kratos.github.io/publication-shop/api.html)

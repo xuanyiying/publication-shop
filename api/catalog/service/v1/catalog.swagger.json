@@ -17,7 +17,7 @@
   ],
   "paths": {},
   "definitions": {
-    "ListBeerReplyBeer": {
+    "ListPublicationReplyPublication": {
       "type": "object",
       "properties": {
         "id": {
@@ -37,12 +37,12 @@
         "image": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/ListBeerReplyBeerImage"
+            "$ref": "#/definitions/ListPublicationReplyPublicationImage"
           }
         }
       }
     },
-    "ListBeerReplyBeerImage": {
+    "ListPublicationReplyPublicationImage": {
       "type": "object",
       "properties": {
         "url": {
@@ -80,7 +80,7 @@
         }
       }
     },
-    "v1CreateBeerReply": {
+    "v1CreatePublicationReply": {
       "type": "object",
       "properties": {
         "id": {
@@ -100,12 +100,12 @@
         "image": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/v1CreateBeerReplyImage"
+            "$ref": "#/definitions/v1CreatePublicationReplyImage"
           }
         }
       }
     },
-    "v1CreateBeerReplyImage": {
+    "v1CreatePublicationReplyImage": {
       "type": "object",
       "properties": {
         "url": {
@@ -113,7 +113,7 @@
         }
       }
     },
-    "v1CreateBeerReqImage": {
+    "v1CreatePublicationReqImage": {
       "type": "object",
       "properties": {
         "url": {
@@ -121,10 +121,10 @@
         }
       }
     },
-    "v1DeleteBeerReply": {
+    "v1DeletePublicationReply": {
       "type": "object"
     },
-    "v1GetBeerReply": {
+    "v1GetPublicationReply": {
       "type": "object",
       "properties": {
         "id": {
@@ -144,12 +144,12 @@
         "image": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/v1GetBeerReplyImage"
+            "$ref": "#/definitions/v1GetPublicationReplyImage"
           }
         }
       }
     },
-    "v1GetBeerReplyImage": {
+    "v1GetPublicationReplyImage": {
       "type": "object",
       "properties": {
         "url": {
@@ -157,18 +157,18 @@
         }
       }
     },
-    "v1ListBeerReply": {
+    "v1ListPublicationReply": {
       "type": "object",
       "properties": {
         "results": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/ListBeerReplyBeer"
+            "$ref": "#/definitions/ListPublicationReplyPublication"
           }
         }
       }
     },
-    "v1UpdateBeerReply": {
+    "v1UpdatePublicationReply": {
       "type": "object",
       "properties": {
         "id": {
@@ -188,12 +188,12 @@
         "image": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/v1UpdateBeerReplyImage"
+            "$ref": "#/definitions/v1UpdatePublicationReplyImage"
           }
         }
       }
     },
-    "v1UpdateBeerReplyImage": {
+    "v1UpdatePublicationReplyImage": {
       "type": "object",
       "properties": {
         "url": {
@@ -201,7 +201,7 @@
         }
       }
     },
-    "v1UpdateBeerReqImage": {
+    "v1UpdatePublicationReqImage": {
       "type": "object",
       "properties": {
         "url": {

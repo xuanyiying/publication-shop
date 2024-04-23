@@ -2,8 +2,8 @@ package service
 
 import (
 	"context"
-	v1 "github.com/go-kratos/beer-shop/api/shipping/service/v1"
-	"github.com/go-kratos/beer-shop/app/shipping/service/internal/biz"
+	v1 "github.com/go-kratos/publication-shop/api/shipping/service/v1"
+	"github.com/go-kratos/publication-shop/app/shipping/service/internal/biz"
 )
 
 func (s *ShippingService) ShipOrder(ctx context.Context, req *v1.ShipOrderReq) (*v1.ShipOrderReply, error) {

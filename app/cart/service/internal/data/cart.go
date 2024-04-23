@@ -7,7 +7,7 @@ import (
 	"go.mongodb.org/mongo-driver/bson"
 	"go.mongodb.org/mongo-driver/mongo"
 
-	"github.com/go-kratos/beer-shop/app/cart/service/internal/biz"
+	"github.com/go-kratos/publication-shop/app/cart/service/internal/biz"
 )
 
 var _ biz.CartRepo = (*cartRepo)(nil)
@@ -22,7 +22,7 @@ func NewCartRepo(data *Data, logger log.Logger) biz.CartRepo {
 	return &cartRepo{
 		data:     data,
 		cartColl: data.db.Collection("cart"),
-		log:      log.NewHelper(log.With(logger, "module", "repo/beer")),
+		log:      log.NewHelper(log.With(logger, "module", "repo/Publication")),
 	}
 }
 

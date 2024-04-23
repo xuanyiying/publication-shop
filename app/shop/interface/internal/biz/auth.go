@@ -4,8 +4,8 @@ import (
 	"context"
 	"errors"
 
-	v1 "github.com/go-kratos/beer-shop/api/shop/interface/v1"
-	"github.com/go-kratos/beer-shop/app/shop/interface/internal/conf"
+	v1 "github.com/go-kratos/publication-shop/api/shop/interface/v1"
+	"github.com/go-kratos/publication-shop/app/shop/interface/internal/conf"
 
 	"github.com/golang-jwt/jwt"
 )

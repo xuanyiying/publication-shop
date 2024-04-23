@@ -1,15 +1,15 @@
 version: '3'
 services:
   web-shop:
-    image: go-kratos/beer-web-shop:0.1.0
+    image: go-kratos/Publication-web-shop:0.1.0
     ports:
       - 80:80
   web-admin:
-    image: go-kratos/beer-web-admin:0.1.0
+    image: go-kratos/Publication-web-admin:0.1.0
     ports:
       - 81:81
   user-service:
-    image: go-kratos/beer-user-service:0.1.0
+    image: go-kratos/Publication-user-service:0.1.0
     hostname: user-service
     depends_on:
       - user-db
@@ -19,7 +19,7 @@ services:
     environment:
       MYSQL_ROOT_PASSWORD: dangerous
   catalog-service:
-    image: go-kratos/beer-catalog-service:0.1.0
+    image: go-kratos/Publication-catalog-service:0.1.0
     hostname: catalog-service
     depends_on:
       - catalog-db
@@ -29,7 +29,7 @@ services:
     environment:
       MYSQL_ROOT_PASSWORD: dangerous
   cart-service:
-    image: go-kratos/beer-cart-service:0.1.0
+    image: go-kratos/Publication-cart-service:0.1.0
     hostname: cart-service
     depends_on:
       - cart-db
@@ -39,7 +39,7 @@ services:
     environment:
       MONGO_INITDB_ROOT_PASSWORD: dangerous
   order-service:
-    image: go-kratos/beer-cart-service:0.1.0
+    image: go-kratos/Publication-cart-service:0.1.0
     hostname: order-service
     depends_on:
       - order-db
@@ -49,7 +49,7 @@ services:
     environment:
       MYSQL_ROOT_PASSWORD: dangerous
   payment-service:
-    image: go-kratos/beer-payment-service:0.1.0
+    image: go-kratos/Publication-payment-service:0.1.0
     hostname: cart-service
   zookeeper:
     image: docker.io/bitnami/zookeeper:3.7

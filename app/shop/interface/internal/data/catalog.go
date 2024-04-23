@@ -5,8 +5,8 @@ import (
 	"fmt"
 	"golang.org/x/sync/singleflight"
 
-	ctV1 "github.com/go-kratos/beer-shop/api/catalog/service/v1"
-	"github.com/go-kratos/beer-shop/app/shop/interface/internal/biz"
+	ctV1 "github.com/go-kratos/publication-shop/api/catalog/service/v1"
+	"github.com/go-kratos/publication-shop/app/shop/interface/internal/biz"
 
 	"github.com/go-kratos/kratos/v2/log"
 )
@@ -19,17 +19,17 @@ type catalogRepo struct {
 	sg   *singleflight.Group
 }
 
-func NewBeerRepo(data *Data, logger log.Logger) biz.CatalogRepo {
+func NewPublicationRepo(data *Data, logger log.Logger) biz.CatalogRepo {
 	return &catalogRepo{
 		data: data,
-		log:  log.NewHelper(log.With(logger, "module", "data/beer")),
+		log:  log.NewHelper(log.With(logger, "module", "data/Publication")),
 		sg:   &singleflight.Group{},
 	}
 }
 
-func (r *catalogRepo) GetBeer(ctx context.Context, id int64) (*biz.Beer, error) {
-	result, err, _ := r.sg.Do(fmt.Sprintf("get_beer_by_id_%d", id), func() (interface{}, error) {
-		reply, err := r.data.bc.GetBeer(ctx, &ctV1.GetBeerReq{
+func (r *catalogRepo) GetPublication(ctx context.Context, id int64) (*biz.Publication, error) {
+	result, err, _ := r.sg.Do(fmt.Sprintf("get_Publication_by_id_%d", id), func() (interface{}, error) {
+		reply, err := r.data.bc.GetPublication(ctx, &ctV1.GetPublicationReq{
 			Id: id,
 		})
 		if err != nil {
@@ -39,7 +39,7 @@ func (r *catalogRepo) GetBeer(ctx context.Context, id int64) (*biz.Beer, error) 
 		for _, x := range reply.Image {
 			images = append(images, biz.Image{URL: x.Url})
 		}
-		return &biz.Beer{
+		return &biz.Publication{
 			Id:          reply.Id,
 			Name:        reply.Name,
 			Description: reply.Description,
@@ -50,24 +50,24 @@ func (r *catalogRepo) GetBeer(ctx context.Context, id int64) (*biz.Beer, error) 
 	if err != nil {
 		return nil, err
 	}
-	return result.(*biz.Beer), nil
+	return result.(*biz.Publication), nil
 }
 
-func (r *catalogRepo) ListBeer(ctx context.Context, pageNum, pageSize int64) ([]*biz.Beer, error) {
-	reply, err := r.data.bc.ListBeer(ctx, &ctV1.ListBeerReq{
+func (r *catalogRepo) ListPublication(ctx context.Context, pageNum, pageSize int64) ([]*biz.Publication, error) {
+	reply, err := r.data.bc.ListPublication(ctx, &ctV1.ListPublicationReq{
 		PageNum:  pageNum,
 		PageSize: pageSize,
 	})
 	if err != nil {
 		return nil, err
 	}
-	rv := make([]*biz.Beer, 0)
+	rv := make([]*biz.Publication, 0)
 	for _, x := range reply.Results {
 		images := make([]biz.Image, 0)
 		for _, img := range x.Image {
 			images = append(images, biz.Image{URL: img.Url})
 		}
-		rv = append(rv, &biz.Beer{
+		rv = append(rv, &biz.Publication{
 			Id:          x.Id,
 			Description: x.Description,
 			Count:       x.Count,

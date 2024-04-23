@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from "react";
 import {Avatar, Button, List, PageHeader, Pagination, Skeleton} from "antd";
-import {listBeer} from "../../api/catalog";
+import {listPublication} from "../../api/catalog";
 import {Link, useRouteMatch} from "react-router-dom";
 
 export default function CustomerList() {
@@ -8,44 +8,44 @@ export default function CustomerList() {
     let {path, url} = useRouteMatch();
 
     useEffect(() => {
-        // listBeer().then((res) => {
-        //     setBeerList(res.data.results)
+        // listPublication().then((res) => {
+        //     setPublicationList(res.data.results)
         // });
 
         setCustomerList([
             {
                 "id": 1,
-                "name": "cool beer1",
+                "name": "cool Publication1",
                 "price": "5.99",
                 "images": ["https://images.unsplash.com/photo-1588704487282-e7c55e0448bc?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=668&q=80"],
             },
             {
                 "id": 2,
-                "name": "cool beer2",
+                "name": "cool Publication2",
                 "price": "6.99",
                 "images": ["https://images.unsplash.com/photo-1588704487282-e7c55e0448bc?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=668&q=80"],
             },
             {
                 "id": 3,
-                "name": "cool beer3",
+                "name": "cool Publication3",
                 "price": "7.99",
                 "images": ["https://images.unsplash.com/photo-1588704487282-e7c55e0448bc?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=668&q=80"],
             },
             {
                 "id": 4,
-                "name": "cool beer4",
+                "name": "cool Publication4",
                 "price": "8.99",
                 "images": ["https://images.unsplash.com/photo-1588704487282-e7c55e0448bc?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=668&q=80"],
             },
             {
                 "id": 5,
-                "name": "cool beer5",
+                "name": "cool Publication5",
                 "price": "9.99",
                 "images": ["https://images.unsplash.com/photo-1588704487282-e7c55e0448bc?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=668&q=80"],
             },
             {
                 "id": 6,
-                "name": "cool beer6",
+                "name": "cool Publication6",
                 "price": "10.99",
                 "images": ["https://images.unsplash.com/photo-1588704487282-e7c55e0448bc?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=668&q=80"],
             },

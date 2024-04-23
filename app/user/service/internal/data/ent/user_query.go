@@ -12,10 +12,10 @@ import (
 	"entgo.io/ent/dialect/sql"
 	"entgo.io/ent/dialect/sql/sqlgraph"
 	"entgo.io/ent/schema/field"
-	"github.com/go-kratos/beer-shop/app/user/service/internal/data/ent/address"
-	"github.com/go-kratos/beer-shop/app/user/service/internal/data/ent/card"
-	"github.com/go-kratos/beer-shop/app/user/service/internal/data/ent/predicate"
-	"github.com/go-kratos/beer-shop/app/user/service/internal/data/ent/user"
+	"github.com/go-kratos/publication-shop/app/user/service/internal/data/ent/address"
+	"github.com/go-kratos/publication-shop/app/user/service/internal/data/ent/card"
+	"github.com/go-kratos/publication-shop/app/user/service/internal/data/ent/predicate"
+	"github.com/go-kratos/publication-shop/app/user/service/internal/data/ent/user"
 )
 
 // UserQuery is the builder for querying User entities.
@@ -327,7 +327,6 @@ func (uq *UserQuery) WithCards(opts ...func(*CardQuery)) *UserQuery {
 //		GroupBy(user.FieldUsername).
 //		Aggregate(ent.Count()).
 //		Scan(ctx, &v)
-//
 func (uq *UserQuery) GroupBy(field string, fields ...string) *UserGroupBy {
 	group := &UserGroupBy{config: uq.config}
 	group.fields = append([]string{field}, fields...)
@@ -352,7 +351,6 @@ func (uq *UserQuery) GroupBy(field string, fields ...string) *UserGroupBy {
 //	client.User.Query().
 //		Select(user.FieldUsername).
 //		Scan(ctx, &v)
-//
 func (uq *UserQuery) Select(field string, fields ...string) *UserSelect {
 	uq.fields = append([]string{field}, fields...)
 	return &UserSelect{UserQuery: uq}

@@ -1473,7 +1473,7 @@ func (x *DeleteCardReply) GetOk() bool {
 	return false
 }
 
-type ListBeerReq struct {
+type ListPublicationReq struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
@@ -1482,8 +1482,8 @@ type ListBeerReq struct {
 	PageSize int64 `protobuf:"varint,2,opt,name=page_size,json=pageSize,proto3" json:"page_size,omitempty"`
 }
 
-func (x *ListBeerReq) Reset() {
-	*x = ListBeerReq{}
+func (x *ListPublicationReq) Reset() {
+	*x = ListPublicationReq{}
 	if protoimpl.UnsafeEnabled {
 		mi := &file_v1_shop_interface_proto_msgTypes[26]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -1491,13 +1491,13 @@ func (x *ListBeerReq) Reset() {
 	}
 }
 
-func (x *ListBeerReq) String() string {
+func (x *ListPublicationReq) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*ListBeerReq) ProtoMessage() {}
+func (*ListPublicationReq) ProtoMessage() {}
 
-func (x *ListBeerReq) ProtoReflect() protoreflect.Message {
+func (x *ListPublicationReq) ProtoReflect() protoreflect.Message {
 	mi := &file_v1_shop_interface_proto_msgTypes[26]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -1509,35 +1509,35 @@ func (x *ListBeerReq) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use ListBeerReq.ProtoReflect.Descriptor instead.
-func (*ListBeerReq) Descriptor() ([]byte, []int) {
+// Deprecated: Use ListPublicationReq.ProtoReflect.Descriptor instead.
+func (*ListPublicationReq) Descriptor() ([]byte, []int) {
 	return file_v1_shop_interface_proto_rawDescGZIP(), []int{26}
 }
 
-func (x *ListBeerReq) GetPageNum() int64 {
+func (x *ListPublicationReq) GetPageNum() int64 {
 	if x != nil {
 		return x.PageNum
 	}
 	return 0
 }
 
-func (x *ListBeerReq) GetPageSize() int64 {
+func (x *ListPublicationReq) GetPageSize() int64 {
 	if x != nil {
 		return x.PageSize
 	}
 	return 0
 }
 
-type ListBeerReply struct {
+type ListPublicationReply struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Results []*ListBeerReply_Beer `protobuf:"bytes,1,rep,name=results,proto3" json:"results,omitempty"`
+	Results []*ListPublicationReply_Publication `protobuf:"bytes,1,rep,name=results,proto3" json:"results,omitempty"`
 }
 
-func (x *ListBeerReply) Reset() {
-	*x = ListBeerReply{}
+func (x *ListPublicationReply) Reset() {
+	*x = ListPublicationReply{}
 	if protoimpl.UnsafeEnabled {
 		mi := &file_v1_shop_interface_proto_msgTypes[27]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -1545,13 +1545,13 @@ func (x *ListBeerReply) Reset() {
 	}
 }
 
-func (x *ListBeerReply) String() string {
+func (x *ListPublicationReply) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*ListBeerReply) ProtoMessage() {}
+func (*ListPublicationReply) ProtoMessage() {}
 
-func (x *ListBeerReply) ProtoReflect() protoreflect.Message {
+func (x *ListPublicationReply) ProtoReflect() protoreflect.Message {
 	mi := &file_v1_shop_interface_proto_msgTypes[27]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -1563,19 +1563,19 @@ func (x *ListBeerReply) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use ListBeerReply.ProtoReflect.Descriptor instead.
-func (*ListBeerReply) Descriptor() ([]byte, []int) {
+// Deprecated: Use ListPublicationReply.ProtoReflect.Descriptor instead.
+func (*ListPublicationReply) Descriptor() ([]byte, []int) {
 	return file_v1_shop_interface_proto_rawDescGZIP(), []int{27}
 }
 
-func (x *ListBeerReply) GetResults() []*ListBeerReply_Beer {
+func (x *ListPublicationReply) GetResults() []*ListPublicationReply_Publication {
 	if x != nil {
 		return x.Results
 	}
 	return nil
 }
 
-type GetBeerReq struct {
+type GetPublicationReq struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
@@ -1583,8 +1583,8 @@ type GetBeerReq struct {
 	Id int64 `protobuf:"varint,1,opt,name=id,proto3" json:"id,omitempty"`
 }
 
-func (x *GetBeerReq) Reset() {
-	*x = GetBeerReq{}
+func (x *GetPublicationReq) Reset() {
+	*x = GetPublicationReq{}
 	if protoimpl.UnsafeEnabled {
 		mi := &file_v1_shop_interface_proto_msgTypes[28]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -1592,13 +1592,13 @@ func (x *GetBeerReq) Reset() {
 	}
 }
 
-func (x *GetBeerReq) String() string {
+func (x *GetPublicationReq) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*GetBeerReq) ProtoMessage() {}
+func (*GetPublicationReq) ProtoMessage() {}
 
-func (x *GetBeerReq) ProtoReflect() protoreflect.Message {
+func (x *GetPublicationReq) ProtoReflect() protoreflect.Message {
 	mi := &file_v1_shop_interface_proto_msgTypes[28]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -1610,32 +1610,32 @@ func (x *GetBeerReq) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use GetBeerReq.ProtoReflect.Descriptor instead.
-func (*GetBeerReq) Descriptor() ([]byte, []int) {
+// Deprecated: Use GetPublicationReq.ProtoReflect.Descriptor instead.
+func (*GetPublicationReq) Descriptor() ([]byte, []int) {
 	return file_v1_shop_interface_proto_rawDescGZIP(), []int{28}
 }
 
-func (x *GetBeerReq) GetId() int64 {
+func (x *GetPublicationReq) GetId() int64 {
 	if x != nil {
 		return x.Id
 	}
 	return 0
 }
 
-type GetBeerReply struct {
+type GetPublicationReply struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Id          int64                 `protobuf:"varint,1,opt,name=id,proto3" json:"id,omitempty"`
-	Name        string                `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`
-	Description string                `protobuf:"bytes,3,opt,name=description,proto3" json:"description,omitempty"`
-	Count       int64                 `protobuf:"varint,4,opt,name=count,proto3" json:"count,omitempty"`
-	Image       []*GetBeerReply_Image `protobuf:"bytes,5,rep,name=image,proto3" json:"image,omitempty"`
+	Id          int64                        `protobuf:"varint,1,opt,name=id,proto3" json:"id,omitempty"`
+	Name        string                       `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`
+	Description string                       `protobuf:"bytes,3,opt,name=description,proto3" json:"description,omitempty"`
+	Count       int64                        `protobuf:"varint,4,opt,name=count,proto3" json:"count,omitempty"`
+	Image       []*GetPublicationReply_Image `protobuf:"bytes,5,rep,name=image,proto3" json:"image,omitempty"`
 }
 
-func (x *GetBeerReply) Reset() {
-	*x = GetBeerReply{}
+func (x *GetPublicationReply) Reset() {
+	*x = GetPublicationReply{}
 	if protoimpl.UnsafeEnabled {
 		mi := &file_v1_shop_interface_proto_msgTypes[29]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -1643,13 +1643,13 @@ func (x *GetBeerReply) Reset() {
 	}
 }
 
-func (x *GetBeerReply) String() string {
+func (x *GetPublicationReply) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*GetBeerReply) ProtoMessage() {}
+func (*GetPublicationReply) ProtoMessage() {}
 
-func (x *GetBeerReply) ProtoReflect() protoreflect.Message {
+func (x *GetPublicationReply) ProtoReflect() protoreflect.Message {
 	mi := &file_v1_shop_interface_proto_msgTypes[29]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -1661,40 +1661,40 @@ func (x *GetBeerReply) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use GetBeerReply.ProtoReflect.Descriptor instead.
-func (*GetBeerReply) Descriptor() ([]byte, []int) {
+// Deprecated: Use GetPublicationReply.ProtoReflect.Descriptor instead.
+func (*GetPublicationReply) Descriptor() ([]byte, []int) {
 	return file_v1_shop_interface_proto_rawDescGZIP(), []int{29}
 }
 
-func (x *GetBeerReply) GetId() int64 {
+func (x *GetPublicationReply) GetId() int64 {
 	if x != nil {
 		return x.Id
 	}
 	return 0
 }
 
-func (x *GetBeerReply) GetName() string {
+func (x *GetPublicationReply) GetName() string {
 	if x != nil {
 		return x.Name
 	}
 	return ""
 }
 
-func (x *GetBeerReply) GetDescription() string {
+func (x *GetPublicationReply) GetDescription() string {
 	if x != nil {
 		return x.Description
 	}
 	return ""
 }
 
-func (x *GetBeerReply) GetCount() int64 {
+func (x *GetPublicationReply) GetCount() int64 {
 	if x != nil {
 		return x.Count
 	}
 	return 0
 }
 
-func (x *GetBeerReply) GetImage() []*GetBeerReply_Image {
+func (x *GetPublicationReply) GetImage() []*GetPublicationReply_Image {
 	if x != nil {
 		return x.Image
 	}
@@ -2205,20 +2205,20 @@ func (x *ListCardReply_Card) GetExpires() string {
 	return ""
 }
 
-type ListBeerReply_Beer struct {
+type ListPublicationReply_Publication struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Id          int64                       `protobuf:"varint,1,opt,name=id,proto3" json:"id,omitempty"`
-	Name        string                      `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`
-	Description string                      `protobuf:"bytes,3,opt,name=description,proto3" json:"description,omitempty"`
-	Count       int64                       `protobuf:"varint,4,opt,name=count,proto3" json:"count,omitempty"`
-	Image       []*ListBeerReply_Beer_Image `protobuf:"bytes,5,rep,name=image,proto3" json:"image,omitempty"`
+	Id          int64                                     `protobuf:"varint,1,opt,name=id,proto3" json:"id,omitempty"`
+	Name        string                                    `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`
+	Description string                                    `protobuf:"bytes,3,opt,name=description,proto3" json:"description,omitempty"`
+	Count       int64                                     `protobuf:"varint,4,opt,name=count,proto3" json:"count,omitempty"`
+	Image       []*ListPublicationReply_Publication_Image `protobuf:"bytes,5,rep,name=image,proto3" json:"image,omitempty"`
 }
 
-func (x *ListBeerReply_Beer) Reset() {
-	*x = ListBeerReply_Beer{}
+func (x *ListPublicationReply_Publication) Reset() {
+	*x = ListPublicationReply_Publication{}
 	if protoimpl.UnsafeEnabled {
 		mi := &file_v1_shop_interface_proto_msgTypes[40]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -2226,13 +2226,13 @@ func (x *ListBeerReply_Beer) Reset() {
 	}
 }
 
-func (x *ListBeerReply_Beer) String() string {
+func (x *ListPublicationReply_Publication) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*ListBeerReply_Beer) ProtoMessage() {}
+func (*ListPublicationReply_Publication) ProtoMessage() {}
 
-func (x *ListBeerReply_Beer) ProtoReflect() protoreflect.Message {
+func (x *ListPublicationReply_Publication) ProtoReflect() protoreflect.Message {
 	mi := &file_v1_shop_interface_proto_msgTypes[40]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -2244,47 +2244,47 @@ func (x *ListBeerReply_Beer) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use ListBeerReply_Beer.ProtoReflect.Descriptor instead.
-func (*ListBeerReply_Beer) Descriptor() ([]byte, []int) {
+// Deprecated: Use ListPublicationReply_Publication.ProtoReflect.Descriptor instead.
+func (*ListPublicationReply_Publication) Descriptor() ([]byte, []int) {
 	return file_v1_shop_interface_proto_rawDescGZIP(), []int{27, 0}
 }
 
-func (x *ListBeerReply_Beer) GetId() int64 {
+func (x *ListPublicationReply_Publication) GetId() int64 {
 	if x != nil {
 		return x.Id
 	}
 	return 0
 }
 
-func (x *ListBeerReply_Beer) GetName() string {
+func (x *ListPublicationReply_Publication) GetName() string {
 	if x != nil {
 		return x.Name
 	}
 	return ""
 }
 
-func (x *ListBeerReply_Beer) GetDescription() string {
+func (x *ListPublicationReply_Publication) GetDescription() string {
 	if x != nil {
 		return x.Description
 	}
 	return ""
 }
 
-func (x *ListBeerReply_Beer) GetCount() int64 {
+func (x *ListPublicationReply_Publication) GetCount() int64 {
 	if x != nil {
 		return x.Count
 	}
 	return 0
 }
 
-func (x *ListBeerReply_Beer) GetImage() []*ListBeerReply_Beer_Image {
+func (x *ListPublicationReply_Publication) GetImage() []*ListPublicationReply_Publication_Image {
 	if x != nil {
 		return x.Image
 	}
 	return nil
 }
 
-type ListBeerReply_Beer_Image struct {
+type ListPublicationReply_Publication_Image struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
@@ -2292,8 +2292,8 @@ type ListBeerReply_Beer_Image struct {
 	Url string `protobuf:"bytes,1,opt,name=url,proto3" json:"url,omitempty"`
 }
 
-func (x *ListBeerReply_Beer_Image) Reset() {
-	*x = ListBeerReply_Beer_Image{}
+func (x *ListPublicationReply_Publication_Image) Reset() {
+	*x = ListPublicationReply_Publication_Image{}
 	if protoimpl.UnsafeEnabled {
 		mi := &file_v1_shop_interface_proto_msgTypes[41]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -2301,13 +2301,13 @@ func (x *ListBeerReply_Beer_Image) Reset() {
 	}
 }
 
-func (x *ListBeerReply_Beer_Image) String() string {
+func (x *ListPublicationReply_Publication_Image) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*ListBeerReply_Beer_Image) ProtoMessage() {}
+func (*ListPublicationReply_Publication_Image) ProtoMessage() {}
 
-func (x *ListBeerReply_Beer_Image) ProtoReflect() protoreflect.Message {
+func (x *ListPublicationReply_Publication_Image) ProtoReflect() protoreflect.Message {
 	mi := &file_v1_shop_interface_proto_msgTypes[41]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -2319,19 +2319,19 @@ func (x *ListBeerReply_Beer_Image) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use ListBeerReply_Beer_Image.ProtoReflect.Descriptor instead.
-func (*ListBeerReply_Beer_Image) Descriptor() ([]byte, []int) {
+// Deprecated: Use ListPublicationReply_Publication_Image.ProtoReflect.Descriptor instead.
+func (*ListPublicationReply_Publication_Image) Descriptor() ([]byte, []int) {
 	return file_v1_shop_interface_proto_rawDescGZIP(), []int{27, 0, 0}
 }
 
-func (x *ListBeerReply_Beer_Image) GetUrl() string {
+func (x *ListPublicationReply_Publication_Image) GetUrl() string {
 	if x != nil {
 		return x.Url
 	}
 	return ""
 }
 
-type GetBeerReply_Image struct {
+type GetPublicationReply_Image struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
@@ -2339,8 +2339,8 @@ type GetBeerReply_Image struct {
 	Url string `protobuf:"bytes,1,opt,name=url,proto3" json:"url,omitempty"`
 }
 
-func (x *GetBeerReply_Image) Reset() {
-	*x = GetBeerReply_Image{}
+func (x *GetPublicationReply_Image) Reset() {
+	*x = GetPublicationReply_Image{}
 	if protoimpl.UnsafeEnabled {
 		mi := &file_v1_shop_interface_proto_msgTypes[42]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -2348,13 +2348,13 @@ func (x *GetBeerReply_Image) Reset() {
 	}
 }
 
-func (x *GetBeerReply_Image) String() string {
+func (x *GetPublicationReply_Image) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*GetBeerReply_Image) ProtoMessage() {}
+func (*GetPublicationReply_Image) ProtoMessage() {}
 
-func (x *GetBeerReply_Image) ProtoReflect() protoreflect.Message {
+func (x *GetPublicationReply_Image) ProtoReflect() protoreflect.Message {
 	mi := &file_v1_shop_interface_proto_msgTypes[42]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -2366,12 +2366,12 @@ func (x *GetBeerReply_Image) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use GetBeerReply_Image.ProtoReflect.Descriptor instead.
-func (*GetBeerReply_Image) Descriptor() ([]byte, []int) {
+// Deprecated: Use GetPublicationReply_Image.ProtoReflect.Descriptor instead.
+func (*GetPublicationReply_Image) Descriptor() ([]byte, []int) {
 	return file_v1_shop_interface_proto_rawDescGZIP(), []int{29, 0}
 }
 
-func (x *GetBeerReply_Image) GetUrl() string {
+func (x *GetPublicationReply_Image) GetUrl() string {
 	if x != nil {
 		return x.Url
 	}
@@ -2691,56 +2691,56 @@ func file_v1_shop_interface_proto_rawDescGZIP() []byte {
 
 var file_v1_shop_interface_proto_msgTypes = make([]protoimpl.MessageInfo, 43)
 var file_v1_shop_interface_proto_goTypes = []interface{}{
-	(*RegisterReq)(nil),              // 0: shop.interface.v1.RegisterReq
-	(*RegisterReply)(nil),            // 1: shop.interface.v1.RegisterReply
-	(*LoginReq)(nil),                 // 2: shop.interface.v1.LoginReq
-	(*LoginReply)(nil),               // 3: shop.interface.v1.LoginReply
-	(*LogoutReq)(nil),                // 4: shop.interface.v1.LogoutReq
-	(*LogoutReply)(nil),              // 5: shop.interface.v1.LogoutReply
-	(*GetUserReq)(nil),               // 6: shop.interface.v1.GetUserReq
-	(*GetUserReply)(nil),             // 7: shop.interface.v1.GetUserReply
-	(*CreateUserReq)(nil),            // 8: shop.interface.v1.CreateUserReq
-	(*CreateUserReply)(nil),          // 9: shop.interface.v1.CreateUserReply
-	(*VerifyPasswordReq)(nil),        // 10: shop.interface.v1.VerifyPasswordReq
-	(*VerifyPasswordReply)(nil),      // 11: shop.interface.v1.VerifyPasswordReply
-	(*ListAddressReq)(nil),           // 12: shop.interface.v1.ListAddressReq
-	(*ListAddressReply)(nil),         // 13: shop.interface.v1.ListAddressReply
-	(*CreateAddressReq)(nil),         // 14: shop.interface.v1.CreateAddressReq
-	(*CreateAddressReply)(nil),       // 15: shop.interface.v1.CreateAddressReply
-	(*GetAddressReq)(nil),            // 16: shop.interface.v1.GetAddressReq
-	(*GetAddressReply)(nil),          // 17: shop.interface.v1.GetAddressReply
-	(*ListCardReq)(nil),              // 18: shop.interface.v1.ListCardReq
-	(*ListCardReply)(nil),            // 19: shop.interface.v1.ListCardReply
-	(*CreateCardReq)(nil),            // 20: shop.interface.v1.CreateCardReq
-	(*CreateCardReply)(nil),          // 21: shop.interface.v1.CreateCardReply
-	(*GetCardReq)(nil),               // 22: shop.interface.v1.GetCardReq
-	(*GetCardReply)(nil),             // 23: shop.interface.v1.GetCardReply
-	(*DeleteCardReq)(nil),            // 24: shop.interface.v1.DeleteCardReq
-	(*DeleteCardReply)(nil),          // 25: shop.interface.v1.DeleteCardReply
-	(*ListBeerReq)(nil),              // 26: shop.interface.v1.ListBeerReq
-	(*ListBeerReply)(nil),            // 27: shop.interface.v1.ListBeerReply
-	(*GetBeerReq)(nil),               // 28: shop.interface.v1.GetBeerReq
-	(*GetBeerReply)(nil),             // 29: shop.interface.v1.GetBeerReply
-	(*ListCartItemReq)(nil),          // 30: shop.interface.v1.ListCartItemReq
-	(*ListCartItemReply)(nil),        // 31: shop.interface.v1.ListCartItemReply
-	(*AddCartItemReq)(nil),           // 32: shop.interface.v1.AddCartItemReq
-	(*AddCartItemReply)(nil),         // 33: shop.interface.v1.AddCartItemReply
-	(*CreateOrderReq)(nil),           // 34: shop.interface.v1.CreateOrderReq
-	(*CreateOrderReply)(nil),         // 35: shop.interface.v1.CreateOrderReply
-	(*ListOrderReq)(nil),             // 36: shop.interface.v1.ListOrderReq
-	(*ListOrderReply)(nil),           // 37: shop.interface.v1.ListOrderReply
-	(*ListAddressReply_Address)(nil), // 38: shop.interface.v1.ListAddressReply.Address
-	(*ListCardReply_Card)(nil),       // 39: shop.interface.v1.ListCardReply.Card
-	(*ListBeerReply_Beer)(nil),       // 40: shop.interface.v1.ListBeerReply.Beer
-	(*ListBeerReply_Beer_Image)(nil), // 41: shop.interface.v1.ListBeerReply.Beer.Image
-	(*GetBeerReply_Image)(nil),       // 42: shop.interface.v1.GetBeerReply.Image
+	(*RegisterReq)(nil),                            // 0: shop.interface.v1.RegisterReq
+	(*RegisterReply)(nil),                          // 1: shop.interface.v1.RegisterReply
+	(*LoginReq)(nil),                               // 2: shop.interface.v1.LoginReq
+	(*LoginReply)(nil),                             // 3: shop.interface.v1.LoginReply
+	(*LogoutReq)(nil),                              // 4: shop.interface.v1.LogoutReq
+	(*LogoutReply)(nil),                            // 5: shop.interface.v1.LogoutReply
+	(*GetUserReq)(nil),                             // 6: shop.interface.v1.GetUserReq
+	(*GetUserReply)(nil),                           // 7: shop.interface.v1.GetUserReply
+	(*CreateUserReq)(nil),                          // 8: shop.interface.v1.CreateUserReq
+	(*CreateUserReply)(nil),                        // 9: shop.interface.v1.CreateUserReply
+	(*VerifyPasswordReq)(nil),                      // 10: shop.interface.v1.VerifyPasswordReq
+	(*VerifyPasswordReply)(nil),                    // 11: shop.interface.v1.VerifyPasswordReply
+	(*ListAddressReq)(nil),                         // 12: shop.interface.v1.ListAddressReq
+	(*ListAddressReply)(nil),                       // 13: shop.interface.v1.ListAddressReply
+	(*CreateAddressReq)(nil),                       // 14: shop.interface.v1.CreateAddressReq
+	(*CreateAddressReply)(nil),                     // 15: shop.interface.v1.CreateAddressReply
+	(*GetAddressReq)(nil),                          // 16: shop.interface.v1.GetAddressReq
+	(*GetAddressReply)(nil),                        // 17: shop.interface.v1.GetAddressReply
+	(*ListCardReq)(nil),                            // 18: shop.interface.v1.ListCardReq
+	(*ListCardReply)(nil),                          // 19: shop.interface.v1.ListCardReply
+	(*CreateCardReq)(nil),                          // 20: shop.interface.v1.CreateCardReq
+	(*CreateCardReply)(nil),                        // 21: shop.interface.v1.CreateCardReply
+	(*GetCardReq)(nil),                             // 22: shop.interface.v1.GetCardReq
+	(*GetCardReply)(nil),                           // 23: shop.interface.v1.GetCardReply
+	(*DeleteCardReq)(nil),                          // 24: shop.interface.v1.DeleteCardReq
+	(*DeleteCardReply)(nil),                        // 25: shop.interface.v1.DeleteCardReply
+	(*ListPublicationReq)(nil),                     // 26: shop.interface.v1.ListPublicationReq
+	(*ListPublicationReply)(nil),                   // 27: shop.interface.v1.ListPublicationReply
+	(*GetPublicationReq)(nil),                      // 28: shop.interface.v1.GetPublicationReq
+	(*GetPublicationReply)(nil),                    // 29: shop.interface.v1.GetPublicationReply
+	(*ListCartItemReq)(nil),                        // 30: shop.interface.v1.ListCartItemReq
+	(*ListCartItemReply)(nil),                      // 31: shop.interface.v1.ListCartItemReply
+	(*AddCartItemReq)(nil),                         // 32: shop.interface.v1.AddCartItemReq
+	(*AddCartItemReply)(nil),                       // 33: shop.interface.v1.AddCartItemReply
+	(*CreateOrderReq)(nil),                         // 34: shop.interface.v1.CreateOrderReq
+	(*CreateOrderReply)(nil),                       // 35: shop.interface.v1.CreateOrderReply
+	(*ListOrderReq)(nil),                           // 36: shop.interface.v1.ListOrderReq
+	(*ListOrderReply)(nil),                         // 37: shop.interface.v1.ListOrderReply
+	(*ListAddressReply_Address)(nil),               // 38: shop.interface.v1.ListAddressReply.Address
+	(*ListCardReply_Card)(nil),                     // 39: shop.interface.v1.ListCardReply.Card
+	(*ListPublicationReply_Publication)(nil),       // 40: shop.interface.v1.ListPublicationReply.Publication
+	(*ListPublicationReply_Publication_Image)(nil), // 41: shop.interface.v1.ListPublicationReply.Publication.Image
+	(*GetPublicationReply_Image)(nil),              // 42: shop.interface.v1.GetPublicationReply.Image
 }
 var file_v1_shop_interface_proto_depIdxs = []int32{
 	38, // 0: shop.interface.v1.ListAddressReply.results:type_name -> shop.interface.v1.ListAddressReply.Address
 	39, // 1: shop.interface.v1.ListCardReply.results:type_name -> shop.interface.v1.ListCardReply.Card
-	40, // 2: shop.interface.v1.ListBeerReply.results:type_name -> shop.interface.v1.ListBeerReply.Beer
-	42, // 3: shop.interface.v1.GetBeerReply.image:type_name -> shop.interface.v1.GetBeerReply.Image
-	41, // 4: shop.interface.v1.ListBeerReply.Beer.image:type_name -> shop.interface.v1.ListBeerReply.Beer.Image
+	40, // 2: shop.interface.v1.ListPublicationReply.results:type_name -> shop.interface.v1.ListPublicationReply.Publication
+	42, // 3: shop.interface.v1.GetPublicationReply.image:type_name -> shop.interface.v1.GetPublicationReply.Image
+	41, // 4: shop.interface.v1.ListPublicationReply.Publication.image:type_name -> shop.interface.v1.ListPublicationReply.Publication.Image
 	0,  // 5: shop.interface.v1.ShopInterface.Register:input_type -> shop.interface.v1.RegisterReq
 	2,  // 6: shop.interface.v1.ShopInterface.Login:input_type -> shop.interface.v1.LoginReq
 	4,  // 7: shop.interface.v1.ShopInterface.Logout:input_type -> shop.interface.v1.LogoutReq
@@ -2751,8 +2751,8 @@ var file_v1_shop_interface_proto_depIdxs = []int32{
 	20, // 12: shop.interface.v1.ShopInterface.CreateCard:input_type -> shop.interface.v1.CreateCardReq
 	22, // 13: shop.interface.v1.ShopInterface.GetCard:input_type -> shop.interface.v1.GetCardReq
 	24, // 14: shop.interface.v1.ShopInterface.DeleteCard:input_type -> shop.interface.v1.DeleteCardReq
-	26, // 15: shop.interface.v1.ShopInterface.ListBeer:input_type -> shop.interface.v1.ListBeerReq
-	28, // 16: shop.interface.v1.ShopInterface.GetBeer:input_type -> shop.interface.v1.GetBeerReq
+	26, // 15: shop.interface.v1.ShopInterface.ListPublication:input_type -> shop.interface.v1.ListPublicationReq
+	28, // 16: shop.interface.v1.ShopInterface.GetPublication:input_type -> shop.interface.v1.GetPublicationReq
 	30, // 17: shop.interface.v1.ShopInterface.ListCartItem:input_type -> shop.interface.v1.ListCartItemReq
 	32, // 18: shop.interface.v1.ShopInterface.AddCartItem:input_type -> shop.interface.v1.AddCartItemReq
 	34, // 19: shop.interface.v1.ShopInterface.CreateOrder:input_type -> shop.interface.v1.CreateOrderReq
@@ -2767,8 +2767,8 @@ var file_v1_shop_interface_proto_depIdxs = []int32{
 	21, // 28: shop.interface.v1.ShopInterface.CreateCard:output_type -> shop.interface.v1.CreateCardReply
 	23, // 29: shop.interface.v1.ShopInterface.GetCard:output_type -> shop.interface.v1.GetCardReply
 	25, // 30: shop.interface.v1.ShopInterface.DeleteCard:output_type -> shop.interface.v1.DeleteCardReply
-	27, // 31: shop.interface.v1.ShopInterface.ListBeer:output_type -> shop.interface.v1.ListBeerReply
-	29, // 32: shop.interface.v1.ShopInterface.GetBeer:output_type -> shop.interface.v1.GetBeerReply
+	27, // 31: shop.interface.v1.ShopInterface.ListPublication:output_type -> shop.interface.v1.ListPublicationReply
+	29, // 32: shop.interface.v1.ShopInterface.GetPublication:output_type -> shop.interface.v1.GetPublicationReply
 	31, // 33: shop.interface.v1.ShopInterface.ListCartItem:output_type -> shop.interface.v1.ListCartItemReply
 	33, // 34: shop.interface.v1.ShopInterface.AddCartItem:output_type -> shop.interface.v1.AddCartItemReply
 	35, // 35: shop.interface.v1.ShopInterface.CreateOrder:output_type -> shop.interface.v1.CreateOrderReply
@@ -3099,7 +3099,7 @@ func file_v1_shop_interface_proto_init() {
 			}
 		}
 		file_v1_shop_interface_proto_msgTypes[26].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*ListBeerReq); i {
+			switch v := v.(*ListPublicationReq); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -3111,7 +3111,7 @@ func file_v1_shop_interface_proto_init() {
 			}
 		}
 		file_v1_shop_interface_proto_msgTypes[27].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*ListBeerReply); i {
+			switch v := v.(*ListPublicationReply); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -3123,7 +3123,7 @@ func file_v1_shop_interface_proto_init() {
 			}
 		}
 		file_v1_shop_interface_proto_msgTypes[28].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*GetBeerReq); i {
+			switch v := v.(*GetPublicationReq); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -3135,7 +3135,7 @@ func file_v1_shop_interface_proto_init() {
 			}
 		}
 		file_v1_shop_interface_proto_msgTypes[29].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*GetBeerReply); i {
+			switch v := v.(*GetPublicationReply); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -3267,7 +3267,7 @@ func file_v1_shop_interface_proto_init() {
 			}
 		}
 		file_v1_shop_interface_proto_msgTypes[40].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*ListBeerReply_Beer); i {
+			switch v := v.(*ListPublicationReply_Publication); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -3279,7 +3279,7 @@ func file_v1_shop_interface_proto_init() {
 			}
 		}
 		file_v1_shop_interface_proto_msgTypes[41].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*ListBeerReply_Beer_Image); i {
+			switch v := v.(*ListPublicationReply_Publication_Image); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -3291,7 +3291,7 @@ func file_v1_shop_interface_proto_init() {
 			}
 		}
 		file_v1_shop_interface_proto_msgTypes[42].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*GetBeerReply_Image); i {
+			switch v := v.(*GetPublicationReply_Image); i {
 			case 0:
 				return &v.state
 			case 1:

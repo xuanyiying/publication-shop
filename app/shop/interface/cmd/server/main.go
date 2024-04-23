@@ -5,7 +5,7 @@ import (
 	"github.com/go-kratos/kratos/v2/registry"
 	"os"
 
-	"github.com/go-kratos/beer-shop/app/shop/interface/internal/conf"
+	"github.com/go-kratos/publication-shop/app/shop/interface/internal/conf"
 
 	"github.com/go-kratos/kratos/v2"
 	"github.com/go-kratos/kratos/v2/config"
@@ -22,7 +22,7 @@ import (
 // go build -ldflags "-X main.Version=x.y.z"
 var (
 	// Name is the name of the compiled software.
-	Name = "beer.shop.interface"
+	Name = "Publication.shop.interface"
 	// Version is the version of the compiled software.
 	Version string
 	// flagconf is the config flag.
@@ -60,7 +60,6 @@ func main() {
 		config.WithSource(
 			file.NewSource(flagconf),
 		),
-
 	)
 	if err := c.Load(); err != nil {
 		panic(err)

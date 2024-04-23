@@ -10,7 +10,7 @@ import (
 	"go.mongodb.org/mongo-driver/mongo/options"
 	"go.mongodb.org/mongo-driver/mongo/readpref"
 
-	"github.com/go-kratos/beer-shop/app/cart/service/internal/conf"
+	"github.com/go-kratos/publication-shop/app/cart/service/internal/conf"
 )
 
 // ProviderSet is data providers.

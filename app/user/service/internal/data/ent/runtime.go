@@ -5,10 +5,10 @@ package ent
 import (
 	"time"
 
-	"github.com/go-kratos/beer-shop/app/user/service/internal/data/ent/address"
-	"github.com/go-kratos/beer-shop/app/user/service/internal/data/ent/card"
-	"github.com/go-kratos/beer-shop/app/user/service/internal/data/ent/schema"
-	"github.com/go-kratos/beer-shop/app/user/service/internal/data/ent/user"
+	"github.com/go-kratos/publication-shop/app/user/service/internal/data/ent/address"
+	"github.com/go-kratos/publication-shop/app/user/service/internal/data/ent/card"
+	"github.com/go-kratos/publication-shop/app/user/service/internal/data/ent/schema"
+	"github.com/go-kratos/publication-shop/app/user/service/internal/data/ent/user"
 )
 
 // The init function reads all schema descriptors with runtime code

@@ -1,11 +1,11 @@
 package server
 
 import (
-	"github.com/go-kratos/beer-shop/api/shop/interface/v1"
-	"github.com/go-kratos/beer-shop/app/shop/interface/internal/conf"
-	"github.com/go-kratos/beer-shop/app/shop/interface/internal/service"
 	"github.com/go-kratos/kratos/v2/log"
 	"github.com/go-kratos/kratos/v2/middleware/auth/jwt"
+	"github.com/go-kratos/publication-shop/api/shop/interface/v1"
+	"github.com/go-kratos/publication-shop/app/shop/interface/internal/conf"
+	"github.com/go-kratos/publication-shop/app/shop/interface/internal/service"
 	jwt2 "github.com/golang-jwt/jwt/v4"
 	tracesdk "go.opentelemetry.io/otel/sdk/trace"
 

@@ -11,9 +11,9 @@ import (
 	"entgo.io/ent/dialect/sql"
 	"entgo.io/ent/dialect/sql/sqlgraph"
 	"entgo.io/ent/schema/field"
-	"github.com/go-kratos/beer-shop/app/user/service/internal/data/ent/address"
-	"github.com/go-kratos/beer-shop/app/user/service/internal/data/ent/predicate"
-	"github.com/go-kratos/beer-shop/app/user/service/internal/data/ent/user"
+	"github.com/go-kratos/publication-shop/app/user/service/internal/data/ent/address"
+	"github.com/go-kratos/publication-shop/app/user/service/internal/data/ent/predicate"
+	"github.com/go-kratos/publication-shop/app/user/service/internal/data/ent/user"
 )
 
 // AddressQuery is the builder for querying Address entities.
@@ -291,7 +291,6 @@ func (aq *AddressQuery) WithUser(opts ...func(*UserQuery)) *AddressQuery {
 //		GroupBy(address.FieldName).
 //		Aggregate(ent.Count()).
 //		Scan(ctx, &v)
-//
 func (aq *AddressQuery) GroupBy(field string, fields ...string) *AddressGroupBy {
 	group := &AddressGroupBy{config: aq.config}
 	group.fields = append([]string{field}, fields...)
@@ -316,7 +315,6 @@ func (aq *AddressQuery) GroupBy(field string, fields ...string) *AddressGroupBy 
 //	client.Address.Query().
 //		Select(address.FieldName).
 //		Scan(ctx, &v)
-//
 func (aq *AddressQuery) Select(field string, fields ...string) *AddressSelect {
 	aq.fields = append([]string{field}, fields...)
 	return &AddressSelect{AddressQuery: aq}

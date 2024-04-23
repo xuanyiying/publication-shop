@@ -6,11 +6,11 @@ import (
 
 	"gorm.io/gorm"
 
-	"github.com/go-kratos/beer-shop/pkg/util/pagination"
+	"github.com/go-kratos/publication-shop/pkg/util/pagination"
 
 	"github.com/go-kratos/kratos/v2/log"
 
-	"github.com/go-kratos/beer-shop/app/order/service/internal/biz"
+	"github.com/go-kratos/publication-shop/app/order/service/internal/biz"
 )
 
 var _ biz.OrderRepo = (*orderRepo)(nil)

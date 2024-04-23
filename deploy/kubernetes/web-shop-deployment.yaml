@@ -24,7 +24,7 @@ spec:
         io.kompose.service: web-shop
     spec:
       containers:
-        - image: go-kratos/beer-web-shop:0.1.0
+        - image: go-kratos/Publication-web-shop:0.1.0
           name: web-shop
           ports:
             - containerPort: 80

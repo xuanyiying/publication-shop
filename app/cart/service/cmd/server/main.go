@@ -11,7 +11,7 @@ import (
 	"go.opentelemetry.io/otel/sdk/resource"
 	semconv "go.opentelemetry.io/otel/semconv/v1.4.0"
 
-	"github.com/go-kratos/beer-shop/app/cart/service/internal/conf"
+	"github.com/go-kratos/publication-shop/app/cart/service/internal/conf"
 
 	"github.com/go-kratos/kratos/v2/config"
 	"github.com/go-kratos/kratos/v2/config/file"
@@ -23,7 +23,7 @@ import (
 // go build -ldflags "-X main.Version=x.y.z"
 var (
 	// Name is the name of the compiled software.
-	Name = "beer.cart.service"
+	Name = "Publication.cart.service"
 	// Version is the version of the compiled software.
 	Version string
 	// flagconf is the config flag.

@@ -1,8 +1,8 @@
 package data
 
 import (
-	"github.com/go-kratos/beer-shop/app/payment/service/internal/biz"
 	"github.com/go-kratos/kratos/v2/log"
+	"github.com/go-kratos/publication-shop/app/payment/service/internal/biz"
 )
 
 var _ biz.PaymentRepo = (*paymentRepo)(nil)

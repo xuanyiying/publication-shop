@@ -1,14 +1,14 @@
 package server
 
 import (
-	"github.com/go-kratos/beer-shop/api/courier/job/v1"
-	"github.com/go-kratos/beer-shop/app/courier/job/internal/conf"
-	"github.com/go-kratos/beer-shop/app/courier/job/internal/service"
 	"github.com/go-kratos/kratos/v2/log"
 	"github.com/go-kratos/kratos/v2/middleware/logging"
 	"github.com/go-kratos/kratos/v2/middleware/recovery"
 	"github.com/go-kratos/kratos/v2/middleware/tracing"
 	"github.com/go-kratos/kratos/v2/transport/grpc"
+	"github.com/go-kratos/publication-shop/api/courier/job/v1"
+	"github.com/go-kratos/publication-shop/app/courier/job/internal/conf"
+	"github.com/go-kratos/publication-shop/app/courier/job/internal/service"
 	tracesdk "go.opentelemetry.io/otel/sdk/trace"
 )
 

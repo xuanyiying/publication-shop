@@ -18,26 +18,26 @@ var _ = binding.EncodeURL
 const _ = http.SupportPackageIsVersion1
 
 type ShopAdminHTTPServer interface {
-	CreateBeer(context.Context, *CreateBeerReq) (*CreateBeerReply, error)
-	DeleteBeer(context.Context, *DeleteBeerReq) (*DeleteBeerReply, error)
+	CreatePublication(context.Context, *CreatePublicationReq) (*CreatePublicationReply, error)
+	DeletePublication(context.Context, *DeletePublicationReq) (*DeletePublicationReply, error)
 	GetOrder(context.Context, *GetOrderReq) (*GetOrderReply, error)
 	GetUser(context.Context, *GetUserReq) (*GetUserReply, error)
-	ListBeer(context.Context, *ListBeerReq) (*ListBeerReply, error)
+	ListPublication(context.Context, *ListPublicationReq) (*ListPublicationReply, error)
 	ListOrder(context.Context, *ListOrderReq) (*ListOrderReply, error)
 	ListUser(context.Context, *ListUserReq) (*ListUserReply, error)
 	Login(context.Context, *LoginReq) (*LoginReply, error)
 	Logout(context.Context, *LogoutReq) (*LogoutReply, error)
-	UpdateBeer(context.Context, *UpdateBeerReq) (*UpdateBeerReply, error)
+	UpdatePublication(context.Context, *UpdatePublicationReq) (*UpdatePublicationReply, error)
 }
 
 func RegisterShopAdminHTTPServer(s *http.Server, srv ShopAdminHTTPServer) {
 	r := s.Route("/")
 	r.POST("/admin/v1/login", _ShopAdmin_Login0_HTTP_Handler(srv))
 	r.POST("/admin/v1/logout", _ShopAdmin_Logout0_HTTP_Handler(srv))
-	r.GET("/admin/v1/catalog/beers", _ShopAdmin_ListBeer0_HTTP_Handler(srv))
-	r.POST("/admin/v1/catalog/beers", _ShopAdmin_CreateBeer0_HTTP_Handler(srv))
-	r.PUT("/admin/v1/catalog/beers/{id}", _ShopAdmin_UpdateBeer0_HTTP_Handler(srv))
-	r.DELETE("/admin/v1/catalog/beers/{id}", _ShopAdmin_DeleteBeer0_HTTP_Handler(srv))
+	r.GET("/admin/v1/catalog/Publications", _ShopAdmin_ListPublication0_HTTP_Handler(srv))
+	r.POST("/admin/v1/catalog/Publications", _ShopAdmin_CreatePublication0_HTTP_Handler(srv))
+	r.PUT("/admin/v1/catalog/Publications/{id}", _ShopAdmin_UpdatePublication0_HTTP_Handler(srv))
+	r.DELETE("/admin/v1/catalog/Publications/{id}", _ShopAdmin_DeletePublication0_HTTP_Handler(srv))
 	r.GET("/admin/v1/orders", _ShopAdmin_ListOrder0_HTTP_Handler(srv))
 	r.GET("/admin/v1/orders", _ShopAdmin_GetOrder0_HTTP_Handler(srv))
 	r.GET("/admin/v1/users", _ShopAdmin_ListUser0_HTTP_Handler(srv))
@@ -82,84 +82,84 @@ func _ShopAdmin_Logout0_HTTP_Handler(srv ShopAdminHTTPServer) func(ctx http.Cont
 	}
 }
 
-func _ShopAdmin_ListBeer0_HTTP_Handler(srv ShopAdminHTTPServer) func(ctx http.Context) error {
+func _ShopAdmin_ListPublication0_HTTP_Handler(srv ShopAdminHTTPServer) func(ctx http.Context) error {
 	return func(ctx http.Context) error {
-		var in ListBeerReq
+		var in ListPublicationReq
 		if err := ctx.BindQuery(&in); err != nil {
 			return err
 		}
-		http.SetOperation(ctx, "/shop.admin.v1.ShopAdmin/ListBeer")
+		http.SetOperation(ctx, "/shop.admin.v1.ShopAdmin/ListPublication")
 		h := ctx.Middleware(func(ctx context.Context, req interface{}) (interface{}, error) {
-			return srv.ListBeer(ctx, req.(*ListBeerReq))
+			return srv.ListPublication(ctx, req.(*ListPublicationReq))
 		})
 		out, err := h(ctx, &in)
 		if err != nil {
 			return err
 		}
-		reply := out.(*ListBeerReply)
+		reply := out.(*ListPublicationReply)
 		return ctx.Result(200, reply)
 	}
 }
 
-func _ShopAdmin_CreateBeer0_HTTP_Handler(srv ShopAdminHTTPServer) func(ctx http.Context) error {
+func _ShopAdmin_CreatePublication0_HTTP_Handler(srv ShopAdminHTTPServer) func(ctx http.Context) error {
 	return func(ctx http.Context) error {
-		var in CreateBeerReq
+		var in CreatePublicationReq
 		if err := ctx.Bind(&in); err != nil {
 			return err
 		}
-		http.SetOperation(ctx, "/shop.admin.v1.ShopAdmin/CreateBeer")
+		http.SetOperation(ctx, "/shop.admin.v1.ShopAdmin/CreatePublication")
 		h := ctx.Middleware(func(ctx context.Context, req interface{}) (interface{}, error) {
-			return srv.CreateBeer(ctx, req.(*CreateBeerReq))
+			return srv.CreatePublication(ctx, req.(*CreatePublicationReq))
 		})
 		out, err := h(ctx, &in)
 		if err != nil {
 			return err
 		}
-		reply := out.(*CreateBeerReply)
+		reply := out.(*CreatePublicationReply)
 		return ctx.Result(200, reply)
 	}
 }
 
-func _ShopAdmin_UpdateBeer0_HTTP_Handler(srv ShopAdminHTTPServer) func(ctx http.Context) error {
+func _ShopAdmin_UpdatePublication0_HTTP_Handler(srv ShopAdminHTTPServer) func(ctx http.Context) error {
 	return func(ctx http.Context) error {
-		var in UpdateBeerReq
+		var in UpdatePublicationReq
 		if err := ctx.Bind(&in); err != nil {
 			return err
 		}
 		if err := ctx.BindVars(&in); err != nil {
 			return err
 		}
-		http.SetOperation(ctx, "/shop.admin.v1.ShopAdmin/UpdateBeer")
+		http.SetOperation(ctx, "/shop.admin.v1.ShopAdmin/UpdatePublication")
 		h := ctx.Middleware(func(ctx context.Context, req interface{}) (interface{}, error) {
-			return srv.UpdateBeer(ctx, req.(*UpdateBeerReq))
+			return srv.UpdatePublication(ctx, req.(*UpdatePublicationReq))
 		})
 		out, err := h(ctx, &in)
 		if err != nil {
 			return err
 		}
-		reply := out.(*UpdateBeerReply)
+		reply := out.(*UpdatePublicationReply)
 		return ctx.Result(200, reply)
 	}
 }
 
-func _ShopAdmin_DeleteBeer0_HTTP_Handler(srv ShopAdminHTTPServer) func(ctx http.Context) error {
+func _ShopAdmin_DeletePublication0_HTTP_Handler(srv ShopAdminHTTPServer) func(ctx http.Context) error {
 	return func(ctx http.Context) error {
-		var in DeleteBeerReq
+		var in DeletePublicationReq
 		if err := ctx.BindQuery(&in); err != nil {
 			return err
 		}
 		if err := ctx.BindVars(&in); err != nil {
 			return err
 		}
-		http.SetOperation(ctx, "/shop.admin.v1.ShopAdmin/DeleteBeer")
+		http.SetOperation(ctx, "/shop.admin.v1.ShopAdmin/DeletePublication")
 		h := ctx.Middleware(func(ctx context.Context, req interface{}) (interface{}, error) {
-			return srv.DeleteBeer(ctx, req.(*DeleteBeerReq))
+			return srv.DeletePublication(ctx, req.(*DeletePublicationReq))
 		})
 		out, err := h(ctx, &in)
 		if err != nil {
 			return err
 		}
-		reply := out.(*DeleteBeerReply)
+		reply := out.(*DeletePublicationReply)
 		return ctx.Result(200, reply)
 	}
 }
@@ -244,16 +244,16 @@ func _ShopAdmin_GetUser0_HTTP_Handler(srv ShopAdminHTTPServer) func(ctx http.Con
 }
 
 type ShopAdminHTTPClient interface {
-	CreateBeer(ctx context.Context, req *CreateBeerReq, opts ...http.CallOption) (rsp *CreateBeerReply, err error)
-	DeleteBeer(ctx context.Context, req *DeleteBeerReq, opts ...http.CallOption) (rsp *DeleteBeerReply, err error)
+	CreatePublication(ctx context.Context, req *CreatePublicationReq, opts ...http.CallOption) (rsp *CreatePublicationReply, err error)
+	DeletePublication(ctx context.Context, req *DeletePublicationReq, opts ...http.CallOption) (rsp *DeletePublicationReply, err error)
 	GetOrder(ctx context.Context, req *GetOrderReq, opts ...http.CallOption) (rsp *GetOrderReply, err error)
 	GetUser(ctx context.Context, req *GetUserReq, opts ...http.CallOption) (rsp *GetUserReply, err error)
-	ListBeer(ctx context.Context, req *ListBeerReq, opts ...http.CallOption) (rsp *ListBeerReply, err error)
+	ListPublication(ctx context.Context, req *ListPublicationReq, opts ...http.CallOption) (rsp *ListPublicationReply, err error)
 	ListOrder(ctx context.Context, req *ListOrderReq, opts ...http.CallOption) (rsp *ListOrderReply, err error)
 	ListUser(ctx context.Context, req *ListUserReq, opts ...http.CallOption) (rsp *ListUserReply, err error)
 	Login(ctx context.Context, req *LoginReq, opts ...http.CallOption) (rsp *LoginReply, err error)
 	Logout(ctx context.Context, req *LogoutReq, opts ...http.CallOption) (rsp *LogoutReply, err error)
-	UpdateBeer(ctx context.Context, req *UpdateBeerReq, opts ...http.CallOption) (rsp *UpdateBeerReply, err error)
+	UpdatePublication(ctx context.Context, req *UpdatePublicationReq, opts ...http.CallOption) (rsp *UpdatePublicationReply, err error)
 }
 
 type ShopAdminHTTPClientImpl struct {
@@ -264,11 +264,11 @@ func NewShopAdminHTTPClient(client *http.Client) ShopAdminHTTPClient {
 	return &ShopAdminHTTPClientImpl{client}
 }
 
-func (c *ShopAdminHTTPClientImpl) CreateBeer(ctx context.Context, in *CreateBeerReq, opts ...http.CallOption) (*CreateBeerReply, error) {
-	var out CreateBeerReply
-	pattern := "/admin/v1/catalog/beers"
+func (c *ShopAdminHTTPClientImpl) CreatePublication(ctx context.Context, in *CreatePublicationReq, opts ...http.CallOption) (*CreatePublicationReply, error) {
+	var out CreatePublicationReply
+	pattern := "/admin/v1/catalog/Publications"
 	path := binding.EncodeURL(pattern, in, false)
-	opts = append(opts, http.Operation("/shop.admin.v1.ShopAdmin/CreateBeer"))
+	opts = append(opts, http.Operation("/shop.admin.v1.ShopAdmin/CreatePublication"))
 	opts = append(opts, http.PathTemplate(pattern))
 	err := c.cc.Invoke(ctx, "POST", path, in, &out, opts...)
 	if err != nil {
@@ -277,11 +277,11 @@ func (c *ShopAdminHTTPClientImpl) CreateBeer(ctx context.Context, in *CreateBeer
 	return &out, err
 }
 
-func (c *ShopAdminHTTPClientImpl) DeleteBeer(ctx context.Context, in *DeleteBeerReq, opts ...http.CallOption) (*DeleteBeerReply, error) {
-	var out DeleteBeerReply
-	pattern := "/admin/v1/catalog/beers/{id}"
+func (c *ShopAdminHTTPClientImpl) DeletePublication(ctx context.Context, in *DeletePublicationReq, opts ...http.CallOption) (*DeletePublicationReply, error) {
+	var out DeletePublicationReply
+	pattern := "/admin/v1/catalog/Publications/{id}"
 	path := binding.EncodeURL(pattern, in, true)
-	opts = append(opts, http.Operation("/shop.admin.v1.ShopAdmin/DeleteBeer"))
+	opts = append(opts, http.Operation("/shop.admin.v1.ShopAdmin/DeletePublication"))
 	opts = append(opts, http.PathTemplate(pattern))
 	err := c.cc.Invoke(ctx, "DELETE", path, nil, &out, opts...)
 	if err != nil {
@@ -316,11 +316,11 @@ func (c *ShopAdminHTTPClientImpl) GetUser(ctx context.Context, in *GetUserReq, o
 	return &out, err
 }
 
-func (c *ShopAdminHTTPClientImpl) ListBeer(ctx context.Context, in *ListBeerReq, opts ...http.CallOption) (*ListBeerReply, error) {
-	var out ListBeerReply
-	pattern := "/admin/v1/catalog/beers"
+func (c *ShopAdminHTTPClientImpl) ListPublication(ctx context.Context, in *ListPublicationReq, opts ...http.CallOption) (*ListPublicationReply, error) {
+	var out ListPublicationReply
+	pattern := "/admin/v1/catalog/Publications"
 	path := binding.EncodeURL(pattern, in, true)
-	opts = append(opts, http.Operation("/shop.admin.v1.ShopAdmin/ListBeer"))
+	opts = append(opts, http.Operation("/shop.admin.v1.ShopAdmin/ListPublication"))
 	opts = append(opts, http.PathTemplate(pattern))
 	err := c.cc.Invoke(ctx, "GET", path, nil, &out, opts...)
 	if err != nil {
@@ -381,11 +381,11 @@ func (c *ShopAdminHTTPClientImpl) Logout(ctx context.Context, in *LogoutReq, opt
 	return &out, err
 }
 
-func (c *ShopAdminHTTPClientImpl) UpdateBeer(ctx context.Context, in *UpdateBeerReq, opts ...http.CallOption) (*UpdateBeerReply, error) {
-	var out UpdateBeerReply
-	pattern := "/admin/v1/catalog/beers/{id}"
+func (c *ShopAdminHTTPClientImpl) UpdatePublication(ctx context.Context, in *UpdatePublicationReq, opts ...http.CallOption) (*UpdatePublicationReply, error) {
+	var out UpdatePublicationReply
+	pattern := "/admin/v1/catalog/Publications/{id}"
 	path := binding.EncodeURL(pattern, in, false)
-	opts = append(opts, http.Operation("/shop.admin.v1.ShopAdmin/UpdateBeer"))
+	opts = append(opts, http.Operation("/shop.admin.v1.ShopAdmin/UpdatePublication"))
 	opts = append(opts, http.PathTemplate(pattern))
 	err := c.cc.Invoke(ctx, "PUT", path, in, &out, opts...)
 	if err != nil {

@@ -1,8 +1,8 @@
 package server
 
 import (
-	"github.com/go-kratos/beer-shop/app/catalog/service/internal/conf"
 	"github.com/go-kratos/kratos/v2/registry"
+	"github.com/go-kratos/publication-shop/app/catalog/service/internal/conf"
 	"github.com/google/wire"
 
 	consul "github.com/go-kratos/kratos/contrib/registry/consul/v2"

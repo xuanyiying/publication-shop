@@ -21,7 +21,7 @@ const (
 	_ = protoimpl.EnforceVersion(protoimpl.MaxVersion - 20)
 )
 
-type ListBeerReq struct {
+type ListPublicationReq struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
@@ -30,8 +30,8 @@ type ListBeerReq struct {
 	PageSize int64 `protobuf:"varint,2,opt,name=page_size,json=pageSize,proto3" json:"page_size,omitempty"`
 }
 
-func (x *ListBeerReq) Reset() {
-	*x = ListBeerReq{}
+func (x *ListPublicationReq) Reset() {
+	*x = ListPublicationReq{}
 	if protoimpl.UnsafeEnabled {
 		mi := &file_api_catalog_service_v1_catalog_proto_msgTypes[0]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -39,13 +39,13 @@ func (x *ListBeerReq) Reset() {
 	}
 }
 
-func (x *ListBeerReq) String() string {
+func (x *ListPublicationReq) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*ListBeerReq) ProtoMessage() {}
+func (*ListPublicationReq) ProtoMessage() {}
 
-func (x *ListBeerReq) ProtoReflect() protoreflect.Message {
+func (x *ListPublicationReq) ProtoReflect() protoreflect.Message {
 	mi := &file_api_catalog_service_v1_catalog_proto_msgTypes[0]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -57,26 +57,26 @@ func (x *ListBeerReq) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use ListBeerReq.ProtoReflect.Descriptor instead.
-func (*ListBeerReq) Descriptor() ([]byte, []int) {
+// Deprecated: Use ListPublicationReq.ProtoReflect.Descriptor instead.
+func (*ListPublicationReq) Descriptor() ([]byte, []int) {
 	return file_api_catalog_service_v1_catalog_proto_rawDescGZIP(), []int{0}
 }
 
-func (x *ListBeerReq) GetPageNum() int64 {
+func (x *ListPublicationReq) GetPageNum() int64 {
 	if x != nil {
 		return x.PageNum
 	}
 	return 0
 }
 
-func (x *ListBeerReq) GetPageSize() int64 {
+func (x *ListPublicationReq) GetPageSize() int64 {
 	if x != nil {
 		return x.PageSize
 	}
 	return 0
 }
 
-type ListBeerNextTokenReq struct {
+type ListPublicationNextTokenReq struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
@@ -94,8 +94,8 @@ type ListBeerNextTokenReq struct {
 	PageToken string `protobuf:"bytes,2,opt,name=page_token,json=pageToken,proto3" json:"page_token,omitempty"`
 }
 
-func (x *ListBeerNextTokenReq) Reset() {
-	*x = ListBeerNextTokenReq{}
+func (x *ListPublicationNextTokenReq) Reset() {
+	*x = ListPublicationNextTokenReq{}
 	if protoimpl.UnsafeEnabled {
 		mi := &file_api_catalog_service_v1_catalog_proto_msgTypes[1]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -103,13 +103,13 @@ func (x *ListBeerNextTokenReq) Reset() {
 	}
 }
 
-func (x *ListBeerNextTokenReq) String() string {
+func (x *ListPublicationNextTokenReq) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*ListBeerNextTokenReq) ProtoMessage() {}
+func (*ListPublicationNextTokenReq) ProtoMessage() {}
 
-func (x *ListBeerNextTokenReq) ProtoReflect() protoreflect.Message {
+func (x *ListPublicationNextTokenReq) ProtoReflect() protoreflect.Message {
 	mi := &file_api_catalog_service_v1_catalog_proto_msgTypes[1]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -121,35 +121,35 @@ func (x *ListBeerNextTokenReq) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use ListBeerNextTokenReq.ProtoReflect.Descriptor instead.
-func (*ListBeerNextTokenReq) Descriptor() ([]byte, []int) {
+// Deprecated: Use ListPublicationNextTokenReq.ProtoReflect.Descriptor instead.
+func (*ListPublicationNextTokenReq) Descriptor() ([]byte, []int) {
 	return file_api_catalog_service_v1_catalog_proto_rawDescGZIP(), []int{1}
 }
 
-func (x *ListBeerNextTokenReq) GetPageSize() int32 {
+func (x *ListPublicationNextTokenReq) GetPageSize() int32 {
 	if x != nil {
 		return x.PageSize
 	}
 	return 0
 }
 
-func (x *ListBeerNextTokenReq) GetPageToken() string {
+func (x *ListPublicationNextTokenReq) GetPageToken() string {
 	if x != nil {
 		return x.PageToken
 	}
 	return ""
 }
 
-type ListBeerReply struct {
+type ListPublicationReply struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Results []*ListBeerReply_Beer `protobuf:"bytes,1,rep,name=results,proto3" json:"results,omitempty"`
+	Results []*ListPublicationReply_Publication `protobuf:"bytes,1,rep,name=results,proto3" json:"results,omitempty"`
 }
 
-func (x *ListBeerReply) Reset() {
-	*x = ListBeerReply{}
+func (x *ListPublicationReply) Reset() {
+	*x = ListPublicationReply{}
 	if protoimpl.UnsafeEnabled {
 		mi := &file_api_catalog_service_v1_catalog_proto_msgTypes[2]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -157,13 +157,13 @@ func (x *ListBeerReply) Reset() {
 	}
 }
 
-func (x *ListBeerReply) String() string {
+func (x *ListPublicationReply) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*ListBeerReply) ProtoMessage() {}
+func (*ListPublicationReply) ProtoMessage() {}
 
-func (x *ListBeerReply) ProtoReflect() protoreflect.Message {
+func (x *ListPublicationReply) ProtoReflect() protoreflect.Message {
 	mi := &file_api_catalog_service_v1_catalog_proto_msgTypes[2]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -175,29 +175,29 @@ func (x *ListBeerReply) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use ListBeerReply.ProtoReflect.Descriptor instead.
-func (*ListBeerReply) Descriptor() ([]byte, []int) {
+// Deprecated: Use ListPublicationReply.ProtoReflect.Descriptor instead.
+func (*ListPublicationReply) Descriptor() ([]byte, []int) {
 	return file_api_catalog_service_v1_catalog_proto_rawDescGZIP(), []int{2}
 }
 
-func (x *ListBeerReply) GetResults() []*ListBeerReply_Beer {
+func (x *ListPublicationReply) GetResults() []*ListPublicationReply_Publication {
 	if x != nil {
 		return x.Results
 	}
 	return nil
 }
 
-type ListBeerReplyNextToken struct {
+type ListPublicationReplyNextToken struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Results       []*ListBeerReplyNextToken_Beer `protobuf:"bytes,1,rep,name=results,proto3" json:"results,omitempty"`
-	NextPageToken string                         `protobuf:"bytes,2,opt,name=next_page_token,json=nextPageToken,proto3" json:"next_page_token,omitempty"`
+	Results       []*ListPublicationReplyNextToken_Publication `protobuf:"bytes,1,rep,name=results,proto3" json:"results,omitempty"`
+	NextPageToken string                                       `protobuf:"bytes,2,opt,name=next_page_token,json=nextPageToken,proto3" json:"next_page_token,omitempty"`
 }
 
-func (x *ListBeerReplyNextToken) Reset() {
-	*x = ListBeerReplyNextToken{}
+func (x *ListPublicationReplyNextToken) Reset() {
+	*x = ListPublicationReplyNextToken{}
 	if protoimpl.UnsafeEnabled {
 		mi := &file_api_catalog_service_v1_catalog_proto_msgTypes[3]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -205,13 +205,13 @@ func (x *ListBeerReplyNextToken) Reset() {
 	}
 }
 
-func (x *ListBeerReplyNextToken) String() string {
+func (x *ListPublicationReplyNextToken) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*ListBeerReplyNextToken) ProtoMessage() {}
+func (*ListPublicationReplyNextToken) ProtoMessage() {}
 
-func (x *ListBeerReplyNextToken) ProtoReflect() protoreflect.Message {
+func (x *ListPublicationReplyNextToken) ProtoReflect() protoreflect.Message {
 	mi := &file_api_catalog_service_v1_catalog_proto_msgTypes[3]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -223,38 +223,38 @@ func (x *ListBeerReplyNextToken) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use ListBeerReplyNextToken.ProtoReflect.Descriptor instead.
-func (*ListBeerReplyNextToken) Descriptor() ([]byte, []int) {
+// Deprecated: Use ListPublicationReplyNextToken.ProtoReflect.Descriptor instead.
+func (*ListPublicationReplyNextToken) Descriptor() ([]byte, []int) {
 	return file_api_catalog_service_v1_catalog_proto_rawDescGZIP(), []int{3}
 }
 
-func (x *ListBeerReplyNextToken) GetResults() []*ListBeerReplyNextToken_Beer {
+func (x *ListPublicationReplyNextToken) GetResults() []*ListPublicationReplyNextToken_Publication {
 	if x != nil {
 		return x.Results
 	}
 	return nil
 }
 
-func (x *ListBeerReplyNextToken) GetNextPageToken() string {
+func (x *ListPublicationReplyNextToken) GetNextPageToken() string {
 	if x != nil {
 		return x.NextPageToken
 	}
 	return ""
 }
 
-type CreateBeerReq struct {
+type CreatePublicationReq struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Name        string                 `protobuf:"bytes,1,opt,name=name,proto3" json:"name,omitempty"`
-	Description string                 `protobuf:"bytes,2,opt,name=description,proto3" json:"description,omitempty"`
-	Count       int64                  `protobuf:"varint,3,opt,name=count,proto3" json:"count,omitempty"`
-	Image       []*CreateBeerReq_Image `protobuf:"bytes,4,rep,name=image,proto3" json:"image,omitempty"`
+	Name        string                        `protobuf:"bytes,1,opt,name=name,proto3" json:"name,omitempty"`
+	Description string                        `protobuf:"bytes,2,opt,name=description,proto3" json:"description,omitempty"`
+	Count       int64                         `protobuf:"varint,3,opt,name=count,proto3" json:"count,omitempty"`
+	Image       []*CreatePublicationReq_Image `protobuf:"bytes,4,rep,name=image,proto3" json:"image,omitempty"`
 }
 
-func (x *CreateBeerReq) Reset() {
-	*x = CreateBeerReq{}
+func (x *CreatePublicationReq) Reset() {
+	*x = CreatePublicationReq{}
 	if protoimpl.UnsafeEnabled {
 		mi := &file_api_catalog_service_v1_catalog_proto_msgTypes[4]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -262,13 +262,13 @@ func (x *CreateBeerReq) Reset() {
 	}
 }
 
-func (x *CreateBeerReq) String() string {
+func (x *CreatePublicationReq) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*CreateBeerReq) ProtoMessage() {}
+func (*CreatePublicationReq) ProtoMessage() {}
 
-func (x *CreateBeerReq) ProtoReflect() protoreflect.Message {
+func (x *CreatePublicationReq) ProtoReflect() protoreflect.Message {
 	mi := &file_api_catalog_service_v1_catalog_proto_msgTypes[4]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -280,53 +280,53 @@ func (x *CreateBeerReq) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use CreateBeerReq.ProtoReflect.Descriptor instead.
-func (*CreateBeerReq) Descriptor() ([]byte, []int) {
+// Deprecated: Use CreatePublicationReq.ProtoReflect.Descriptor instead.
+func (*CreatePublicationReq) Descriptor() ([]byte, []int) {
 	return file_api_catalog_service_v1_catalog_proto_rawDescGZIP(), []int{4}
 }
 
-func (x *CreateBeerReq) GetName() string {
+func (x *CreatePublicationReq) GetName() string {
 	if x != nil {
 		return x.Name
 	}
 	return ""
 }
 
-func (x *CreateBeerReq) GetDescription() string {
+func (x *CreatePublicationReq) GetDescription() string {
 	if x != nil {
 		return x.Description
 	}
 	return ""
 }
 
-func (x *CreateBeerReq) GetCount() int64 {
+func (x *CreatePublicationReq) GetCount() int64 {
 	if x != nil {
 		return x.Count
 	}
 	return 0
 }
 
-func (x *CreateBeerReq) GetImage() []*CreateBeerReq_Image {
+func (x *CreatePublicationReq) GetImage() []*CreatePublicationReq_Image {
 	if x != nil {
 		return x.Image
 	}
 	return nil
 }
 
-type CreateBeerReply struct {
+type CreatePublicationReply struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Id          int64                    `protobuf:"varint,1,opt,name=id,proto3" json:"id,omitempty"`
-	Name        string                   `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`
-	Description string                   `protobuf:"bytes,3,opt,name=description,proto3" json:"description,omitempty"`
-	Count       int64                    `protobuf:"varint,4,opt,name=count,proto3" json:"count,omitempty"`
-	Image       []*CreateBeerReply_Image `protobuf:"bytes,5,rep,name=image,proto3" json:"image,omitempty"`
+	Id          int64                           `protobuf:"varint,1,opt,name=id,proto3" json:"id,omitempty"`
+	Name        string                          `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`
+	Description string                          `protobuf:"bytes,3,opt,name=description,proto3" json:"description,omitempty"`
+	Count       int64                           `protobuf:"varint,4,opt,name=count,proto3" json:"count,omitempty"`
+	Image       []*CreatePublicationReply_Image `protobuf:"bytes,5,rep,name=image,proto3" json:"image,omitempty"`
 }
 
-func (x *CreateBeerReply) Reset() {
-	*x = CreateBeerReply{}
+func (x *CreatePublicationReply) Reset() {
+	*x = CreatePublicationReply{}
 	if protoimpl.UnsafeEnabled {
 		mi := &file_api_catalog_service_v1_catalog_proto_msgTypes[5]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -334,13 +334,13 @@ func (x *CreateBeerReply) Reset() {
 	}
 }
 
-func (x *CreateBeerReply) String() string {
+func (x *CreatePublicationReply) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*CreateBeerReply) ProtoMessage() {}
+func (*CreatePublicationReply) ProtoMessage() {}
 
-func (x *CreateBeerReply) ProtoReflect() protoreflect.Message {
+func (x *CreatePublicationReply) ProtoReflect() protoreflect.Message {
 	mi := &file_api_catalog_service_v1_catalog_proto_msgTypes[5]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -352,47 +352,47 @@ func (x *CreateBeerReply) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use CreateBeerReply.ProtoReflect.Descriptor instead.
-func (*CreateBeerReply) Descriptor() ([]byte, []int) {
+// Deprecated: Use CreatePublicationReply.ProtoReflect.Descriptor instead.
+func (*CreatePublicationReply) Descriptor() ([]byte, []int) {
 	return file_api_catalog_service_v1_catalog_proto_rawDescGZIP(), []int{5}
 }
 
-func (x *CreateBeerReply) GetId() int64 {
+func (x *CreatePublicationReply) GetId() int64 {
 	if x != nil {
 		return x.Id
 	}
 	return 0
 }
 
-func (x *CreateBeerReply) GetName() string {
+func (x *CreatePublicationReply) GetName() string {
 	if x != nil {
 		return x.Name
 	}
 	return ""
 }
 
-func (x *CreateBeerReply) GetDescription() string {
+func (x *CreatePublicationReply) GetDescription() string {
 	if x != nil {
 		return x.Description
 	}
 	return ""
 }
 
-func (x *CreateBeerReply) GetCount() int64 {
+func (x *CreatePublicationReply) GetCount() int64 {
 	if x != nil {
 		return x.Count
 	}
 	return 0
 }
 
-func (x *CreateBeerReply) GetImage() []*CreateBeerReply_Image {
+func (x *CreatePublicationReply) GetImage() []*CreatePublicationReply_Image {
 	if x != nil {
 		return x.Image
 	}
 	return nil
 }
 
-type GetBeerReq struct {
+type GetPublicationReq struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
@@ -400,8 +400,8 @@ type GetBeerReq struct {
 	Id int64 `protobuf:"varint,1,opt,name=id,proto3" json:"id,omitempty"`
 }
 
-func (x *GetBeerReq) Reset() {
-	*x = GetBeerReq{}
+func (x *GetPublicationReq) Reset() {
+	*x = GetPublicationReq{}
 	if protoimpl.UnsafeEnabled {
 		mi := &file_api_catalog_service_v1_catalog_proto_msgTypes[6]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -409,13 +409,13 @@ func (x *GetBeerReq) Reset() {
 	}
 }
 
-func (x *GetBeerReq) String() string {
+func (x *GetPublicationReq) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*GetBeerReq) ProtoMessage() {}
+func (*GetPublicationReq) ProtoMessage() {}
 
-func (x *GetBeerReq) ProtoReflect() protoreflect.Message {
+func (x *GetPublicationReq) ProtoReflect() protoreflect.Message {
 	mi := &file_api_catalog_service_v1_catalog_proto_msgTypes[6]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -427,32 +427,32 @@ func (x *GetBeerReq) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use GetBeerReq.ProtoReflect.Descriptor instead.
-func (*GetBeerReq) Descriptor() ([]byte, []int) {
+// Deprecated: Use GetPublicationReq.ProtoReflect.Descriptor instead.
+func (*GetPublicationReq) Descriptor() ([]byte, []int) {
 	return file_api_catalog_service_v1_catalog_proto_rawDescGZIP(), []int{6}
 }
 
-func (x *GetBeerReq) GetId() int64 {
+func (x *GetPublicationReq) GetId() int64 {
 	if x != nil {
 		return x.Id
 	}
 	return 0
 }
 
-type GetBeerReply struct {
+type GetPublicationReply struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Id          int64                 `protobuf:"varint,1,opt,name=id,proto3" json:"id,omitempty"`
-	Name        string                `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`
-	Description string                `protobuf:"bytes,3,opt,name=description,proto3" json:"description,omitempty"`
-	Count       int64                 `protobuf:"varint,4,opt,name=count,proto3" json:"count,omitempty"`
-	Image       []*GetBeerReply_Image `protobuf:"bytes,5,rep,name=image,proto3" json:"image,omitempty"`
+	Id          int64                        `protobuf:"varint,1,opt,name=id,proto3" json:"id,omitempty"`
+	Name        string                       `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`
+	Description string                       `protobuf:"bytes,3,opt,name=description,proto3" json:"description,omitempty"`
+	Count       int64                        `protobuf:"varint,4,opt,name=count,proto3" json:"count,omitempty"`
+	Image       []*GetPublicationReply_Image `protobuf:"bytes,5,rep,name=image,proto3" json:"image,omitempty"`
 }
 
-func (x *GetBeerReply) Reset() {
-	*x = GetBeerReply{}
+func (x *GetPublicationReply) Reset() {
+	*x = GetPublicationReply{}
 	if protoimpl.UnsafeEnabled {
 		mi := &file_api_catalog_service_v1_catalog_proto_msgTypes[7]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -460,13 +460,13 @@ func (x *GetBeerReply) Reset() {
 	}
 }
 
-func (x *GetBeerReply) String() string {
+func (x *GetPublicationReply) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*GetBeerReply) ProtoMessage() {}
+func (*GetPublicationReply) ProtoMessage() {}
 
-func (x *GetBeerReply) ProtoReflect() protoreflect.Message {
+func (x *GetPublicationReply) ProtoReflect() protoreflect.Message {
 	mi := &file_api_catalog_service_v1_catalog_proto_msgTypes[7]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -478,60 +478,60 @@ func (x *GetBeerReply) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use GetBeerReply.ProtoReflect.Descriptor instead.
-func (*GetBeerReply) Descriptor() ([]byte, []int) {
+// Deprecated: Use GetPublicationReply.ProtoReflect.Descriptor instead.
+func (*GetPublicationReply) Descriptor() ([]byte, []int) {
 	return file_api_catalog_service_v1_catalog_proto_rawDescGZIP(), []int{7}
 }
 
-func (x *GetBeerReply) GetId() int64 {
+func (x *GetPublicationReply) GetId() int64 {
 	if x != nil {
 		return x.Id
 	}
 	return 0
 }
 
-func (x *GetBeerReply) GetName() string {
+func (x *GetPublicationReply) GetName() string {
 	if x != nil {
 		return x.Name
 	}
 	return ""
 }
 
-func (x *GetBeerReply) GetDescription() string {
+func (x *GetPublicationReply) GetDescription() string {
 	if x != nil {
 		return x.Description
 	}
 	return ""
 }
 
-func (x *GetBeerReply) GetCount() int64 {
+func (x *GetPublicationReply) GetCount() int64 {
 	if x != nil {
 		return x.Count
 	}
 	return 0
 }
 
-func (x *GetBeerReply) GetImage() []*GetBeerReply_Image {
+func (x *GetPublicationReply) GetImage() []*GetPublicationReply_Image {
 	if x != nil {
 		return x.Image
 	}
 	return nil
 }
 
-type UpdateBeerReq struct {
+type UpdatePublicationReq struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Id          int64                  `protobuf:"varint,1,opt,name=id,proto3" json:"id,omitempty"`
-	Name        string                 `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`
-	Description string                 `protobuf:"bytes,3,opt,name=description,proto3" json:"description,omitempty"`
-	Count       int64                  `protobuf:"varint,4,opt,name=count,proto3" json:"count,omitempty"`
-	Image       []*UpdateBeerReq_Image `protobuf:"bytes,5,rep,name=image,proto3" json:"image,omitempty"`
+	Id          int64                         `protobuf:"varint,1,opt,name=id,proto3" json:"id,omitempty"`
+	Name        string                        `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`
+	Description string                        `protobuf:"bytes,3,opt,name=description,proto3" json:"description,omitempty"`
+	Count       int64                         `protobuf:"varint,4,opt,name=count,proto3" json:"count,omitempty"`
+	Image       []*UpdatePublicationReq_Image `protobuf:"bytes,5,rep,name=image,proto3" json:"image,omitempty"`
 }
 
-func (x *UpdateBeerReq) Reset() {
-	*x = UpdateBeerReq{}
+func (x *UpdatePublicationReq) Reset() {
+	*x = UpdatePublicationReq{}
 	if protoimpl.UnsafeEnabled {
 		mi := &file_api_catalog_service_v1_catalog_proto_msgTypes[8]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -539,13 +539,13 @@ func (x *UpdateBeerReq) Reset() {
 	}
 }
 
-func (x *UpdateBeerReq) String() string {
+func (x *UpdatePublicationReq) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*UpdateBeerReq) ProtoMessage() {}
+func (*UpdatePublicationReq) ProtoMessage() {}
 
-func (x *UpdateBeerReq) ProtoReflect() protoreflect.Message {
+func (x *UpdatePublicationReq) ProtoReflect() protoreflect.Message {
 	mi := &file_api_catalog_service_v1_catalog_proto_msgTypes[8]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -557,60 +557,60 @@ func (x *UpdateBeerReq) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use UpdateBeerReq.ProtoReflect.Descriptor instead.
-func (*UpdateBeerReq) Descriptor() ([]byte, []int) {
+// Deprecated: Use UpdatePublicationReq.ProtoReflect.Descriptor instead.
+func (*UpdatePublicationReq) Descriptor() ([]byte, []int) {
 	return file_api_catalog_service_v1_catalog_proto_rawDescGZIP(), []int{8}
 }
 
-func (x *UpdateBeerReq) GetId() int64 {
+func (x *UpdatePublicationReq) GetId() int64 {
 	if x != nil {
 		return x.Id
 	}
 	return 0
 }
 
-func (x *UpdateBeerReq) GetName() string {
+func (x *UpdatePublicationReq) GetName() string {
 	if x != nil {
 		return x.Name
 	}
 	return ""
 }
 
-func (x *UpdateBeerReq) GetDescription() string {
+func (x *UpdatePublicationReq) GetDescription() string {
 	if x != nil {
 		return x.Description
 	}
 	return ""
 }
 
-func (x *UpdateBeerReq) GetCount() int64 {
+func (x *UpdatePublicationReq) GetCount() int64 {
 	if x != nil {
 		return x.Count
 	}
 	return 0
 }
 
-func (x *UpdateBeerReq) GetImage() []*UpdateBeerReq_Image {
+func (x *UpdatePublicationReq) GetImage() []*UpdatePublicationReq_Image {
 	if x != nil {
 		return x.Image
 	}
 	return nil
 }
 
-type UpdateBeerReply struct {
+type UpdatePublicationReply struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Id          int64                    `protobuf:"varint,1,opt,name=id,proto3" json:"id,omitempty"`
-	Name        string                   `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`
-	Description string                   `protobuf:"bytes,3,opt,name=description,proto3" json:"description,omitempty"`
-	Count       int64                    `protobuf:"varint,4,opt,name=count,proto3" json:"count,omitempty"`
-	Image       []*UpdateBeerReply_Image `protobuf:"bytes,5,rep,name=image,proto3" json:"image,omitempty"`
+	Id          int64                           `protobuf:"varint,1,opt,name=id,proto3" json:"id,omitempty"`
+	Name        string                          `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`
+	Description string                          `protobuf:"bytes,3,opt,name=description,proto3" json:"description,omitempty"`
+	Count       int64                           `protobuf:"varint,4,opt,name=count,proto3" json:"count,omitempty"`
+	Image       []*UpdatePublicationReply_Image `protobuf:"bytes,5,rep,name=image,proto3" json:"image,omitempty"`
 }
 
-func (x *UpdateBeerReply) Reset() {
-	*x = UpdateBeerReply{}
+func (x *UpdatePublicationReply) Reset() {
+	*x = UpdatePublicationReply{}
 	if protoimpl.UnsafeEnabled {
 		mi := &file_api_catalog_service_v1_catalog_proto_msgTypes[9]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -618,13 +618,13 @@ func (x *UpdateBeerReply) Reset() {
 	}
 }
 
-func (x *UpdateBeerReply) String() string {
+func (x *UpdatePublicationReply) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*UpdateBeerReply) ProtoMessage() {}
+func (*UpdatePublicationReply) ProtoMessage() {}
 
-func (x *UpdateBeerReply) ProtoReflect() protoreflect.Message {
+func (x *UpdatePublicationReply) ProtoReflect() protoreflect.Message {
 	mi := &file_api_catalog_service_v1_catalog_proto_msgTypes[9]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -636,47 +636,47 @@ func (x *UpdateBeerReply) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use UpdateBeerReply.ProtoReflect.Descriptor instead.
-func (*UpdateBeerReply) Descriptor() ([]byte, []int) {
+// Deprecated: Use UpdatePublicationReply.ProtoReflect.Descriptor instead.
+func (*UpdatePublicationReply) Descriptor() ([]byte, []int) {
 	return file_api_catalog_service_v1_catalog_proto_rawDescGZIP(), []int{9}
 }
 
-func (x *UpdateBeerReply) GetId() int64 {
+func (x *UpdatePublicationReply) GetId() int64 {
 	if x != nil {
 		return x.Id
 	}
 	return 0
 }
 
-func (x *UpdateBeerReply) GetName() string {
+func (x *UpdatePublicationReply) GetName() string {
 	if x != nil {
 		return x.Name
 	}
 	return ""
 }
 
-func (x *UpdateBeerReply) GetDescription() string {
+func (x *UpdatePublicationReply) GetDescription() string {
 	if x != nil {
 		return x.Description
 	}
 	return ""
 }
 
-func (x *UpdateBeerReply) GetCount() int64 {
+func (x *UpdatePublicationReply) GetCount() int64 {
 	if x != nil {
 		return x.Count
 	}
 	return 0
 }
 
-func (x *UpdateBeerReply) GetImage() []*UpdateBeerReply_Image {
+func (x *UpdatePublicationReply) GetImage() []*UpdatePublicationReply_Image {
 	if x != nil {
 		return x.Image
 	}
 	return nil
 }
 
-type DeleteBeerReq struct {
+type DeletePublicationReq struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
@@ -684,8 +684,8 @@ type DeleteBeerReq struct {
 	Id int64 `protobuf:"varint,1,opt,name=id,proto3" json:"id,omitempty"`
 }
 
-func (x *DeleteBeerReq) Reset() {
-	*x = DeleteBeerReq{}
+func (x *DeletePublicationReq) Reset() {
+	*x = DeletePublicationReq{}
 	if protoimpl.UnsafeEnabled {
 		mi := &file_api_catalog_service_v1_catalog_proto_msgTypes[10]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -693,13 +693,13 @@ func (x *DeleteBeerReq) Reset() {
 	}
 }
 
-func (x *DeleteBeerReq) String() string {
+func (x *DeletePublicationReq) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*DeleteBeerReq) ProtoMessage() {}
+func (*DeletePublicationReq) ProtoMessage() {}
 
-func (x *DeleteBeerReq) ProtoReflect() protoreflect.Message {
+func (x *DeletePublicationReq) ProtoReflect() protoreflect.Message {
 	mi := &file_api_catalog_service_v1_catalog_proto_msgTypes[10]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -711,26 +711,26 @@ func (x *DeleteBeerReq) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use DeleteBeerReq.ProtoReflect.Descriptor instead.
-func (*DeleteBeerReq) Descriptor() ([]byte, []int) {
+// Deprecated: Use DeletePublicationReq.ProtoReflect.Descriptor instead.
+func (*DeletePublicationReq) Descriptor() ([]byte, []int) {
 	return file_api_catalog_service_v1_catalog_proto_rawDescGZIP(), []int{10}
 }
 
-func (x *DeleteBeerReq) GetId() int64 {
+func (x *DeletePublicationReq) GetId() int64 {
 	if x != nil {
 		return x.Id
 	}
 	return 0
 }
 
-type DeleteBeerReply struct {
+type DeletePublicationReply struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 }
 
-func (x *DeleteBeerReply) Reset() {
-	*x = DeleteBeerReply{}
+func (x *DeletePublicationReply) Reset() {
+	*x = DeletePublicationReply{}
 	if protoimpl.UnsafeEnabled {
 		mi := &file_api_catalog_service_v1_catalog_proto_msgTypes[11]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -738,13 +738,13 @@ func (x *DeleteBeerReply) Reset() {
 	}
 }
 
-func (x *DeleteBeerReply) String() string {
+func (x *DeletePublicationReply) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*DeleteBeerReply) ProtoMessage() {}
+func (*DeletePublicationReply) ProtoMessage() {}
 
-func (x *DeleteBeerReply) ProtoReflect() protoreflect.Message {
+func (x *DeletePublicationReply) ProtoReflect() protoreflect.Message {
 	mi := &file_api_catalog_service_v1_catalog_proto_msgTypes[11]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -756,25 +756,25 @@ func (x *DeleteBeerReply) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use DeleteBeerReply.ProtoReflect.Descriptor instead.
-func (*DeleteBeerReply) Descriptor() ([]byte, []int) {
+// Deprecated: Use DeletePublicationReply.ProtoReflect.Descriptor instead.
+func (*DeletePublicationReply) Descriptor() ([]byte, []int) {
 	return file_api_catalog_service_v1_catalog_proto_rawDescGZIP(), []int{11}
 }
 
-type ListBeerReply_Beer struct {
+type ListPublicationReply_Publication struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Id          int64                       `protobuf:"varint,1,opt,name=id,proto3" json:"id,omitempty"`
-	Name        string                      `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`
-	Description string                      `protobuf:"bytes,3,opt,name=description,proto3" json:"description,omitempty"`
-	Count       int64                       `protobuf:"varint,4,opt,name=count,proto3" json:"count,omitempty"`
-	Image       []*ListBeerReply_Beer_Image `protobuf:"bytes,5,rep,name=image,proto3" json:"image,omitempty"`
+	Id          int64                                     `protobuf:"varint,1,opt,name=id,proto3" json:"id,omitempty"`
+	Name        string                                    `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`
+	Description string                                    `protobuf:"bytes,3,opt,name=description,proto3" json:"description,omitempty"`
+	Count       int64                                     `protobuf:"varint,4,opt,name=count,proto3" json:"count,omitempty"`
+	Image       []*ListPublicationReply_Publication_Image `protobuf:"bytes,5,rep,name=image,proto3" json:"image,omitempty"`
 }
 
-func (x *ListBeerReply_Beer) Reset() {
-	*x = ListBeerReply_Beer{}
+func (x *ListPublicationReply_Publication) Reset() {
+	*x = ListPublicationReply_Publication{}
 	if protoimpl.UnsafeEnabled {
 		mi := &file_api_catalog_service_v1_catalog_proto_msgTypes[12]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -782,13 +782,13 @@ func (x *ListBeerReply_Beer) Reset() {
 	}
 }
 
-func (x *ListBeerReply_Beer) String() string {
+func (x *ListPublicationReply_Publication) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*ListBeerReply_Beer) ProtoMessage() {}
+func (*ListPublicationReply_Publication) ProtoMessage() {}
 
-func (x *ListBeerReply_Beer) ProtoReflect() protoreflect.Message {
+func (x *ListPublicationReply_Publication) ProtoReflect() protoreflect.Message {
 	mi := &file_api_catalog_service_v1_catalog_proto_msgTypes[12]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -800,47 +800,47 @@ func (x *ListBeerReply_Beer) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use ListBeerReply_Beer.ProtoReflect.Descriptor instead.
-func (*ListBeerReply_Beer) Descriptor() ([]byte, []int) {
+// Deprecated: Use ListPublicationReply_Publication.ProtoReflect.Descriptor instead.
+func (*ListPublicationReply_Publication) Descriptor() ([]byte, []int) {
 	return file_api_catalog_service_v1_catalog_proto_rawDescGZIP(), []int{2, 0}
 }
 
-func (x *ListBeerReply_Beer) GetId() int64 {
+func (x *ListPublicationReply_Publication) GetId() int64 {
 	if x != nil {
 		return x.Id
 	}
 	return 0
 }
 
-func (x *ListBeerReply_Beer) GetName() string {
+func (x *ListPublicationReply_Publication) GetName() string {
 	if x != nil {
 		return x.Name
 	}
 	return ""
 }
 
-func (x *ListBeerReply_Beer) GetDescription() string {
+func (x *ListPublicationReply_Publication) GetDescription() string {
 	if x != nil {
 		return x.Description
 	}
 	return ""
 }
 
-func (x *ListBeerReply_Beer) GetCount() int64 {
+func (x *ListPublicationReply_Publication) GetCount() int64 {
 	if x != nil {
 		return x.Count
 	}
 	return 0
 }
 
-func (x *ListBeerReply_Beer) GetImage() []*ListBeerReply_Beer_Image {
+func (x *ListPublicationReply_Publication) GetImage() []*ListPublicationReply_Publication_Image {
 	if x != nil {
 		return x.Image
 	}
 	return nil
 }
 
-type ListBeerReply_Beer_Image struct {
+type ListPublicationReply_Publication_Image struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
@@ -848,8 +848,8 @@ type ListBeerReply_Beer_Image struct {
 	Url string `protobuf:"bytes,1,opt,name=url,proto3" json:"url,omitempty"`
 }
 
-func (x *ListBeerReply_Beer_Image) Reset() {
-	*x = ListBeerReply_Beer_Image{}
+func (x *ListPublicationReply_Publication_Image) Reset() {
+	*x = ListPublicationReply_Publication_Image{}
 	if protoimpl.UnsafeEnabled {
 		mi := &file_api_catalog_service_v1_catalog_proto_msgTypes[13]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -857,13 +857,13 @@ func (x *ListBeerReply_Beer_Image) Reset() {
 	}
 }
 
-func (x *ListBeerReply_Beer_Image) String() string {
+func (x *ListPublicationReply_Publication_Image) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*ListBeerReply_Beer_Image) ProtoMessage() {}
+func (*ListPublicationReply_Publication_Image) ProtoMessage() {}
 
-func (x *ListBeerReply_Beer_Image) ProtoReflect() protoreflect.Message {
+func (x *ListPublicationReply_Publication_Image) ProtoReflect() protoreflect.Message {
 	mi := &file_api_catalog_service_v1_catalog_proto_msgTypes[13]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -875,32 +875,32 @@ func (x *ListBeerReply_Beer_Image) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use ListBeerReply_Beer_Image.ProtoReflect.Descriptor instead.
-func (*ListBeerReply_Beer_Image) Descriptor() ([]byte, []int) {
+// Deprecated: Use ListPublicationReply_Publication_Image.ProtoReflect.Descriptor instead.
+func (*ListPublicationReply_Publication_Image) Descriptor() ([]byte, []int) {
 	return file_api_catalog_service_v1_catalog_proto_rawDescGZIP(), []int{2, 0, 0}
 }
 
-func (x *ListBeerReply_Beer_Image) GetUrl() string {
+func (x *ListPublicationReply_Publication_Image) GetUrl() string {
 	if x != nil {
 		return x.Url
 	}
 	return ""
 }
 
-type ListBeerReplyNextToken_Beer struct {
+type ListPublicationReplyNextToken_Publication struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Id          int64                                `protobuf:"varint,1,opt,name=id,proto3" json:"id,omitempty"`
-	Name        string                               `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`
-	Description string                               `protobuf:"bytes,3,opt,name=description,proto3" json:"description,omitempty"`
-	Count       int64                                `protobuf:"varint,4,opt,name=count,proto3" json:"count,omitempty"`
-	Image       []*ListBeerReplyNextToken_Beer_Image `protobuf:"bytes,5,rep,name=image,proto3" json:"image,omitempty"`
+	Id          int64                                              `protobuf:"varint,1,opt,name=id,proto3" json:"id,omitempty"`
+	Name        string                                             `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`
+	Description string                                             `protobuf:"bytes,3,opt,name=description,proto3" json:"description,omitempty"`
+	Count       int64                                              `protobuf:"varint,4,opt,name=count,proto3" json:"count,omitempty"`
+	Image       []*ListPublicationReplyNextToken_Publication_Image `protobuf:"bytes,5,rep,name=image,proto3" json:"image,omitempty"`
 }
 
-func (x *ListBeerReplyNextToken_Beer) Reset() {
-	*x = ListBeerReplyNextToken_Beer{}
+func (x *ListPublicationReplyNextToken_Publication) Reset() {
+	*x = ListPublicationReplyNextToken_Publication{}
 	if protoimpl.UnsafeEnabled {
 		mi := &file_api_catalog_service_v1_catalog_proto_msgTypes[14]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -908,13 +908,13 @@ func (x *ListBeerReplyNextToken_Beer) Reset() {
 	}
 }
 
-func (x *ListBeerReplyNextToken_Beer) String() string {
+func (x *ListPublicationReplyNextToken_Publication) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*ListBeerReplyNextToken_Beer) ProtoMessage() {}
+func (*ListPublicationReplyNextToken_Publication) ProtoMessage() {}
 
-func (x *ListBeerReplyNextToken_Beer) ProtoReflect() protoreflect.Message {
+func (x *ListPublicationReplyNextToken_Publication) ProtoReflect() protoreflect.Message {
 	mi := &file_api_catalog_service_v1_catalog_proto_msgTypes[14]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -926,47 +926,47 @@ func (x *ListBeerReplyNextToken_Beer) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use ListBeerReplyNextToken_Beer.ProtoReflect.Descriptor instead.
-func (*ListBeerReplyNextToken_Beer) Descriptor() ([]byte, []int) {
+// Deprecated: Use ListPublicationReplyNextToken_Publication.ProtoReflect.Descriptor instead.
+func (*ListPublicationReplyNextToken_Publication) Descriptor() ([]byte, []int) {
 	return file_api_catalog_service_v1_catalog_proto_rawDescGZIP(), []int{3, 0}
 }
 
-func (x *ListBeerReplyNextToken_Beer) GetId() int64 {
+func (x *ListPublicationReplyNextToken_Publication) GetId() int64 {
 	if x != nil {
 		return x.Id
 	}
 	return 0
 }
 
-func (x *ListBeerReplyNextToken_Beer) GetName() string {
+func (x *ListPublicationReplyNextToken_Publication) GetName() string {
 	if x != nil {
 		return x.Name
 	}
 	return ""
 }
 
-func (x *ListBeerReplyNextToken_Beer) GetDescription() string {
+func (x *ListPublicationReplyNextToken_Publication) GetDescription() string {
 	if x != nil {
 		return x.Description
 	}
 	return ""
 }
 
-func (x *ListBeerReplyNextToken_Beer) GetCount() int64 {
+func (x *ListPublicationReplyNextToken_Publication) GetCount() int64 {
 	if x != nil {
 		return x.Count
 	}
 	return 0
 }
 
-func (x *ListBeerReplyNextToken_Beer) GetImage() []*ListBeerReplyNextToken_Beer_Image {
+func (x *ListPublicationReplyNextToken_Publication) GetImage() []*ListPublicationReplyNextToken_Publication_Image {
 	if x != nil {
 		return x.Image
 	}
 	return nil
 }
 
-type ListBeerReplyNextToken_Beer_Image struct {
+type ListPublicationReplyNextToken_Publication_Image struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
@@ -974,8 +974,8 @@ type ListBeerReplyNextToken_Beer_Image struct {
 	Url string `protobuf:"bytes,1,opt,name=url,proto3" json:"url,omitempty"`
 }
 
-func (x *ListBeerReplyNextToken_Beer_Image) Reset() {
-	*x = ListBeerReplyNextToken_Beer_Image{}
+func (x *ListPublicationReplyNextToken_Publication_Image) Reset() {
+	*x = ListPublicationReplyNextToken_Publication_Image{}
 	if protoimpl.UnsafeEnabled {
 		mi := &file_api_catalog_service_v1_catalog_proto_msgTypes[15]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -983,13 +983,13 @@ func (x *ListBeerReplyNextToken_Beer_Image) Reset() {
 	}
 }
 
-func (x *ListBeerReplyNextToken_Beer_Image) String() string {
+func (x *ListPublicationReplyNextToken_Publication_Image) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*ListBeerReplyNextToken_Beer_Image) ProtoMessage() {}
+func (*ListPublicationReplyNextToken_Publication_Image) ProtoMessage() {}
 
-func (x *ListBeerReplyNextToken_Beer_Image) ProtoReflect() protoreflect.Message {
+func (x *ListPublicationReplyNextToken_Publication_Image) ProtoReflect() protoreflect.Message {
 	mi := &file_api_catalog_service_v1_catalog_proto_msgTypes[15]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -1001,19 +1001,19 @@ func (x *ListBeerReplyNextToken_Beer_Image) ProtoReflect() protoreflect.Message 
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use ListBeerReplyNextToken_Beer_Image.ProtoReflect.Descriptor instead.
-func (*ListBeerReplyNextToken_Beer_Image) Descriptor() ([]byte, []int) {
+// Deprecated: Use ListPublicationReplyNextToken_Publication_Image.ProtoReflect.Descriptor instead.
+func (*ListPublicationReplyNextToken_Publication_Image) Descriptor() ([]byte, []int) {
 	return file_api_catalog_service_v1_catalog_proto_rawDescGZIP(), []int{3, 0, 0}
 }
 
-func (x *ListBeerReplyNextToken_Beer_Image) GetUrl() string {
+func (x *ListPublicationReplyNextToken_Publication_Image) GetUrl() string {
 	if x != nil {
 		return x.Url
 	}
 	return ""
 }
 
-type CreateBeerReq_Image struct {
+type CreatePublicationReq_Image struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
@@ -1021,8 +1021,8 @@ type CreateBeerReq_Image struct {
 	Url string `protobuf:"bytes,1,opt,name=url,proto3" json:"url,omitempty"`
 }
 
-func (x *CreateBeerReq_Image) Reset() {
-	*x = CreateBeerReq_Image{}
+func (x *CreatePublicationReq_Image) Reset() {
+	*x = CreatePublicationReq_Image{}
 	if protoimpl.UnsafeEnabled {
 		mi := &file_api_catalog_service_v1_catalog_proto_msgTypes[16]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -1030,13 +1030,13 @@ func (x *CreateBeerReq_Image) Reset() {
 	}
 }
 
-func (x *CreateBeerReq_Image) String() string {
+func (x *CreatePublicationReq_Image) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*CreateBeerReq_Image) ProtoMessage() {}
+func (*CreatePublicationReq_Image) ProtoMessage() {}
 
-func (x *CreateBeerReq_Image) ProtoReflect() protoreflect.Message {
+func (x *CreatePublicationReq_Image) ProtoReflect() protoreflect.Message {
 	mi := &file_api_catalog_service_v1_catalog_proto_msgTypes[16]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -1048,19 +1048,19 @@ func (x *CreateBeerReq_Image) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use CreateBeerReq_Image.ProtoReflect.Descriptor instead.
-func (*CreateBeerReq_Image) Descriptor() ([]byte, []int) {
+// Deprecated: Use CreatePublicationReq_Image.ProtoReflect.Descriptor instead.
+func (*CreatePublicationReq_Image) Descriptor() ([]byte, []int) {
 	return file_api_catalog_service_v1_catalog_proto_rawDescGZIP(), []int{4, 0}
 }
 
-func (x *CreateBeerReq_Image) GetUrl() string {
+func (x *CreatePublicationReq_Image) GetUrl() string {
 	if x != nil {
 		return x.Url
 	}
 	return ""
 }
 
-type CreateBeerReply_Image struct {
+type CreatePublicationReply_Image struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
@@ -1068,8 +1068,8 @@ type CreateBeerReply_Image struct {
 	Url string `protobuf:"bytes,1,opt,name=url,proto3" json:"url,omitempty"`
 }
 
-func (x *CreateBeerReply_Image) Reset() {
-	*x = CreateBeerReply_Image{}
+func (x *CreatePublicationReply_Image) Reset() {
+	*x = CreatePublicationReply_Image{}
 	if protoimpl.UnsafeEnabled {
 		mi := &file_api_catalog_service_v1_catalog_proto_msgTypes[17]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -1077,13 +1077,13 @@ func (x *CreateBeerReply_Image) Reset() {
 	}
 }
 
-func (x *CreateBeerReply_Image) String() string {
+func (x *CreatePublicationReply_Image) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*CreateBeerReply_Image) ProtoMessage() {}
+func (*CreatePublicationReply_Image) ProtoMessage() {}
 
-func (x *CreateBeerReply_Image) ProtoReflect() protoreflect.Message {
+func (x *CreatePublicationReply_Image) ProtoReflect() protoreflect.Message {
 	mi := &file_api_catalog_service_v1_catalog_proto_msgTypes[17]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -1095,19 +1095,19 @@ func (x *CreateBeerReply_Image) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use CreateBeerReply_Image.ProtoReflect.Descriptor instead.
-func (*CreateBeerReply_Image) Descriptor() ([]byte, []int) {
+// Deprecated: Use CreatePublicationReply_Image.ProtoReflect.Descriptor instead.
+func (*CreatePublicationReply_Image) Descriptor() ([]byte, []int) {
 	return file_api_catalog_service_v1_catalog_proto_rawDescGZIP(), []int{5, 0}
 }
 
-func (x *CreateBeerReply_Image) GetUrl() string {
+func (x *CreatePublicationReply_Image) GetUrl() string {
 	if x != nil {
 		return x.Url
 	}
 	return ""
 }
 
-type GetBeerReply_Image struct {
+type GetPublicationReply_Image struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
@@ -1115,8 +1115,8 @@ type GetBeerReply_Image struct {
 	Url string `protobuf:"bytes,1,opt,name=url,proto3" json:"url,omitempty"`
 }
 
-func (x *GetBeerReply_Image) Reset() {
-	*x = GetBeerReply_Image{}
+func (x *GetPublicationReply_Image) Reset() {
+	*x = GetPublicationReply_Image{}
 	if protoimpl.UnsafeEnabled {
 		mi := &file_api_catalog_service_v1_catalog_proto_msgTypes[18]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -1124,13 +1124,13 @@ func (x *GetBeerReply_Image) Reset() {
 	}
 }
 
-func (x *GetBeerReply_Image) String() string {
+func (x *GetPublicationReply_Image) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*GetBeerReply_Image) ProtoMessage() {}
+func (*GetPublicationReply_Image) ProtoMessage() {}
 
-func (x *GetBeerReply_Image) ProtoReflect() protoreflect.Message {
+func (x *GetPublicationReply_Image) ProtoReflect() protoreflect.Message {
 	mi := &file_api_catalog_service_v1_catalog_proto_msgTypes[18]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -1142,19 +1142,19 @@ func (x *GetBeerReply_Image) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use GetBeerReply_Image.ProtoReflect.Descriptor instead.
-func (*GetBeerReply_Image) Descriptor() ([]byte, []int) {
+// Deprecated: Use GetPublicationReply_Image.ProtoReflect.Descriptor instead.
+func (*GetPublicationReply_Image) Descriptor() ([]byte, []int) {
 	return file_api_catalog_service_v1_catalog_proto_rawDescGZIP(), []int{7, 0}
 }
 
-func (x *GetBeerReply_Image) GetUrl() string {
+func (x *GetPublicationReply_Image) GetUrl() string {
 	if x != nil {
 		return x.Url
 	}
 	return ""
 }
 
-type UpdateBeerReq_Image struct {
+type UpdatePublicationReq_Image struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
@@ -1162,8 +1162,8 @@ type UpdateBeerReq_Image struct {
 	Url string `protobuf:"bytes,1,opt,name=url,proto3" json:"url,omitempty"`
 }
 
-func (x *UpdateBeerReq_Image) Reset() {
-	*x = UpdateBeerReq_Image{}
+func (x *UpdatePublicationReq_Image) Reset() {
+	*x = UpdatePublicationReq_Image{}
 	if protoimpl.UnsafeEnabled {
 		mi := &file_api_catalog_service_v1_catalog_proto_msgTypes[19]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -1171,13 +1171,13 @@ func (x *UpdateBeerReq_Image) Reset() {
 	}
 }
 
-func (x *UpdateBeerReq_Image) String() string {
+func (x *UpdatePublicationReq_Image) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*UpdateBeerReq_Image) ProtoMessage() {}
+func (*UpdatePublicationReq_Image) ProtoMessage() {}
 
-func (x *UpdateBeerReq_Image) ProtoReflect() protoreflect.Message {
+func (x *UpdatePublicationReq_Image) ProtoReflect() protoreflect.Message {
 	mi := &file_api_catalog_service_v1_catalog_proto_msgTypes[19]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -1189,19 +1189,19 @@ func (x *UpdateBeerReq_Image) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use UpdateBeerReq_Image.ProtoReflect.Descriptor instead.
-func (*UpdateBeerReq_Image) Descriptor() ([]byte, []int) {
+// Deprecated: Use UpdatePublicationReq_Image.ProtoReflect.Descriptor instead.
+func (*UpdatePublicationReq_Image) Descriptor() ([]byte, []int) {
 	return file_api_catalog_service_v1_catalog_proto_rawDescGZIP(), []int{8, 0}
 }
 
-func (x *UpdateBeerReq_Image) GetUrl() string {
+func (x *UpdatePublicationReq_Image) GetUrl() string {
 	if x != nil {
 		return x.Url
 	}
 	return ""
 }
 
-type UpdateBeerReply_Image struct {
+type UpdatePublicationReply_Image struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
@@ -1209,8 +1209,8 @@ type UpdateBeerReply_Image struct {
 	Url string `protobuf:"bytes,1,opt,name=url,proto3" json:"url,omitempty"`
 }
 
-func (x *UpdateBeerReply_Image) Reset() {
-	*x = UpdateBeerReply_Image{}
+func (x *UpdatePublicationReply_Image) Reset() {
+	*x = UpdatePublicationReply_Image{}
 	if protoimpl.UnsafeEnabled {
 		mi := &file_api_catalog_service_v1_catalog_proto_msgTypes[20]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -1218,13 +1218,13 @@ func (x *UpdateBeerReply_Image) Reset() {
 	}
 }
 
-func (x *UpdateBeerReply_Image) String() string {
+func (x *UpdatePublicationReply_Image) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*UpdateBeerReply_Image) ProtoMessage() {}
+func (*UpdatePublicationReply_Image) ProtoMessage() {}
 
-func (x *UpdateBeerReply_Image) ProtoReflect() protoreflect.Message {
+func (x *UpdatePublicationReply_Image) ProtoReflect() protoreflect.Message {
 	mi := &file_api_catalog_service_v1_catalog_proto_msgTypes[20]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -1236,12 +1236,12 @@ func (x *UpdateBeerReply_Image) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use UpdateBeerReply_Image.ProtoReflect.Descriptor instead.
-func (*UpdateBeerReply_Image) Descriptor() ([]byte, []int) {
+// Deprecated: Use UpdatePublicationReply_Image.ProtoReflect.Descriptor instead.
+func (*UpdatePublicationReply_Image) Descriptor() ([]byte, []int) {
 	return file_api_catalog_service_v1_catalog_proto_rawDescGZIP(), []int{9, 0}
 }
 
-func (x *UpdateBeerReply_Image) GetUrl() string {
+func (x *UpdatePublicationReply_Image) GetUrl() string {
 	if x != nil {
 		return x.Url
 	}
@@ -1425,50 +1425,50 @@ func file_api_catalog_service_v1_catalog_proto_rawDescGZIP() []byte {
 
 var file_api_catalog_service_v1_catalog_proto_msgTypes = make([]protoimpl.MessageInfo, 21)
 var file_api_catalog_service_v1_catalog_proto_goTypes = []interface{}{
-	(*ListBeerReq)(nil),                       // 0: catalog.service.v1.ListBeerReq
-	(*ListBeerNextTokenReq)(nil),              // 1: catalog.service.v1.listBeerNextTokenReq
-	(*ListBeerReply)(nil),                     // 2: catalog.service.v1.ListBeerReply
-	(*ListBeerReplyNextToken)(nil),            // 3: catalog.service.v1.ListBeerReplyNextToken
-	(*CreateBeerReq)(nil),                     // 4: catalog.service.v1.CreateBeerReq
-	(*CreateBeerReply)(nil),                   // 5: catalog.service.v1.CreateBeerReply
-	(*GetBeerReq)(nil),                        // 6: catalog.service.v1.GetBeerReq
-	(*GetBeerReply)(nil),                      // 7: catalog.service.v1.GetBeerReply
-	(*UpdateBeerReq)(nil),                     // 8: catalog.service.v1.UpdateBeerReq
-	(*UpdateBeerReply)(nil),                   // 9: catalog.service.v1.UpdateBeerReply
-	(*DeleteBeerReq)(nil),                     // 10: catalog.service.v1.DeleteBeerReq
-	(*DeleteBeerReply)(nil),                   // 11: catalog.service.v1.DeleteBeerReply
-	(*ListBeerReply_Beer)(nil),                // 12: catalog.service.v1.ListBeerReply.Beer
-	(*ListBeerReply_Beer_Image)(nil),          // 13: catalog.service.v1.ListBeerReply.Beer.Image
-	(*ListBeerReplyNextToken_Beer)(nil),       // 14: catalog.service.v1.ListBeerReplyNextToken.Beer
-	(*ListBeerReplyNextToken_Beer_Image)(nil), // 15: catalog.service.v1.ListBeerReplyNextToken.Beer.Image
-	(*CreateBeerReq_Image)(nil),               // 16: catalog.service.v1.CreateBeerReq.Image
-	(*CreateBeerReply_Image)(nil),             // 17: catalog.service.v1.CreateBeerReply.Image
-	(*GetBeerReply_Image)(nil),                // 18: catalog.service.v1.GetBeerReply.Image
-	(*UpdateBeerReq_Image)(nil),               // 19: catalog.service.v1.UpdateBeerReq.Image
-	(*UpdateBeerReply_Image)(nil),             // 20: catalog.service.v1.UpdateBeerReply.Image
+	(*ListPublicationReq)(nil),                              // 0: catalog.service.v1.ListPublicationReq
+	(*ListPublicationNextTokenReq)(nil),                     // 1: catalog.service.v1.listPublicationNextTokenReq
+	(*ListPublicationReply)(nil),                            // 2: catalog.service.v1.ListPublicationReply
+	(*ListPublicationReplyNextToken)(nil),                   // 3: catalog.service.v1.ListPublicationReplyNextToken
+	(*CreatePublicationReq)(nil),                            // 4: catalog.service.v1.CreatePublicationReq
+	(*CreatePublicationReply)(nil),                          // 5: catalog.service.v1.CreatePublicationReply
+	(*GetPublicationReq)(nil),                               // 6: catalog.service.v1.GetPublicationReq
+	(*GetPublicationReply)(nil),                             // 7: catalog.service.v1.GetPublicationReply
+	(*UpdatePublicationReq)(nil),                            // 8: catalog.service.v1.UpdatePublicationReq
+	(*UpdatePublicationReply)(nil),                          // 9: catalog.service.v1.UpdatePublicationReply
+	(*DeletePublicationReq)(nil),                            // 10: catalog.service.v1.DeletePublicationReq
+	(*DeletePublicationReply)(nil),                          // 11: catalog.service.v1.DeletePublicationReply
+	(*ListPublicationReply_Publication)(nil),                // 12: catalog.service.v1.ListPublicationReply.Publication
+	(*ListPublicationReply_Publication_Image)(nil),          // 13: catalog.service.v1.ListPublicationReply.Publication.Image
+	(*ListPublicationReplyNextToken_Publication)(nil),       // 14: catalog.service.v1.ListPublicationReplyNextToken.Publication
+	(*ListPublicationReplyNextToken_Publication_Image)(nil), // 15: catalog.service.v1.ListPublicationReplyNextToken.Publication.Image
+	(*CreatePublicationReq_Image)(nil),                      // 16: catalog.service.v1.CreatePublicationReq.Image
+	(*CreatePublicationReply_Image)(nil),                    // 17: catalog.service.v1.CreatePublicationReply.Image
+	(*GetPublicationReply_Image)(nil),                       // 18: catalog.service.v1.GetPublicationReply.Image
+	(*UpdatePublicationReq_Image)(nil),                      // 19: catalog.service.v1.UpdatePublicationReq.Image
+	(*UpdatePublicationReply_Image)(nil),                    // 20: catalog.service.v1.UpdatePublicationReply.Image
 }
 var file_api_catalog_service_v1_catalog_proto_depIdxs = []int32{
-	12, // 0: catalog.service.v1.ListBeerReply.results:type_name -> catalog.service.v1.ListBeerReply.Beer
-	14, // 1: catalog.service.v1.ListBeerReplyNextToken.results:type_name -> catalog.service.v1.ListBeerReplyNextToken.Beer
-	16, // 2: catalog.service.v1.CreateBeerReq.image:type_name -> catalog.service.v1.CreateBeerReq.Image
-	17, // 3: catalog.service.v1.CreateBeerReply.image:type_name -> catalog.service.v1.CreateBeerReply.Image
-	18, // 4: catalog.service.v1.GetBeerReply.image:type_name -> catalog.service.v1.GetBeerReply.Image
-	19, // 5: catalog.service.v1.UpdateBeerReq.image:type_name -> catalog.service.v1.UpdateBeerReq.Image
-	20, // 6: catalog.service.v1.UpdateBeerReply.image:type_name -> catalog.service.v1.UpdateBeerReply.Image
-	13, // 7: catalog.service.v1.ListBeerReply.Beer.image:type_name -> catalog.service.v1.ListBeerReply.Beer.Image
-	15, // 8: catalog.service.v1.ListBeerReplyNextToken.Beer.image:type_name -> catalog.service.v1.ListBeerReplyNextToken.Beer.Image
-	0,  // 9: catalog.service.v1.Catalog.ListBeer:input_type -> catalog.service.v1.ListBeerReq
-	1,  // 10: catalog.service.v1.Catalog.ListBeerNextToken:input_type -> catalog.service.v1.listBeerNextTokenReq
-	4,  // 11: catalog.service.v1.Catalog.CreateBeer:input_type -> catalog.service.v1.CreateBeerReq
-	6,  // 12: catalog.service.v1.Catalog.GetBeer:input_type -> catalog.service.v1.GetBeerReq
-	8,  // 13: catalog.service.v1.Catalog.UpdateBeer:input_type -> catalog.service.v1.UpdateBeerReq
-	10, // 14: catalog.service.v1.Catalog.DeleteBeer:input_type -> catalog.service.v1.DeleteBeerReq
-	2,  // 15: catalog.service.v1.Catalog.ListBeer:output_type -> catalog.service.v1.ListBeerReply
-	3,  // 16: catalog.service.v1.Catalog.ListBeerNextToken:output_type -> catalog.service.v1.ListBeerReplyNextToken
-	5,  // 17: catalog.service.v1.Catalog.CreateBeer:output_type -> catalog.service.v1.CreateBeerReply
-	7,  // 18: catalog.service.v1.Catalog.GetBeer:output_type -> catalog.service.v1.GetBeerReply
-	9,  // 19: catalog.service.v1.Catalog.UpdateBeer:output_type -> catalog.service.v1.UpdateBeerReply
-	11, // 20: catalog.service.v1.Catalog.DeleteBeer:output_type -> catalog.service.v1.DeleteBeerReply
+	12, // 0: catalog.service.v1.ListPublicationReply.results:type_name -> catalog.service.v1.ListPublicationReply.Publication
+	14, // 1: catalog.service.v1.ListPublicationReplyNextToken.results:type_name -> catalog.service.v1.ListPublicationReplyNextToken.Publication
+	16, // 2: catalog.service.v1.CreatePublicationReq.image:type_name -> catalog.service.v1.CreatePublicationReq.Image
+	17, // 3: catalog.service.v1.CreatePublicationReply.image:type_name -> catalog.service.v1.CreatePublicationReply.Image
+	18, // 4: catalog.service.v1.GetPublicationReply.image:type_name -> catalog.service.v1.GetPublicationReply.Image
+	19, // 5: catalog.service.v1.UpdatePublicationReq.image:type_name -> catalog.service.v1.UpdatePublicationReq.Image
+	20, // 6: catalog.service.v1.UpdatePublicationReply.image:type_name -> catalog.service.v1.UpdatePublicationReply.Image
+	13, // 7: catalog.service.v1.ListPublicationReply.Publication.image:type_name -> catalog.service.v1.ListPublicationReply.Publication.Image
+	15, // 8: catalog.service.v1.ListPublicationReplyNextToken.Publication.image:type_name -> catalog.service.v1.ListPublicationReplyNextToken.Publication.Image
+	0,  // 9: catalog.service.v1.Catalog.ListPublication:input_type -> catalog.service.v1.ListPublicationReq
+	1,  // 10: catalog.service.v1.Catalog.ListPublicationNextToken:input_type -> catalog.service.v1.listPublicationNextTokenReq
+	4,  // 11: catalog.service.v1.Catalog.CreatePublication:input_type -> catalog.service.v1.CreatePublicationReq
+	6,  // 12: catalog.service.v1.Catalog.GetPublication:input_type -> catalog.service.v1.GetPublicationReq
+	8,  // 13: catalog.service.v1.Catalog.UpdatePublication:input_type -> catalog.service.v1.UpdatePublicationReq
+	10, // 14: catalog.service.v1.Catalog.DeletePublication:input_type -> catalog.service.v1.DeletePublicationReq
+	2,  // 15: catalog.service.v1.Catalog.ListPublication:output_type -> catalog.service.v1.ListPublicationReply
+	3,  // 16: catalog.service.v1.Catalog.ListPublicationNextToken:output_type -> catalog.service.v1.ListPublicationReplyNextToken
+	5,  // 17: catalog.service.v1.Catalog.CreatePublication:output_type -> catalog.service.v1.CreatePublicationReply
+	7,  // 18: catalog.service.v1.Catalog.GetPublication:output_type -> catalog.service.v1.GetPublicationReply
+	9,  // 19: catalog.service.v1.Catalog.UpdatePublication:output_type -> catalog.service.v1.UpdatePublicationReply
+	11, // 20: catalog.service.v1.Catalog.DeletePublication:output_type -> catalog.service.v1.DeletePublicationReply
 	15, // [15:21] is the sub-list for method output_type
 	9,  // [9:15] is the sub-list for method input_type
 	9,  // [9:9] is the sub-list for extension type_name
@@ -1483,7 +1483,7 @@ func file_api_catalog_service_v1_catalog_proto_init() {
 	}
 	if !protoimpl.UnsafeEnabled {
 		file_api_catalog_service_v1_catalog_proto_msgTypes[0].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*ListBeerReq); i {
+			switch v := v.(*ListPublicationReq); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -1495,7 +1495,7 @@ func file_api_catalog_service_v1_catalog_proto_init() {
 			}
 		}
 		file_api_catalog_service_v1_catalog_proto_msgTypes[1].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*ListBeerNextTokenReq); i {
+			switch v := v.(*ListPublicationNextTokenReq); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -1507,7 +1507,7 @@ func file_api_catalog_service_v1_catalog_proto_init() {
 			}
 		}
 		file_api_catalog_service_v1_catalog_proto_msgTypes[2].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*ListBeerReply); i {
+			switch v := v.(*ListPublicationReply); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -1519,7 +1519,7 @@ func file_api_catalog_service_v1_catalog_proto_init() {
 			}
 		}
 		file_api_catalog_service_v1_catalog_proto_msgTypes[3].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*ListBeerReplyNextToken); i {
+			switch v := v.(*ListPublicationReplyNextToken); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -1531,7 +1531,7 @@ func file_api_catalog_service_v1_catalog_proto_init() {
 			}
 		}
 		file_api_catalog_service_v1_catalog_proto_msgTypes[4].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*CreateBeerReq); i {
+			switch v := v.(*CreatePublicationReq); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -1543,7 +1543,7 @@ func file_api_catalog_service_v1_catalog_proto_init() {
 			}
 		}
 		file_api_catalog_service_v1_catalog_proto_msgTypes[5].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*CreateBeerReply); i {
+			switch v := v.(*CreatePublicationReply); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -1555,7 +1555,7 @@ func file_api_catalog_service_v1_catalog_proto_init() {
 			}
 		}
 		file_api_catalog_service_v1_catalog_proto_msgTypes[6].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*GetBeerReq); i {
+			switch v := v.(*GetPublicationReq); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -1567,7 +1567,7 @@ func file_api_catalog_service_v1_catalog_proto_init() {
 			}
 		}
 		file_api_catalog_service_v1_catalog_proto_msgTypes[7].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*GetBeerReply); i {
+			switch v := v.(*GetPublicationReply); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -1579,7 +1579,7 @@ func file_api_catalog_service_v1_catalog_proto_init() {
 			}
 		}
 		file_api_catalog_service_v1_catalog_proto_msgTypes[8].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*UpdateBeerReq); i {
+			switch v := v.(*UpdatePublicationReq); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -1591,7 +1591,7 @@ func file_api_catalog_service_v1_catalog_proto_init() {
 			}
 		}
 		file_api_catalog_service_v1_catalog_proto_msgTypes[9].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*UpdateBeerReply); i {
+			switch v := v.(*UpdatePublicationReply); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -1603,7 +1603,7 @@ func file_api_catalog_service_v1_catalog_proto_init() {
 			}
 		}
 		file_api_catalog_service_v1_catalog_proto_msgTypes[10].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*DeleteBeerReq); i {
+			switch v := v.(*DeletePublicationReq); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -1615,7 +1615,7 @@ func file_api_catalog_service_v1_catalog_proto_init() {
 			}
 		}
 		file_api_catalog_service_v1_catalog_proto_msgTypes[11].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*DeleteBeerReply); i {
+			switch v := v.(*DeletePublicationReply); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -1627,7 +1627,7 @@ func file_api_catalog_service_v1_catalog_proto_init() {
 			}
 		}
 		file_api_catalog_service_v1_catalog_proto_msgTypes[12].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*ListBeerReply_Beer); i {
+			switch v := v.(*ListPublicationReply_Publication); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -1639,7 +1639,7 @@ func file_api_catalog_service_v1_catalog_proto_init() {
 			}
 		}
 		file_api_catalog_service_v1_catalog_proto_msgTypes[13].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*ListBeerReply_Beer_Image); i {
+			switch v := v.(*ListPublicationReply_Publication_Image); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -1651,7 +1651,7 @@ func file_api_catalog_service_v1_catalog_proto_init() {
 			}
 		}
 		file_api_catalog_service_v1_catalog_proto_msgTypes[14].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*ListBeerReplyNextToken_Beer); i {
+			switch v := v.(*ListPublicationReplyNextToken_Publication); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -1663,7 +1663,7 @@ func file_api_catalog_service_v1_catalog_proto_init() {
 			}
 		}
 		file_api_catalog_service_v1_catalog_proto_msgTypes[15].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*ListBeerReplyNextToken_Beer_Image); i {
+			switch v := v.(*ListPublicationReplyNextToken_Publication_Image); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -1675,7 +1675,7 @@ func file_api_catalog_service_v1_catalog_proto_init() {
 			}
 		}
 		file_api_catalog_service_v1_catalog_proto_msgTypes[16].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*CreateBeerReq_Image); i {
+			switch v := v.(*CreatePublicationReq_Image); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -1687,7 +1687,7 @@ func file_api_catalog_service_v1_catalog_proto_init() {
 			}
 		}
 		file_api_catalog_service_v1_catalog_proto_msgTypes[17].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*CreateBeerReply_Image); i {
+			switch v := v.(*CreatePublicationReply_Image); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -1699,7 +1699,7 @@ func file_api_catalog_service_v1_catalog_proto_init() {
 			}
 		}
 		file_api_catalog_service_v1_catalog_proto_msgTypes[18].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*GetBeerReply_Image); i {
+			switch v := v.(*GetPublicationReply_Image); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -1711,7 +1711,7 @@ func file_api_catalog_service_v1_catalog_proto_init() {
 			}
 		}
 		file_api_catalog_service_v1_catalog_proto_msgTypes[19].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*UpdateBeerReq_Image); i {
+			switch v := v.(*UpdatePublicationReq_Image); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -1723,7 +1723,7 @@ func file_api_catalog_service_v1_catalog_proto_init() {
 			}
 		}
 		file_api_catalog_service_v1_catalog_proto_msgTypes[20].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*UpdateBeerReply_Image); i {
+			switch v := v.(*UpdatePublicationReply_Image); i {
 			case 0:
 				return &v.state
 			case 1:

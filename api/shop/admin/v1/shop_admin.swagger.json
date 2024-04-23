@@ -16,14 +16,14 @@
     "application/json"
   ],
   "paths": {
-    "/admin/v1/catalog/beers": {
+    "/admin/v1/catalog/Publications": {
       "get": {
-        "operationId": "ShopAdmin_ListBeer",
+        "operationId": "ShopAdmin_ListPublication",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/v1ListBeerReply"
+              "$ref": "#/definitions/v1ListPublicationReply"
             }
           },
           "default": {
@@ -54,12 +54,12 @@
         ]
       },
       "post": {
-        "operationId": "ShopAdmin_CreateBeer",
+        "operationId": "ShopAdmin_CreatePublication",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/v1CreateBeerReply"
+              "$ref": "#/definitions/v1CreatePublicationReply"
             }
           },
           "default": {
@@ -75,7 +75,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/v1CreateBeerReq"
+              "$ref": "#/definitions/v1CreatePublicationReq"
             }
           }
         ],
@@ -84,14 +84,14 @@
         ]
       }
     },
-    "/admin/v1/catalog/beers/{id}": {
+    "/admin/v1/catalog/Publications/{id}": {
       "delete": {
-        "operationId": "ShopAdmin_DeleteBeer",
+        "operationId": "ShopAdmin_DeletePublication",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/v1DeleteBeerReply"
+              "$ref": "#/definitions/v1DeletePublicationReply"
             }
           },
           "default": {
@@ -115,12 +115,12 @@
         ]
       },
       "put": {
-        "operationId": "ShopAdmin_UpdateBeer",
+        "operationId": "ShopAdmin_UpdatePublication",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/v1UpdateBeerReply"
+              "$ref": "#/definitions/v1UpdatePublicationReply"
             }
           },
           "default": {
@@ -158,7 +158,7 @@
                 "image": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/definitions/v1UpdateBeerReqImage"
+                    "$ref": "#/definitions/v1UpdatePublicationReqImage"
                   }
                 }
               }
@@ -311,7 +311,7 @@
     }
   },
   "definitions": {
-    "ListBeerReplyBeer": {
+    "ListPublicationReplyPublication": {
       "type": "object",
       "properties": {
         "id": {
@@ -331,12 +331,12 @@
         "image": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/ListBeerReplyBeerImage"
+            "$ref": "#/definitions/ListPublicationReplyPublicationImage"
           }
         }
       }
     },
-    "ListBeerReplyBeerImage": {
+    "ListPublicationReplyPublicationImage": {
       "type": "object",
       "properties": {
         "url": {
@@ -374,10 +374,10 @@
         }
       }
     },
-    "v1CreateBeerReply": {
+    "v1CreatePublicationReply": {
       "type": "object"
     },
-    "v1CreateBeerReq": {
+    "v1CreatePublicationReq": {
       "type": "object",
       "properties": {
         "name": {
@@ -393,12 +393,12 @@
         "image": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/v1CreateBeerReqImage"
+            "$ref": "#/definitions/v1CreatePublicationReqImage"
           }
         }
       }
     },
-    "v1CreateBeerReqImage": {
+    "v1CreatePublicationReqImage": {
       "type": "object",
       "properties": {
         "url": {
@@ -406,7 +406,7 @@
         }
       }
     },
-    "v1DeleteBeerReply": {
+    "v1DeletePublicationReply": {
       "type": "object"
     },
     "v1GetOrderReply": {
@@ -424,13 +424,13 @@
         }
       }
     },
-    "v1ListBeerReply": {
+    "v1ListPublicationReply": {
       "type": "object",
       "properties": {
         "results": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/ListBeerReplyBeer"
+            "$ref": "#/definitions/ListPublicationReplyPublication"
           }
         }
       }
@@ -466,10 +466,10 @@
     "v1LogoutReq": {
       "type": "object"
     },
-    "v1UpdateBeerReply": {
+    "v1UpdatePublicationReply": {
       "type": "object"
     },
-    "v1UpdateBeerReqImage": {
+    "v1UpdatePublicationReqImage": {
       "type": "object",
       "properties": {
         "url": {

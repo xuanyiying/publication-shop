@@ -4,7 +4,7 @@ import (
 	"flag"
 	"os"
 
-	"github.com/go-kratos/beer-shop/app/courier/job/internal/conf"
+	"github.com/go-kratos/publication-shop/app/courier/job/internal/conf"
 
 	"github.com/go-kratos/kratos/v2"
 	"github.com/go-kratos/kratos/v2/config"
@@ -21,7 +21,7 @@ import (
 // go build -ldflags "-X main.Version=x.y.z"
 var (
 	// Name is the name of the compiled software.
-	Name = "beer.courier.job"
+	Name = "Publication.courier.job"
 	// Version is the version of the compiled software.
 	Version string
 	// flagconf is the config flag.
@@ -58,7 +58,6 @@ func main() {
 		config.WithSource(
 			file.NewSource(flagconf),
 		),
-
 	)
 	if err := c.Load(); err != nil {
 		panic(err)

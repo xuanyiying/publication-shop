@@ -1,9 +1,9 @@
 package service
 
 import (
-	v1 "github.com/go-kratos/beer-shop/api/catalog/service/v1"
-	"github.com/go-kratos/beer-shop/app/catalog/service/internal/biz"
 	"github.com/go-kratos/kratos/v2/log"
+	v1 "github.com/go-kratos/publication-shop/api/catalog/service/v1"
+	"github.com/go-kratos/publication-shop/app/catalog/service/internal/biz"
 	"github.com/google/wire"
 )
 
@@ -13,11 +13,11 @@ var ProviderSet = wire.NewSet(NewCatalogService)
 type CatalogService struct {
 	v1.UnimplementedCatalogServer
 
-	bc  *biz.BeerUseCase
+	bc  *biz.PublicationUseCase
 	log *log.Helper
 }
 
-func NewCatalogService(bc *biz.BeerUseCase, logger log.Logger) *CatalogService {
+func NewCatalogService(bc *biz.PublicationUseCase, logger log.Logger) *CatalogService {
 	return &CatalogService{
 
 		bc:  bc,

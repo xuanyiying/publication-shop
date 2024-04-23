@@ -11,9 +11,9 @@ import (
 	"entgo.io/ent/dialect/sql"
 	"entgo.io/ent/dialect/sql/sqlgraph"
 	"entgo.io/ent/schema/field"
-	"github.com/go-kratos/beer-shop/app/user/service/internal/data/ent/card"
-	"github.com/go-kratos/beer-shop/app/user/service/internal/data/ent/predicate"
-	"github.com/go-kratos/beer-shop/app/user/service/internal/data/ent/user"
+	"github.com/go-kratos/publication-shop/app/user/service/internal/data/ent/card"
+	"github.com/go-kratos/publication-shop/app/user/service/internal/data/ent/predicate"
+	"github.com/go-kratos/publication-shop/app/user/service/internal/data/ent/user"
 )
 
 // CardQuery is the builder for querying Card entities.
@@ -291,7 +291,6 @@ func (cq *CardQuery) WithUser(opts ...func(*UserQuery)) *CardQuery {
 //		GroupBy(card.FieldName).
 //		Aggregate(ent.Count()).
 //		Scan(ctx, &v)
-//
 func (cq *CardQuery) GroupBy(field string, fields ...string) *CardGroupBy {
 	group := &CardGroupBy{config: cq.config}
 	group.fields = append([]string{field}, fields...)
@@ -316,7 +315,6 @@ func (cq *CardQuery) GroupBy(field string, fields ...string) *CardGroupBy {
 //	client.Card.Query().
 //		Select(card.FieldName).
 //		Scan(ctx, &v)
-//
 func (cq *CardQuery) Select(field string, fields ...string) *CardSelect {
 	cq.fields = append([]string{field}, fields...)
 	return &CardSelect{CardQuery: cq}

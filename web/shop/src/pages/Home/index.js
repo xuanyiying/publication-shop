@@ -1,48 +1,48 @@
 import React, {useState, useEffect} from "react";
 import ProductCard from "../../components/ProductCard";
-import {listBeer} from "../../api/beer";
+import {listPublication} from "../../api/Publication";
 
 export default function Home(props) {
-    const [beerList, setBeerList] = useState([]);
+    const [PublicationList, setPublicationList] = useState([]);
     useEffect(() => {
-        listBeer().then((res)=>{
-            setBeerList(res.data.results)
+        listPublication().then((res)=>{
+            setPublicationList(res.data.results)
         });
 
-        setBeerList([
+        setPublicationList([
             {
                 "id": 1,
-                "name": "cool beer1",
+                "name": "cool Publication1",
                 "price": "5.99",
                 "images": ["https://images.unsplash.com/photo-1588704487282-e7c55e0448bc?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=668&q=80"],
             },
             {
                 "id": 2,
-                "name": "cool beer2",
+                "name": "cool Publication2",
                 "price": "6.99",
                 "images": ["https://images.unsplash.com/photo-1588704487282-e7c55e0448bc?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=668&q=80"],
             },
             {
                 "id": 3,
-                "name": "cool beer3",
+                "name": "cool Publication3",
                 "price": "7.99",
                 "images": ["https://images.unsplash.com/photo-1588704487282-e7c55e0448bc?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=668&q=80"],
             },
             {
                 "id": 4,
-                "name": "cool beer4",
+                "name": "cool Publication4",
                 "price": "8.99",
                 "images": ["https://images.unsplash.com/photo-1588704487282-e7c55e0448bc?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=668&q=80"],
             },
             {
                 "id": 5,
-                "name": "cool beer5",
+                "name": "cool Publication5",
                 "price": "9.99",
                 "images": ["https://images.unsplash.com/photo-1588704487282-e7c55e0448bc?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=668&q=80"],
             },
             {
                 "id": 6,
-                "name": "cool beer6",
+                "name": "cool Publication6",
                 "price": "10.99",
                 "images": ["https://images.unsplash.com/photo-1588704487282-e7c55e0448bc?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=668&q=80"],
             },
@@ -60,7 +60,7 @@ export default function Home(props) {
             <div className="container mx-auto">
                 <div
                     className="flex flex-col w-full lg:w-1/2 justify-center items-start  px-6 tracking-wide text-white">
-                    <h1 className="text-2xl my-4">Your Favorite Beer</h1>
+                    <h1 className="text-2xl my-4">Your Favorite Publication</h1>
                     <a className="text-xl inline-block no-underline border-b border-gray-600 leading-relaxed hover:text-white hover:border-white"
                        href="#">Buy Now !</a>
                 </div>
@@ -95,7 +95,7 @@ export default function Home(props) {
                         </div>
                     </div>
                 </nav>
-                {beerList.map((x) => <ProductCard key={x.id} data={x}/>)}
+                {PublicationList.map((x) => <ProductCard key={x.id} data={x}/>)}
             </div>
         </section>
 
@@ -106,7 +106,7 @@ export default function Home(props) {
                     About
                 </a>
 
-                <p className="mt-8 mb-8">BeerShop is a simple but complete microservices demo for kratos. created by <a
+                <p className="mt-8 mb-8">PublicationShop is a simple but complete microservices demo for kratos. created by <a
                     className="text-gray-800 underline hover:text-gray-900"
                     href="https://go-kratos.dev">go-kratos.dev</a></p>
                 <p className="mb-8">This project describes the microservices project layout in mono-repo,
@@ -114,7 +114,7 @@ export default function Home(props) {
                 <p className="mb-8">All the backend microservices are built with kratos framework. You could get the
                     project's source code from <a
                         className="text-gray-800 underline hover:text-gray-900"
-                        href="https://github.com/go-kratos/beer-shop">https://github.com/go-kratos/beer-shop</a></p>
+                        href="https://github.com/go-kratos/publication-shop">https://github.com/go-kratos/publication-shop</a></p>
             </div>
 
         </section>
@@ -126,7 +126,7 @@ export default function Home(props) {
                         <div className="px-3 md:px-0">
                             <h3 className="font-bold text-gray-900">Footer</h3>
                             <p className="py-4">
-                                beer shop
+                                Publication shop
                             </p>
                         </div>
                     </div>

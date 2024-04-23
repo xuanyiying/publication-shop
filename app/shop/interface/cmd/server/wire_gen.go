@@ -7,13 +7,13 @@
 package main
 
 import (
-	"github.com/go-kratos/beer-shop/app/shop/interface/internal/biz"
-	"github.com/go-kratos/beer-shop/app/shop/interface/internal/conf"
-	"github.com/go-kratos/beer-shop/app/shop/interface/internal/data"
-	"github.com/go-kratos/beer-shop/app/shop/interface/internal/server"
-	"github.com/go-kratos/beer-shop/app/shop/interface/internal/service"
 	"github.com/go-kratos/kratos/v2"
 	"github.com/go-kratos/kratos/v2/log"
+	"github.com/go-kratos/publication-shop/app/shop/interface/internal/biz"
+	"github.com/go-kratos/publication-shop/app/shop/interface/internal/conf"
+	"github.com/go-kratos/publication-shop/app/shop/interface/internal/data"
+	"github.com/go-kratos/publication-shop/app/shop/interface/internal/server"
+	"github.com/go-kratos/publication-shop/app/shop/interface/internal/service"
 	"go.opentelemetry.io/otel/sdk/trace"
 )
 
@@ -32,7 +32,7 @@ func initApp(confServer *conf.Server, registry *conf.Registry, confData *conf.Da
 	userRepo := data.NewUserRepo(dataData, logger)
 	authUseCase := biz.NewAuthUseCase(auth, userRepo)
 	userUseCase := biz.NewUserUseCase(userRepo, logger, authUseCase)
-	catalogRepo := data.NewBeerRepo(dataData, logger)
+	catalogRepo := data.NewPublicationRepo(dataData, logger)
 	catalogUseCase := biz.NewCatalogUseCase(catalogRepo, logger)
 	shopInterface := service.NewShopInterface(userUseCase, catalogUseCase, authUseCase, logger)
 	httpServer := server.NewHTTPServer(confServer, auth, logger, tracerProvider, shopInterface)

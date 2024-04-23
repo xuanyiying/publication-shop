@@ -3,8 +3,8 @@ package data
 import (
 	"context"
 
-	orderv1 "github.com/go-kratos/beer-shop/api/order/service/v1"
-	"github.com/go-kratos/beer-shop/app/courier/job/internal/conf"
+	orderv1 "github.com/go-kratos/publication-shop/api/order/service/v1"
+	"github.com/go-kratos/publication-shop/app/courier/job/internal/conf"
 
 	"github.com/Shopify/sarama"
 	consul "github.com/go-kratos/kratos/contrib/registry/consul/v2"
@@ -75,7 +75,7 @@ func NewDiscovery(conf *conf.Registry) registry.Discovery {
 func NewOrderServiceClient(r registry.Discovery, tp *tracesdk.TracerProvider) orderv1.OrderClient {
 	conn, err := grpc.DialInsecure(
 		context.Background(),
-		grpc.WithEndpoint("discovery:///beer.order.service"),
+		grpc.WithEndpoint("discovery:///Publication.order.service"),
 		grpc.WithDiscovery(r),
 		grpc.WithMiddleware(
 			tracing.Client(tracing.WithTracerProvider(tp)),

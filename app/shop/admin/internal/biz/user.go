@@ -1,8 +1,8 @@
 package biz
 
 import (
-	usV1 "github.com/go-kratos/beer-shop/api/user/service/v1"
 	"github.com/go-kratos/kratos/v2/log"
+	usV1 "github.com/go-kratos/publication-shop/api/user/service/v1"
 )
 
 type User struct {

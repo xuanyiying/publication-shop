@@ -1,18 +1,18 @@
 package data
 
 import (
-	"github.com/go-kratos/beer-shop/app/shop/admin/internal/conf"
 	"github.com/go-kratos/kratos/v2/log"
 	"github.com/go-kratos/kratos/v2/middleware/recovery"
 	"github.com/go-kratos/kratos/v2/middleware/tracing"
+	"github.com/go-kratos/publication-shop/app/shop/admin/internal/conf"
 
 	"context"
 
-	cartv1 "github.com/go-kratos/beer-shop/api/cart/service/v1"
-	catalogv1 "github.com/go-kratos/beer-shop/api/catalog/service/v1"
-	orderv1 "github.com/go-kratos/beer-shop/api/order/service/v1"
-	paymentv1 "github.com/go-kratos/beer-shop/api/payment/service/v1"
-	userv1 "github.com/go-kratos/beer-shop/api/user/service/v1"
+	cartv1 "github.com/go-kratos/publication-shop/api/cart/service/v1"
+	catalogv1 "github.com/go-kratos/publication-shop/api/catalog/service/v1"
+	orderv1 "github.com/go-kratos/publication-shop/api/order/service/v1"
+	paymentv1 "github.com/go-kratos/publication-shop/api/payment/service/v1"
+	userv1 "github.com/go-kratos/publication-shop/api/user/service/v1"
 
 	consul "github.com/go-kratos/kratos/contrib/registry/consul/v2"
 	"github.com/go-kratos/kratos/v2/registry"
@@ -83,7 +83,7 @@ func NewRegistrar(conf *conf.Registry) registry.Registrar {
 func NewUserServiceClient(r registry.Discovery, tp *tracesdk.TracerProvider) userv1.UserClient {
 	conn, err := grpc.DialInsecure(
 		context.Background(),
-		grpc.WithEndpoint("discovery:///beer.user.service"),
+		grpc.WithEndpoint("discovery:///Publication.user.service"),
 		grpc.WithDiscovery(r),
 		grpc.WithMiddleware(
 			tracing.Client(tracing.WithTracerProvider(tp)),
@@ -100,7 +100,7 @@ func NewUserServiceClient(r registry.Discovery, tp *tracesdk.TracerProvider) use
 func NewCartServiceClient(r registry.Discovery, tp *tracesdk.TracerProvider) cartv1.CartClient {
 	conn, err := grpc.DialInsecure(
 		context.Background(),
-		grpc.WithEndpoint("discovery:///beer.cart.service"),
+		grpc.WithEndpoint("discovery:///Publication.cart.service"),
 		grpc.WithDiscovery(r),
 		grpc.WithMiddleware(
 			tracing.Client(tracing.WithTracerProvider(tp)),
@@ -116,7 +116,7 @@ func NewCartServiceClient(r registry.Discovery, tp *tracesdk.TracerProvider) car
 func NewCatalogServiceClient(r registry.Discovery, tp *tracesdk.TracerProvider) catalogv1.CatalogClient {
 	conn, err := grpc.DialInsecure(
 		context.Background(),
-		grpc.WithEndpoint("discovery:///beer.catalog.service"),
+		grpc.WithEndpoint("discovery:///Publication.catalog.service"),
 		grpc.WithDiscovery(r),
 		grpc.WithMiddleware(
 			tracing.Client(tracing.WithTracerProvider(tp)),
@@ -132,7 +132,7 @@ func NewCatalogServiceClient(r registry.Discovery, tp *tracesdk.TracerProvider) 
 func NewOrderServiceClient(r registry.Discovery, tp *tracesdk.TracerProvider) orderv1.OrderClient {
 	conn, err := grpc.DialInsecure(
 		context.Background(),
-		grpc.WithEndpoint("discovery:///beer.order.service"),
+		grpc.WithEndpoint("discovery:///Publication.order.service"),
 		grpc.WithDiscovery(r),
 		grpc.WithMiddleware(
 			tracing.Client(tracing.WithTracerProvider(tp)),
@@ -148,7 +148,7 @@ func NewOrderServiceClient(r registry.Discovery, tp *tracesdk.TracerProvider) or
 func NewPaymentServiceClient(r registry.Discovery, tp *tracesdk.TracerProvider) paymentv1.PaymentClient {
 	conn, err := grpc.DialInsecure(
 		context.Background(),
-		grpc.WithEndpoint("discovery:///beer.payment.service"),
+		grpc.WithEndpoint("discovery:///Publication.payment.service"),
 		grpc.WithDiscovery(r),
 		grpc.WithMiddleware(
 			tracing.Client(tracing.WithTracerProvider(tp)),

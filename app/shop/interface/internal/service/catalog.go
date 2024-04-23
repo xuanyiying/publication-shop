@@ -2,46 +2,46 @@ package service
 
 import (
 	"context"
-	"github.com/go-kratos/beer-shop/api/shop/interface/v1"
+	"github.com/go-kratos/publication-shop/api/shop/interface/v1"
 )
 
-func (s *ShopInterface) ListBeer(ctx context.Context, req *v1.ListBeerReq) (*v1.ListBeerReply, error) {
-	rv, err := s.cc.ListBeer(ctx, req.PageNum, req.PageSize)
+func (s *ShopInterface) ListPublication(ctx context.Context, req *v1.ListPublicationReq) (*v1.ListPublicationReply, error) {
+	rv, err := s.cc.ListPublication(ctx, req.PageNum, req.PageSize)
 	if err != nil {
 		return nil, err
 	}
-	reply := &v1.ListBeerReply{
-		Results: make([]*v1.ListBeerReply_Beer, 0),
+	reply := &v1.ListPublicationReply{
+		Results: make([]*v1.ListPublicationReply_Publication, 0),
 	}
 	for _, x := range rv {
-		item := &v1.ListBeerReply_Beer{
+		item := &v1.ListPublicationReply_Publication{
 			Id:          x.Id,
 			Name:        x.Name,
 			Description: x.Description,
 			Count:       x.Count,
-			Image:       make([]*v1.ListBeerReply_Beer_Image, 0),
+			Image:       make([]*v1.ListPublicationReply_Publication_Image, 0),
 		}
 		for _, img := range x.Images {
-			item.Image = append(item.Image, &v1.ListBeerReply_Beer_Image{Url: img.URL})
+			item.Image = append(item.Image, &v1.ListPublicationReply_Publication_Image{Url: img.URL})
 		}
 		reply.Results = append(reply.Results, item)
 	}
 	return reply, nil
 }
-func (s *ShopInterface) GetBeer(ctx context.Context, req *v1.GetBeerReq) (*v1.GetBeerReply, error) {
-	x, err := s.cc.GetBeer(ctx, req.Id)
+func (s *ShopInterface) GetPublication(ctx context.Context, req *v1.GetPublicationReq) (*v1.GetPublicationReply, error) {
+	x, err := s.cc.GetPublication(ctx, req.Id)
 	if err != nil {
 		return nil, err
 	}
-	reply := &v1.GetBeerReply{
+	reply := &v1.GetPublicationReply{
 		Id:          x.Id,
 		Name:        x.Name,
 		Description: x.Description,
 		Count:       x.Count,
-		Image:       make([]*v1.GetBeerReply_Image, 0),
+		Image:       make([]*v1.GetPublicationReply_Image, 0),
 	}
 	for _, img := range x.Images {
-		reply.Image = append(reply.Image, &v1.GetBeerReply_Image{Url: img.URL})
+		reply.Image = append(reply.Image, &v1.GetPublicationReply_Image{Url: img.URL})
 	}
 	return reply, nil
 }

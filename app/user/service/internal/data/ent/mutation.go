@@ -8,10 +8,10 @@ import (
 	"sync"
 	"time"
 
-	"github.com/go-kratos/beer-shop/app/user/service/internal/data/ent/address"
-	"github.com/go-kratos/beer-shop/app/user/service/internal/data/ent/card"
-	"github.com/go-kratos/beer-shop/app/user/service/internal/data/ent/predicate"
-	"github.com/go-kratos/beer-shop/app/user/service/internal/data/ent/user"
+	"github.com/go-kratos/publication-shop/app/user/service/internal/data/ent/address"
+	"github.com/go-kratos/publication-shop/app/user/service/internal/data/ent/card"
+	"github.com/go-kratos/publication-shop/app/user/service/internal/data/ent/predicate"
+	"github.com/go-kratos/publication-shop/app/user/service/internal/data/ent/user"
 
 	"entgo.io/ent"
 )

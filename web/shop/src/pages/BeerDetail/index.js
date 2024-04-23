@@ -1,16 +1,16 @@
 import React, {useState, useEffect} from "react";
 import {useParams} from "react-router-dom";
-import {getBeerDetail} from "../../api/beer";
+import {getPublicationDetail} from "../../api/Publication";
 import {addCartItem} from "../../api/order"
 import {login} from "../../api/user";
 
-export default function BeerDetail(props) {
+export default function PublicationDetail(props) {
     const {id} = useParams();
     const [data, setData] = useState({});
     const [qty, setQty] = useState(1);
 
     useEffect(() => {
-        getBeerDetail(id).then((res)=>{
+        getPublicationDetail(id).then((res)=>{
             setData(res.data)
         });
     }, []);

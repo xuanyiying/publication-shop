@@ -22,12 +22,12 @@ const _ = grpc.SupportPackageIsVersion7
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type CatalogClient interface {
-	ListBeer(ctx context.Context, in *ListBeerReq, opts ...grpc.CallOption) (*ListBeerReply, error)
-	ListBeerNextToken(ctx context.Context, in *ListBeerNextTokenReq, opts ...grpc.CallOption) (*ListBeerReplyNextToken, error)
-	CreateBeer(ctx context.Context, in *CreateBeerReq, opts ...grpc.CallOption) (*CreateBeerReply, error)
-	GetBeer(ctx context.Context, in *GetBeerReq, opts ...grpc.CallOption) (*GetBeerReply, error)
-	UpdateBeer(ctx context.Context, in *UpdateBeerReq, opts ...grpc.CallOption) (*UpdateBeerReply, error)
-	DeleteBeer(ctx context.Context, in *DeleteBeerReq, opts ...grpc.CallOption) (*DeleteBeerReply, error)
+	ListPublication(ctx context.Context, in *ListPublicationReq, opts ...grpc.CallOption) (*ListPublicationReply, error)
+	ListPublicationNextToken(ctx context.Context, in *ListPublicationNextTokenReq, opts ...grpc.CallOption) (*ListPublicationReplyNextToken, error)
+	CreatePublication(ctx context.Context, in *CreatePublicationReq, opts ...grpc.CallOption) (*CreatePublicationReply, error)
+	GetPublication(ctx context.Context, in *GetPublicationReq, opts ...grpc.CallOption) (*GetPublicationReply, error)
+	UpdatePublication(ctx context.Context, in *UpdatePublicationReq, opts ...grpc.CallOption) (*UpdatePublicationReply, error)
+	DeletePublication(ctx context.Context, in *DeletePublicationReq, opts ...grpc.CallOption) (*DeletePublicationReply, error)
 }
 
 type catalogClient struct {
@@ -38,54 +38,54 @@ func NewCatalogClient(cc grpc.ClientConnInterface) CatalogClient {
 	return &catalogClient{cc}
 }
 
-func (c *catalogClient) ListBeer(ctx context.Context, in *ListBeerReq, opts ...grpc.CallOption) (*ListBeerReply, error) {
-	out := new(ListBeerReply)
-	err := c.cc.Invoke(ctx, "/catalog.service.v1.Catalog/ListBeer", in, out, opts...)
+func (c *catalogClient) ListPublication(ctx context.Context, in *ListPublicationReq, opts ...grpc.CallOption) (*ListPublicationReply, error) {
+	out := new(ListPublicationReply)
+	err := c.cc.Invoke(ctx, "/catalog.service.v1.Catalog/ListPublication", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *catalogClient) ListBeerNextToken(ctx context.Context, in *ListBeerNextTokenReq, opts ...grpc.CallOption) (*ListBeerReplyNextToken, error) {
-	out := new(ListBeerReplyNextToken)
-	err := c.cc.Invoke(ctx, "/catalog.service.v1.Catalog/ListBeerNextToken", in, out, opts...)
+func (c *catalogClient) ListPublicationNextToken(ctx context.Context, in *ListPublicationNextTokenReq, opts ...grpc.CallOption) (*ListPublicationReplyNextToken, error) {
+	out := new(ListPublicationReplyNextToken)
+	err := c.cc.Invoke(ctx, "/catalog.service.v1.Catalog/ListPublicationNextToken", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *catalogClient) CreateBeer(ctx context.Context, in *CreateBeerReq, opts ...grpc.CallOption) (*CreateBeerReply, error) {
-	out := new(CreateBeerReply)
-	err := c.cc.Invoke(ctx, "/catalog.service.v1.Catalog/CreateBeer", in, out, opts...)
+func (c *catalogClient) CreatePublication(ctx context.Context, in *CreatePublicationReq, opts ...grpc.CallOption) (*CreatePublicationReply, error) {
+	out := new(CreatePublicationReply)
+	err := c.cc.Invoke(ctx, "/catalog.service.v1.Catalog/CreatePublication", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *catalogClient) GetBeer(ctx context.Context, in *GetBeerReq, opts ...grpc.CallOption) (*GetBeerReply, error) {
-	out := new(GetBeerReply)
-	err := c.cc.Invoke(ctx, "/catalog.service.v1.Catalog/GetBeer", in, out, opts...)
+func (c *catalogClient) GetPublication(ctx context.Context, in *GetPublicationReq, opts ...grpc.CallOption) (*GetPublicationReply, error) {
+	out := new(GetPublicationReply)
+	err := c.cc.Invoke(ctx, "/catalog.service.v1.Catalog/GetPublication", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *catalogClient) UpdateBeer(ctx context.Context, in *UpdateBeerReq, opts ...grpc.CallOption) (*UpdateBeerReply, error) {
-	out := new(UpdateBeerReply)
-	err := c.cc.Invoke(ctx, "/catalog.service.v1.Catalog/UpdateBeer", in, out, opts...)
+func (c *catalogClient) UpdatePublication(ctx context.Context, in *UpdatePublicationReq, opts ...grpc.CallOption) (*UpdatePublicationReply, error) {
+	out := new(UpdatePublicationReply)
+	err := c.cc.Invoke(ctx, "/catalog.service.v1.Catalog/UpdatePublication", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *catalogClient) DeleteBeer(ctx context.Context, in *DeleteBeerReq, opts ...grpc.CallOption) (*DeleteBeerReply, error) {
-	out := new(DeleteBeerReply)
-	err := c.cc.Invoke(ctx, "/catalog.service.v1.Catalog/DeleteBeer", in, out, opts...)
+func (c *catalogClient) DeletePublication(ctx context.Context, in *DeletePublicationReq, opts ...grpc.CallOption) (*DeletePublicationReply, error) {
+	out := new(DeletePublicationReply)
+	err := c.cc.Invoke(ctx, "/catalog.service.v1.Catalog/DeletePublication", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -96,12 +96,12 @@ func (c *catalogClient) DeleteBeer(ctx context.Context, in *DeleteBeerReq, opts 
 // All implementations must embed UnimplementedCatalogServer
 // for forward compatibility
 type CatalogServer interface {
-	ListBeer(context.Context, *ListBeerReq) (*ListBeerReply, error)
-	ListBeerNextToken(context.Context, *ListBeerNextTokenReq) (*ListBeerReplyNextToken, error)
-	CreateBeer(context.Context, *CreateBeerReq) (*CreateBeerReply, error)
-	GetBeer(context.Context, *GetBeerReq) (*GetBeerReply, error)
-	UpdateBeer(context.Context, *UpdateBeerReq) (*UpdateBeerReply, error)
-	DeleteBeer(context.Context, *DeleteBeerReq) (*DeleteBeerReply, error)
+	ListPublication(context.Context, *ListPublicationReq) (*ListPublicationReply, error)
+	ListPublicationNextToken(context.Context, *ListPublicationNextTokenReq) (*ListPublicationReplyNextToken, error)
+	CreatePublication(context.Context, *CreatePublicationReq) (*CreatePublicationReply, error)
+	GetPublication(context.Context, *GetPublicationReq) (*GetPublicationReply, error)
+	UpdatePublication(context.Context, *UpdatePublicationReq) (*UpdatePublicationReply, error)
+	DeletePublication(context.Context, *DeletePublicationReq) (*DeletePublicationReply, error)
 	mustEmbedUnimplementedCatalogServer()
 }
 
@@ -109,23 +109,23 @@ type CatalogServer interface {
 type UnimplementedCatalogServer struct {
 }
 
-func (UnimplementedCatalogServer) ListBeer(context.Context, *ListBeerReq) (*ListBeerReply, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method ListBeer not implemented")
+func (UnimplementedCatalogServer) ListPublication(context.Context, *ListPublicationReq) (*ListPublicationReply, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method ListPublication not implemented")
 }
-func (UnimplementedCatalogServer) ListBeerNextToken(context.Context, *ListBeerNextTokenReq) (*ListBeerReplyNextToken, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method ListBeerNextToken not implemented")
+func (UnimplementedCatalogServer) ListPublicationNextToken(context.Context, *ListPublicationNextTokenReq) (*ListPublicationReplyNextToken, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method ListPublicationNextToken not implemented")
 }
-func (UnimplementedCatalogServer) CreateBeer(context.Context, *CreateBeerReq) (*CreateBeerReply, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method CreateBeer not implemented")
+func (UnimplementedCatalogServer) CreatePublication(context.Context, *CreatePublicationReq) (*CreatePublicationReply, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CreatePublication not implemented")
 }
-func (UnimplementedCatalogServer) GetBeer(context.Context, *GetBeerReq) (*GetBeerReply, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method GetBeer not implemented")
+func (UnimplementedCatalogServer) GetPublication(context.Context, *GetPublicationReq) (*GetPublicationReply, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetPublication not implemented")
 }
-func (UnimplementedCatalogServer) UpdateBeer(context.Context, *UpdateBeerReq) (*UpdateBeerReply, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method UpdateBeer not implemented")
+func (UnimplementedCatalogServer) UpdatePublication(context.Context, *UpdatePublicationReq) (*UpdatePublicationReply, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method UpdatePublication not implemented")
 }
-func (UnimplementedCatalogServer) DeleteBeer(context.Context, *DeleteBeerReq) (*DeleteBeerReply, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method DeleteBeer not implemented")
+func (UnimplementedCatalogServer) DeletePublication(context.Context, *DeletePublicationReq) (*DeletePublicationReply, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method DeletePublication not implemented")
 }
 func (UnimplementedCatalogServer) mustEmbedUnimplementedCatalogServer() {}
 
@@ -140,110 +140,110 @@ func RegisterCatalogServer(s grpc.ServiceRegistrar, srv CatalogServer) {
 	s.RegisterService(&Catalog_ServiceDesc, srv)
 }
 
-func _Catalog_ListBeer_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(ListBeerReq)
+func _Catalog_ListPublication_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ListPublicationReq)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(CatalogServer).ListBeer(ctx, in)
+		return srv.(CatalogServer).ListPublication(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/catalog.service.v1.Catalog/ListBeer",
+		FullMethod: "/catalog.service.v1.Catalog/ListPublication",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(CatalogServer).ListBeer(ctx, req.(*ListBeerReq))
+		return srv.(CatalogServer).ListPublication(ctx, req.(*ListPublicationReq))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Catalog_ListBeerNextToken_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(ListBeerNextTokenReq)
+func _Catalog_ListPublicationNextToken_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ListPublicationNextTokenReq)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(CatalogServer).ListBeerNextToken(ctx, in)
+		return srv.(CatalogServer).ListPublicationNextToken(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/catalog.service.v1.Catalog/ListBeerNextToken",
+		FullMethod: "/catalog.service.v1.Catalog/ListPublicationNextToken",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(CatalogServer).ListBeerNextToken(ctx, req.(*ListBeerNextTokenReq))
+		return srv.(CatalogServer).ListPublicationNextToken(ctx, req.(*ListPublicationNextTokenReq))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Catalog_CreateBeer_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(CreateBeerReq)
+func _Catalog_CreatePublication_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CreatePublicationReq)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(CatalogServer).CreateBeer(ctx, in)
+		return srv.(CatalogServer).CreatePublication(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/catalog.service.v1.Catalog/CreateBeer",
+		FullMethod: "/catalog.service.v1.Catalog/CreatePublication",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(CatalogServer).CreateBeer(ctx, req.(*CreateBeerReq))
+		return srv.(CatalogServer).CreatePublication(ctx, req.(*CreatePublicationReq))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Catalog_GetBeer_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(GetBeerReq)
+func _Catalog_GetPublication_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetPublicationReq)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(CatalogServer).GetBeer(ctx, in)
+		return srv.(CatalogServer).GetPublication(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/catalog.service.v1.Catalog/GetBeer",
+		FullMethod: "/catalog.service.v1.Catalog/GetPublication",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(CatalogServer).GetBeer(ctx, req.(*GetBeerReq))
+		return srv.(CatalogServer).GetPublication(ctx, req.(*GetPublicationReq))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Catalog_UpdateBeer_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(UpdateBeerReq)
+func _Catalog_UpdatePublication_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UpdatePublicationReq)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(CatalogServer).UpdateBeer(ctx, in)
+		return srv.(CatalogServer).UpdatePublication(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/catalog.service.v1.Catalog/UpdateBeer",
+		FullMethod: "/catalog.service.v1.Catalog/UpdatePublication",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(CatalogServer).UpdateBeer(ctx, req.(*UpdateBeerReq))
+		return srv.(CatalogServer).UpdatePublication(ctx, req.(*UpdatePublicationReq))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Catalog_DeleteBeer_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(DeleteBeerReq)
+func _Catalog_DeletePublication_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(DeletePublicationReq)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(CatalogServer).DeleteBeer(ctx, in)
+		return srv.(CatalogServer).DeletePublication(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/catalog.service.v1.Catalog/DeleteBeer",
+		FullMethod: "/catalog.service.v1.Catalog/DeletePublication",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(CatalogServer).DeleteBeer(ctx, req.(*DeleteBeerReq))
+		return srv.(CatalogServer).DeletePublication(ctx, req.(*DeletePublicationReq))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -256,28 +256,28 @@ var Catalog_ServiceDesc = grpc.ServiceDesc{
 	HandlerType: (*CatalogServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
-			MethodName: "ListBeer",
-			Handler:    _Catalog_ListBeer_Handler,
+			MethodName: "ListPublication",
+			Handler:    _Catalog_ListPublication_Handler,
 		},
 		{
-			MethodName: "ListBeerNextToken",
-			Handler:    _Catalog_ListBeerNextToken_Handler,
+			MethodName: "ListPublicationNextToken",
+			Handler:    _Catalog_ListPublicationNextToken_Handler,
 		},
 		{
-			MethodName: "CreateBeer",
-			Handler:    _Catalog_CreateBeer_Handler,
+			MethodName: "CreatePublication",
+			Handler:    _Catalog_CreatePublication_Handler,
 		},
 		{
-			MethodName: "GetBeer",
-			Handler:    _Catalog_GetBeer_Handler,
+			MethodName: "GetPublication",
+			Handler:    _Catalog_GetPublication_Handler,
 		},
 		{
-			MethodName: "UpdateBeer",
-			Handler:    _Catalog_UpdateBeer_Handler,
+			MethodName: "UpdatePublication",
+			Handler:    _Catalog_UpdatePublication_Handler,
 		},
 		{
-			MethodName: "DeleteBeer",
-			Handler:    _Catalog_DeleteBeer_Handler,
+			MethodName: "DeletePublication",
+			Handler:    _Catalog_DeletePublication_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

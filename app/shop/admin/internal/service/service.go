@@ -1,9 +1,9 @@
 package service
 
 import (
-	"github.com/go-kratos/beer-shop/api/shop/admin/v1"
-	"github.com/go-kratos/beer-shop/app/shop/admin/internal/biz"
 	"github.com/go-kratos/kratos/v2/log"
+	"github.com/go-kratos/publication-shop/api/shop/admin/v1"
+	"github.com/go-kratos/publication-shop/app/shop/admin/internal/biz"
 	"github.com/google/wire"
 )
 

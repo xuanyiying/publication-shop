@@ -1,4 +1,4 @@
-# [WIP] beer-shop
+# [WIP] publication-shop
 An online shop application, mono-repo microservices demo for kratos.
 
 本项目为一个使用kratos框架创建的，简单的微服务电商项目。
@@ -10,7 +10,7 @@ An online shop application, mono-repo microservices demo for kratos.
 * 提供与各种基础设施集成和部署的样例
 * 主要为kratos框架使用演示，很多组件的设计做了简化或模拟处理，与实际的电商项目有一定出入，仅供参考
 
-具体架构请参考文档：[Docs](https://go-kratos.github.io/beer-shop/#/)
+具体架构请参考文档：[Docs](https://go-kratos.github.io/publication-shop/#/)
 
 **ATTENTION: This project is a Work-in-Progress.**
 

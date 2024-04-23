@@ -1,1 +1,1 @@
-# Frontend projects for beer-shop 
+# Frontend projects for publication-shop 
