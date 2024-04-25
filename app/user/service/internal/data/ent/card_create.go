@@ -10,8 +10,8 @@ import (
 
 	"entgo.io/ent/dialect/sql/sqlgraph"
 	"entgo.io/ent/schema/field"
-	"github.com/go-kratos/publication-shop/app/user/service/internal/data/ent/card"
-	"github.com/go-kratos/publication-shop/app/user/service/internal/data/ent/user"
+	"github.com/publication-shop/app/user/service/internal/data/ent/card"
+	"github.com/publication-shop/app/user/service/internal/data/ent/user"
 )
 
 // CardCreate is the builder for creating a Card entity.

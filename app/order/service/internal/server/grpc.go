@@ -2,9 +2,9 @@ package server
 
 import (
 	"github.com/go-kratos/kratos/v2/log"
-	"github.com/go-kratos/publication-shop/api/order/service/v1"
-	"github.com/go-kratos/publication-shop/app/order/service/internal/conf"
-	"github.com/go-kratos/publication-shop/app/order/service/internal/service"
+	"github.com/publication-shop/api/order/service/v1"
+	"github.com/publication-shop/app/order/service/internal/conf"
+	"github.com/publication-shop/app/order/service/internal/service"
 	tracesdk "go.opentelemetry.io/otel/sdk/trace"
 
 	"github.com/go-kratos/kratos/v2/middleware/logging"

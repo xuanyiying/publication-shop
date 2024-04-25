@@ -3,8 +3,8 @@ package data
 import (
 	"context"
 
-	orderv1 "github.com/go-kratos/publication-shop/api/order/service/v1"
-	"github.com/go-kratos/publication-shop/app/courier/job/internal/conf"
+	orderv1 "github.com/publication-shop/api/order/service/v1"
+	"github.com/publication-shop/app/courier/job/internal/conf"
 
 	"github.com/Shopify/sarama"
 	consul "github.com/go-kratos/kratos/contrib/registry/consul/v2"

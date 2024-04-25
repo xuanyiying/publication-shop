@@ -2,7 +2,7 @@ package service
 
 import (
 	"context"
-	"github.com/go-kratos/publication-shop/api/shop/admin/v1"
+	"github.com/publication-shop/api/shop/admin/v1"
 )
 
 func (s *ShopAdmin) ListUser(ctx context.Context, req *v1.ListUserReq) (*v1.ListUserReply, error) {

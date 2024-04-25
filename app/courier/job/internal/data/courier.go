@@ -3,7 +3,7 @@ package data
 import (
 	"github.com/go-kratos/kratos/v2/log"
 
-	"github.com/go-kratos/publication-shop/app/courier/job/internal/biz"
+	"github.com/publication-shop/app/courier/job/internal/biz"
 )
 
 var _ biz.CourierRepo = (*courierRepo)(nil)

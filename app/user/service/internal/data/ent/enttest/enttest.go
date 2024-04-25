@@ -5,9 +5,9 @@ package enttest
 import (
 	"context"
 
-	"github.com/go-kratos/publication-shop/app/user/service/internal/data/ent"
+	"github.com/publication-shop/app/user/service/internal/data/ent"
 	// required by schema hooks.
-	_ "github.com/go-kratos/publication-shop/app/user/service/internal/data/ent/runtime"
+	_ "github.com/publication-shop/app/user/service/internal/data/ent/runtime"
 
 	"entgo.io/ent/dialect/sql/schema"
 )

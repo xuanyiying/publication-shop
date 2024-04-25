@@ -10,10 +10,10 @@ import (
 	"entgo.io/ent/dialect/sql"
 	"entgo.io/ent/dialect/sql/sqlgraph"
 	"entgo.io/ent/schema/field"
-	"github.com/go-kratos/publication-shop/app/user/service/internal/data/ent/address"
-	"github.com/go-kratos/publication-shop/app/user/service/internal/data/ent/card"
-	"github.com/go-kratos/publication-shop/app/user/service/internal/data/ent/predicate"
-	"github.com/go-kratos/publication-shop/app/user/service/internal/data/ent/user"
+	"github.com/publication-shop/app/user/service/internal/data/ent/address"
+	"github.com/publication-shop/app/user/service/internal/data/ent/card"
+	"github.com/publication-shop/app/user/service/internal/data/ent/predicate"
+	"github.com/publication-shop/app/user/service/internal/data/ent/user"
 )
 
 // UserUpdate is the builder for updating User entities.

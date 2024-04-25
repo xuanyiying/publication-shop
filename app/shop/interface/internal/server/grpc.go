@@ -3,10 +3,10 @@ package server
 import (
 	"github.com/go-kratos/kratos/v2/log"
 	"github.com/go-kratos/kratos/v2/middleware/auth/jwt"
-	"github.com/go-kratos/publication-shop/api/shop/interface/v1"
-	"github.com/go-kratos/publication-shop/app/shop/interface/internal/conf"
-	"github.com/go-kratos/publication-shop/app/shop/interface/internal/service"
-	jwt2 "github.com/golang-jwt/jwt/v4"
+	jwtv5 "github.com/golang-jwt/jwt/v5"
+	"github.com/publication-shop/api/shop/interface/v1"
+	"github.com/publication-shop/app/shop/interface/internal/conf"
+	"github.com/publication-shop/app/shop/interface/internal/service"
 	tracesdk "go.opentelemetry.io/otel/sdk/trace"
 
 	"github.com/go-kratos/kratos/v2/middleware/logging"
@@ -23,9 +23,9 @@ func NewGRPCServer(c *conf.Server, ac *conf.Auth, logger log.Logger, tp *tracesd
 			tracing.Server(
 				tracing.WithTracerProvider(tp)),
 			logging.Server(logger),
-			jwt.Server(func(token *jwt2.Token) (interface{}, error) {
+			jwt.Server(func(token *jwtv5.Token) (interface{}, error) {
 				return []byte(ac.ApiKey), nil
-			}, jwt.WithSigningMethod(jwt2.SigningMethodHS256)),
+			}, jwt.WithSigningMethod(jwtv5.SigningMethodHS256)),
 		),
 	}
 	if c.Grpc.Network != "" {

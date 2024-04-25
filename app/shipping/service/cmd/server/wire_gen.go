@@ -9,11 +9,11 @@ package main
 import (
 	"github.com/go-kratos/kratos/v2"
 	"github.com/go-kratos/kratos/v2/log"
-	"github.com/go-kratos/publication-shop/app/shipping/service/internal/biz"
-	"github.com/go-kratos/publication-shop/app/shipping/service/internal/conf"
-	"github.com/go-kratos/publication-shop/app/shipping/service/internal/data"
-	"github.com/go-kratos/publication-shop/app/shipping/service/internal/server"
-	"github.com/go-kratos/publication-shop/app/shipping/service/internal/service"
+	"github.com/publication-shop/app/shipping/service/internal/biz"
+	"github.com/publication-shop/app/shipping/service/internal/conf"
+	"github.com/publication-shop/app/shipping/service/internal/data"
+	"github.com/publication-shop/app/shipping/service/internal/server"
+	"github.com/publication-shop/app/shipping/service/internal/service"
 	"go.opentelemetry.io/otel/sdk/trace"
 )
 

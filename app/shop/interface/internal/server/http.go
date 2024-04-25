@@ -9,12 +9,12 @@ import (
 	"github.com/go-kratos/kratos/v2/middleware/selector"
 	"github.com/go-kratos/kratos/v2/middleware/tracing"
 	"github.com/go-kratos/kratos/v2/transport/http"
-	"github.com/go-kratos/publication-shop/api/shop/interface/v1"
-	"github.com/go-kratos/publication-shop/app/shop/interface/internal/conf"
-	"github.com/go-kratos/publication-shop/app/shop/interface/internal/service"
 	"github.com/go-kratos/swagger-api/openapiv2"
-	jwt2 "github.com/golang-jwt/jwt/v4"
+	jwtv5 "github.com/golang-jwt/jwt/v5"
 	"github.com/gorilla/handlers"
+	"github.com/publication-shop/api/shop/interface/v1"
+	"github.com/publication-shop/app/shop/interface/internal/conf"
+	"github.com/publication-shop/app/shop/interface/internal/service"
 	tracesdk "go.opentelemetry.io/otel/sdk/trace"
 )
 
@@ -40,10 +40,10 @@ func NewHTTPServer(c *conf.Server, ac *conf.Auth, logger log.Logger, tp *tracesd
 				tracing.WithTracerProvider(tp)),
 			logging.Server(logger),
 			selector.Server(
-				jwt.Server(func(token *jwt2.Token) (interface{}, error) {
+				jwt.Server(func(token *jwtv5.Token) (interface{}, error) {
 					return []byte(ac.ApiKey), nil
-				}, jwt.WithSigningMethod(jwt2.SigningMethodHS256), jwt.WithClaims(func() jwt2.Claims {
-					return &jwt2.MapClaims{}
+				}, jwt.WithSigningMethod(jwtv5.SigningMethodHS256), jwt.WithClaims(func() jwtv5.Claims {
+					return &jwtv5.MapClaims{}
 				})),
 			).
 				Match(NewWhiteListMatcher()).

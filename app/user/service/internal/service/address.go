@@ -3,8 +3,8 @@ package service
 import (
 	"context"
 
-	v1 "github.com/go-kratos/publication-shop/api/user/service/v1"
-	"github.com/go-kratos/publication-shop/app/user/service/internal/biz"
+	v1 "github.com/publication-shop/api/user/service/v1"
+	"github.com/publication-shop/app/user/service/internal/biz"
 )
 
 func (s *UserService) CreateAddress(ctx context.Context, req *v1.CreateAddressReq) (*v1.CreateAddressReply, error) {

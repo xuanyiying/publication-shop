@@ -6,7 +6,7 @@ import (
 
 	"github.com/go-kratos/kratos/v2/registry"
 
-	"github.com/go-kratos/publication-shop/app/shop/admin/internal/conf"
+	"github.com/publication-shop/app/shop/admin/internal/conf"
 
 	"github.com/go-kratos/kratos/v2"
 	"github.com/go-kratos/kratos/v2/config"

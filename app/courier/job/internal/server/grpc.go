@@ -6,9 +6,9 @@ import (
 	"github.com/go-kratos/kratos/v2/middleware/recovery"
 	"github.com/go-kratos/kratos/v2/middleware/tracing"
 	"github.com/go-kratos/kratos/v2/transport/grpc"
-	"github.com/go-kratos/publication-shop/api/courier/job/v1"
-	"github.com/go-kratos/publication-shop/app/courier/job/internal/conf"
-	"github.com/go-kratos/publication-shop/app/courier/job/internal/service"
+	"github.com/publication-shop/api/courier/job/v1"
+	"github.com/publication-shop/app/courier/job/internal/conf"
+	"github.com/publication-shop/app/courier/job/internal/service"
 	tracesdk "go.opentelemetry.io/otel/sdk/trace"
 )
 

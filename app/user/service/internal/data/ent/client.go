@@ -7,11 +7,11 @@ import (
 	"fmt"
 	"log"
 
-	"github.com/go-kratos/publication-shop/app/user/service/internal/data/ent/migrate"
+	"github.com/publication-shop/app/user/service/internal/data/ent/migrate"
 
-	"github.com/go-kratos/publication-shop/app/user/service/internal/data/ent/address"
-	"github.com/go-kratos/publication-shop/app/user/service/internal/data/ent/card"
-	"github.com/go-kratos/publication-shop/app/user/service/internal/data/ent/user"
+	"github.com/publication-shop/app/user/service/internal/data/ent/address"
+	"github.com/publication-shop/app/user/service/internal/data/ent/card"
+	"github.com/publication-shop/app/user/service/internal/data/ent/user"
 
 	"entgo.io/ent/dialect"
 	"entgo.io/ent/dialect/sql"
