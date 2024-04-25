@@ -114,7 +114,7 @@ export default function Home(props) {
                 <p className="mb-8">All the backend microservices are built with kratos framework. You could get the
                     project's source code from <a
                         className="text-gray-800 underline hover:text-gray-900"
-                        href="https://github.com/go-kratos/publication-shop">https://github.com/go-kratos/publication-shop</a></p>
+                        href="https://github.com/publication-shop">https://github.com/publication-shop</a></p>
             </div>
 
         </section>

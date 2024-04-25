@@ -1,3 +1,4 @@
+use book_store;
 create table catalog
 (
     catalog_id        bigint auto_increment comment '分类ID'
@@ -133,3 +134,44 @@ create table publication_stock
     publication_id         bigint        null comment '出版物ID'
 )
     comment '出版物库存' charset = utf8;
+CREATE TABLE cart (
+    -- 购物车ID，主键，自增整数
+    cart_id INT AUTO_INCREMENT PRIMARY KEY,
+
+    -- 用户ID，与用户表关联，标识拥有该购物车的用户
+    user_id INT NOT NULL,
+
+    -- 创建时间，记录购物车创建的时间
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+
+    -- 更新时间，记录购物车最后一次更新的时间
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+
+    -- 外键约束，确保引用的用户数据存在
+    FOREIGN KEY (user_id) REFERENCES user(user_id)
+) COMMENT '购物车表';
+CREATE TABLE cart_item (
+    -- 购物车项ID，主键，自增整数
+    item_id INT AUTO_INCREMENT PRIMARY KEY,
+
+    -- 购物车ID，与购物车表关联，标识该购物车项所属的购物车
+    cart_id INT NOT NULL,
+
+    -- 书籍ID，与书籍表关联，标识购物车项中的具体书籍
+    book_id INT NOT NULL,
+
+    -- 购买数量，用户选择购买该书籍的数量
+    quantity INT NOT NULL DEFAULT 1,
+
+    -- 选中状态，用于实现批量操作（如全选、反选），通常为布尔值，0表示未选中，1表示已选中
+    is_selected BOOLEAN NOT NULL DEFAULT 0,
+
+    -- 加入购物车的时间，用于记录用户添加商品到购物车的具体时间
+    added_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+
+    -- 外键约束，确保引用的数据存在
+    FOREIGN KEY (cart_id) REFERENCES cart(cart_id),
+    FOREIGN KEY (book_id) REFERENCES book(book_id)
+) COMMENT '购物车项表';
+
+
