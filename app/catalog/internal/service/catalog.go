@@ -2,7 +2,7 @@ package service
 
 import (
 	"context"
-	"github.com/publication-shop/api/catalog/service/v1"
+	"github.com/xuanyiying/publication-shop/api/catalog/service/v1"
 )
 
 type CatalogService struct {

@@ -3,8 +3,8 @@ package data
 import (
 	"context"
 
-	"github.com/publication-shop/app/user/service/internal/biz"
-	"github.com/publication-shop/app/user/service/internal/data/ent/user"
+	"github.com/xuanyiying/publication-shop/app/user/service/internal/biz"
+	"github.com/xuanyiying/publication-shop/app/user/service/internal/data/ent/user"
 
 	"github.com/go-kratos/kratos/v2/log"
 )

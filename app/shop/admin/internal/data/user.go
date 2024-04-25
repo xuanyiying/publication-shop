@@ -3,9 +3,9 @@ package data
 import (
 	"context"
 	"github.com/go-kratos/kratos/v2/log"
-	"github.com/publication-shop/app/shop/admin/internal/biz"
+	"github.com/xuanyiying/publication-shop/app/shop/admin/internal/biz"
 
-	userv1 "github.com/publication-shop/api/user/service/v1"
+	userv1 "github.com/xuanyiying/publication-shop/api/user/service/v1"
 )
 
 var _ biz.UserRepo = (*userRepo)(nil)

@@ -9,7 +9,7 @@ import (
 
 	"entgo.io/ent/dialect/sql/sqlgraph"
 	"entgo.io/ent/schema/field"
-	"github.com/publication-shop/app/catalog/ent/catalog"
+	"github.com/xuanyiying/publication-shop/app/catalog/ent/catalog"
 )
 
 // CatalogCreate is the builder for creating a Catalog entity.

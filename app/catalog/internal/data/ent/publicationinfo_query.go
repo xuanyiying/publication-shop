@@ -10,8 +10,8 @@ import (
 	"entgo.io/ent/dialect/sql"
 	"entgo.io/ent/dialect/sql/sqlgraph"
 	"entgo.io/ent/schema/field"
-	"github.com/publication-shop/app/catalog/ent/predicate"
-	"github.com/publication-shop/app/catalog/ent/publicationinfo"
+	"github.com/xuanyiying/publication-shop/app/catalog/ent/predicate"
+	"github.com/xuanyiying/publication-shop/app/catalog/ent/publicationinfo"
 )
 
 // PublicationInfoQuery is the builder for querying PublicationInfo entities.

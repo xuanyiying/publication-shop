@@ -8,7 +8,7 @@ import (
 
 	"entgo.io/ent"
 	"entgo.io/ent/dialect/sql"
-	"github.com/publication-shop/app/catalog/ent/publicationdetail"
+	"github.com/xuanyiying/publication-shop/app/catalog/ent/publicationdetail"
 )
 
 // PublicationDetail is the model entity for the PublicationDetail schema.

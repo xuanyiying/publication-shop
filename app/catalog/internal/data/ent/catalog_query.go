@@ -10,8 +10,8 @@ import (
 	"entgo.io/ent/dialect/sql"
 	"entgo.io/ent/dialect/sql/sqlgraph"
 	"entgo.io/ent/schema/field"
-	"github.com/publication-shop/app/catalog/ent/catalog"
-	"github.com/publication-shop/app/catalog/ent/predicate"
+	"github.com/xuanyiying/publication-shop/app/catalog/ent/catalog"
+	"github.com/xuanyiying/publication-shop/app/catalog/ent/predicate"
 )
 
 // CatalogQuery is the builder for querying Catalog entities.

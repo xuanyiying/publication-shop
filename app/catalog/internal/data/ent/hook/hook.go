@@ -6,7 +6,7 @@ import (
 	"context"
 	"fmt"
 
-	"github.com/publication-shop/app/catalog/ent"
+	"github.com/xuanyiying/publication-shop/app/catalog/ent"
 )
 
 // The CatalogFunc type is an adapter to allow the use of ordinary

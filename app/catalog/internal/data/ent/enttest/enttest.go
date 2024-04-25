@@ -5,12 +5,12 @@ package enttest
 import (
 	"context"
 
-	"github.com/publication-shop/app/catalog/ent"
+	"github.com/xuanyiying/publication-shop/app/catalog/ent"
 	// required by schema hooks.
-	_ "github.com/publication-shop/app/catalog/ent/runtime"
+	_ "github.com/xuanyiying/publication-shop/app/catalog/ent/runtime"
 
 	"entgo.io/ent/dialect/sql/schema"
-	"github.com/publication-shop/app/catalog/ent/migrate"
+	"github.com/xuanyiying/publication-shop/app/catalog/ent/migrate"
 )
 
 type (

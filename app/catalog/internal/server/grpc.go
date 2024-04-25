@@ -1,9 +1,9 @@
 package server
 
 import (
-	"github.com/publication-shop/api/catalog/service/v1"
-	"github.com/publication-shop/app/catalog/internal/conf"
-	"github.com/publication-shop/app/catalog/internal/service"
+	"github.com/xuanyiying/publication-shop/api/catalog/service/v1"
+	"github.com/xuanyiying/publication-shop/app/catalog/internal/conf"
+	"github.com/xuanyiying/publication-shop/app/catalog/internal/service"
 
 	"github.com/go-kratos/kratos/v2/log"
 	"github.com/go-kratos/kratos/v2/middleware/recovery"

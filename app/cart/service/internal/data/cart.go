@@ -7,7 +7,7 @@ import (
 	"go.mongodb.org/mongo-driver/bson"
 	"go.mongodb.org/mongo-driver/mongo"
 
-	"github.com/publication-shop/app/cart/service/internal/biz"
+	"github.com/xuanyiying/publication-shop/app/cart/service/internal/biz"
 )
 
 var _ biz.CartRepo = (*cartRepo)(nil)

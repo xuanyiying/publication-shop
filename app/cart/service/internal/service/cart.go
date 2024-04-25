@@ -3,8 +3,8 @@ package service
 import (
 	"context"
 
-	v1 "github.com/publication-shop/api/cart/service/v1"
-	"github.com/publication-shop/app/cart/service/internal/biz"
+	v1 "github.com/xuanyiying/publication-shop/api/cart/service/v1"
+	"github.com/xuanyiying/publication-shop/app/cart/service/internal/biz"
 )
 
 func (s *CartService) GetCart(ctx context.Context, req *v1.GetCartReq) (reply *v1.GetCartReply, err error) {

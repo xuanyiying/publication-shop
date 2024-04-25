@@ -10,8 +10,8 @@ import (
 	"entgo.io/ent/dialect/sql"
 	"entgo.io/ent/dialect/sql/sqlgraph"
 	"entgo.io/ent/schema/field"
-	"github.com/publication-shop/app/catalog/ent/predicate"
-	"github.com/publication-shop/app/catalog/ent/publicationimg"
+	"github.com/xuanyiying/publication-shop/app/catalog/ent/predicate"
+	"github.com/xuanyiying/publication-shop/app/catalog/ent/publicationimg"
 )
 
 // PublicationImgUpdate is the builder for updating PublicationImg entities.

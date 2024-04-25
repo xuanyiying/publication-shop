@@ -8,7 +8,7 @@ import (
 
 	"entgo.io/ent"
 	"entgo.io/ent/dialect/sql"
-	"github.com/publication-shop/app/catalog/ent/publicationxlanguage"
+	"github.com/xuanyiying/publication-shop/app/catalog/ent/publicationxlanguage"
 )
 
 // PublicationXLanguage is the model entity for the PublicationXLanguage schema.

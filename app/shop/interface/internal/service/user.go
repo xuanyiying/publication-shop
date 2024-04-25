@@ -3,8 +3,8 @@ package service
 import (
 	"context"
 
-	v1 "github.com/publication-shop/api/shop/interface/v1"
-	"github.com/publication-shop/app/shop/interface/internal/biz"
+	v1 "github.com/xuanyiying/publication-shop/api/shop/interface/v1"
+	"github.com/xuanyiying/publication-shop/app/shop/interface/internal/biz"
 )
 
 func (s *ShopInterface) Register(ctx context.Context, req *v1.RegisterReq) (*v1.RegisterReply, error) {

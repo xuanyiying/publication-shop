@@ -8,7 +8,7 @@ import (
 
 	"entgo.io/ent/dialect/sql/sqlgraph"
 	"entgo.io/ent/schema/field"
-	"github.com/publication-shop/app/catalog/ent/classic"
+	"github.com/xuanyiying/publication-shop/app/catalog/ent/classic"
 )
 
 // ClassicCreate is the builder for creating a Classic entity.

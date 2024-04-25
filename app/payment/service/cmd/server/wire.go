@@ -6,11 +6,11 @@
 package main
 
 import (
-	"github.com/publication-shop/app/payment/service/internal/biz"
-	"github.com/publication-shop/app/payment/service/internal/conf"
-	"github.com/publication-shop/app/payment/service/internal/data"
-	"github.com/publication-shop/app/payment/service/internal/server"
-	"github.com/publication-shop/app/payment/service/internal/service"
+	"github.com/xuanyiying/publication-shop/app/payment/service/internal/biz"
+	"github.com/xuanyiying/publication-shop/app/payment/service/internal/conf"
+	"github.com/xuanyiying/publication-shop/app/payment/service/internal/data"
+	"github.com/xuanyiying/publication-shop/app/payment/service/internal/server"
+	"github.com/xuanyiying/publication-shop/app/payment/service/internal/service"
 
 	"github.com/go-kratos/kratos/v2"
 	"github.com/go-kratos/kratos/v2/log"

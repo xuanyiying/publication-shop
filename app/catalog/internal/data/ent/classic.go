@@ -8,7 +8,7 @@ import (
 
 	"entgo.io/ent"
 	"entgo.io/ent/dialect/sql"
-	"github.com/publication-shop/app/catalog/ent/classic"
+	"github.com/xuanyiying/publication-shop/app/catalog/ent/classic"
 )
 
 // Classic is the model entity for the Classic schema.

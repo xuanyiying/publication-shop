@@ -8,7 +8,7 @@ import (
 
 	"entgo.io/ent"
 	"entgo.io/ent/dialect/sql"
-	"github.com/publication-shop/app/catalog/ent/publicationimg"
+	"github.com/xuanyiying/publication-shop/app/catalog/ent/publicationimg"
 )
 
 // PublicationImg is the model entity for the PublicationImg schema.

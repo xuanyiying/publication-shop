@@ -7,11 +7,11 @@ import (
 	"fmt"
 	"log"
 
-	"github.com/publication-shop/app/user/service/internal/data/ent/migrate"
+	"github.com/xuanyiying/publication-shop/app/user/service/internal/data/ent/migrate"
 
-	"github.com/publication-shop/app/user/service/internal/data/ent/address"
-	"github.com/publication-shop/app/user/service/internal/data/ent/card"
-	"github.com/publication-shop/app/user/service/internal/data/ent/user"
+	"github.com/xuanyiying/publication-shop/app/user/service/internal/data/ent/address"
+	"github.com/xuanyiying/publication-shop/app/user/service/internal/data/ent/card"
+	"github.com/xuanyiying/publication-shop/app/user/service/internal/data/ent/user"
 
 	"entgo.io/ent/dialect"
 	"entgo.io/ent/dialect/sql"

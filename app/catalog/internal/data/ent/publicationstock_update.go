@@ -10,8 +10,8 @@ import (
 	"entgo.io/ent/dialect/sql"
 	"entgo.io/ent/dialect/sql/sqlgraph"
 	"entgo.io/ent/schema/field"
-	"github.com/publication-shop/app/catalog/ent/predicate"
-	"github.com/publication-shop/app/catalog/ent/publicationstock"
+	"github.com/xuanyiying/publication-shop/app/catalog/ent/predicate"
+	"github.com/xuanyiying/publication-shop/app/catalog/ent/publicationstock"
 )
 
 // PublicationStockUpdate is the builder for updating PublicationStock entities.

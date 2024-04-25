@@ -12,9 +12,9 @@ import (
 	"github.com/go-kratos/swagger-api/openapiv2"
 	jwtv5 "github.com/golang-jwt/jwt/v5"
 	"github.com/gorilla/handlers"
-	"github.com/publication-shop/api/shop/interface/v1"
-	"github.com/publication-shop/app/shop/interface/internal/conf"
-	"github.com/publication-shop/app/shop/interface/internal/service"
+	"github.com/xuanyiying/publication-shop/api/shop/interface/v1"
+	"github.com/xuanyiying/publication-shop/app/shop/interface/internal/conf"
+	"github.com/xuanyiying/publication-shop/app/shop/interface/internal/service"
 	tracesdk "go.opentelemetry.io/otel/sdk/trace"
 )
 

@@ -2,7 +2,7 @@ package biz
 
 import (
 	"github.com/go-kratos/kratos/v2/log"
-	usV1 "github.com/publication-shop/api/user/service/v1"
+	usV1 "github.com/xuanyiying/publication-shop/api/user/service/v1"
 )
 
 type User struct {

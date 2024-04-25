@@ -11,9 +11,9 @@ import (
 	"entgo.io/ent/dialect/sql"
 	"entgo.io/ent/dialect/sql/sqlgraph"
 	"entgo.io/ent/schema/field"
-	"github.com/publication-shop/app/user/service/internal/data/ent/card"
-	"github.com/publication-shop/app/user/service/internal/data/ent/predicate"
-	"github.com/publication-shop/app/user/service/internal/data/ent/user"
+	"github.com/xuanyiying/publication-shop/app/user/service/internal/data/ent/card"
+	"github.com/xuanyiying/publication-shop/app/user/service/internal/data/ent/predicate"
+	"github.com/xuanyiying/publication-shop/app/user/service/internal/data/ent/user"
 )
 
 // CardQuery is the builder for querying Card entities.

@@ -1,8 +1,8 @@
 package service
 
 import (
-	v1 "github.com/publication-shop/api/order/service/v1"
-	"github.com/publication-shop/app/order/service/internal/biz"
+	v1 "github.com/xuanyiying/publication-shop/api/order/service/v1"
+	"github.com/xuanyiying/publication-shop/app/order/service/internal/biz"
 
 	"github.com/go-kratos/kratos/v2/log"
 	"github.com/google/wire"

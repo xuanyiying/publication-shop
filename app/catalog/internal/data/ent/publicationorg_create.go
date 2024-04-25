@@ -10,7 +10,7 @@ import (
 
 	"entgo.io/ent/dialect/sql/sqlgraph"
 	"entgo.io/ent/schema/field"
-	"github.com/publication-shop/app/catalog/ent/publicationorg"
+	"github.com/xuanyiying/publication-shop/app/catalog/ent/publicationorg"
 )
 
 // PublicationOrgCreate is the builder for creating a PublicationOrg entity.

@@ -8,7 +8,7 @@ import (
 
 	"entgo.io/ent"
 	"entgo.io/ent/dialect/sql"
-	"github.com/publication-shop/app/catalog/ent/catalog"
+	"github.com/xuanyiying/publication-shop/app/catalog/ent/catalog"
 )
 
 // Catalog is the model entity for the Catalog schema.

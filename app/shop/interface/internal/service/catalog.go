@@ -2,7 +2,7 @@ package service
 
 import (
 	"context"
-	"github.com/publication-shop/api/shop/interface/v1"
+	"github.com/xuanyiying/publication-shop/api/shop/interface/v1"
 )
 
 func (s *ShopInterface) ListPublication(ctx context.Context, req *v1.ListPublicationReq) (*v1.ListPublicationReply, error) {

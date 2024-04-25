@@ -9,8 +9,8 @@ import (
 	"entgo.io/ent/dialect/sql"
 	"entgo.io/ent/dialect/sql/sqlgraph"
 	"entgo.io/ent/schema/field"
-	"github.com/publication-shop/app/user/service/internal/data/ent/address"
-	"github.com/publication-shop/app/user/service/internal/data/ent/predicate"
+	"github.com/xuanyiying/publication-shop/app/user/service/internal/data/ent/address"
+	"github.com/xuanyiying/publication-shop/app/user/service/internal/data/ent/predicate"
 )
 
 // AddressDelete is the builder for deleting a Address entity.

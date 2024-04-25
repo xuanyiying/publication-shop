@@ -8,9 +8,9 @@ import (
 	"github.com/go-kratos/kratos/v2/middleware/tracing"
 	"github.com/go-kratos/kratos/v2/transport/grpc"
 	jwt2 "github.com/golang-jwt/jwt/v4"
-	"github.com/publication-shop/api/user/service/v1"
-	"github.com/publication-shop/app/user/service/internal/conf"
-	"github.com/publication-shop/app/user/service/internal/service"
+	"github.com/xuanyiying/publication-shop/api/user/service/v1"
+	"github.com/xuanyiying/publication-shop/app/user/service/internal/conf"
+	"github.com/xuanyiying/publication-shop/app/user/service/internal/service"
 	tracesdk "go.opentelemetry.io/otel/sdk/trace"
 )
 

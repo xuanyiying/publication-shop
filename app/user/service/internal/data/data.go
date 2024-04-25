@@ -5,9 +5,9 @@ import (
 	"github.com/go-redis/redis/v8"
 	"time"
 
-	"github.com/publication-shop/app/user/service/internal/conf"
-	"github.com/publication-shop/app/user/service/internal/data/ent"
-	"github.com/publication-shop/app/user/service/internal/data/ent/migrate"
+	"github.com/xuanyiying/publication-shop/app/user/service/internal/conf"
+	"github.com/xuanyiying/publication-shop/app/user/service/internal/data/ent"
+	"github.com/xuanyiying/publication-shop/app/user/service/internal/data/ent/migrate"
 
 	"github.com/go-kratos/kratos/v2/log"
 	"github.com/google/wire"

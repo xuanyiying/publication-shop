@@ -5,10 +5,10 @@ package ent
 import (
 	"time"
 
-	"github.com/publication-shop/app/user/service/internal/data/ent/address"
-	"github.com/publication-shop/app/user/service/internal/data/ent/card"
-	"github.com/publication-shop/app/user/service/internal/data/ent/schema"
-	"github.com/publication-shop/app/user/service/internal/data/ent/user"
+	"github.com/xuanyiying/publication-shop/app/user/service/internal/data/ent/address"
+	"github.com/xuanyiying/publication-shop/app/user/service/internal/data/ent/card"
+	"github.com/xuanyiying/publication-shop/app/user/service/internal/data/ent/schema"
+	"github.com/xuanyiying/publication-shop/app/user/service/internal/data/ent/user"
 )
 
 // The init function reads all schema descriptors with runtime code

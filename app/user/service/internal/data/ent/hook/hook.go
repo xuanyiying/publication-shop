@@ -6,7 +6,7 @@ import (
 	"context"
 	"fmt"
 
-	"github.com/publication-shop/app/user/service/internal/data/ent"
+	"github.com/xuanyiying/publication-shop/app/user/service/internal/data/ent"
 )
 
 // The AddressFunc type is an adapter to allow the use of ordinary

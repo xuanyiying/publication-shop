@@ -3,12 +3,12 @@ package data
 import (
 	"context"
 
-	cartv1 "github.com/publication-shop/api/cart/service/v1"
-	catalogv1 "github.com/publication-shop/api/catalog/service/v1"
-	orderv1 "github.com/publication-shop/api/order/service/v1"
-	paymentv1 "github.com/publication-shop/api/payment/service/v1"
-	userv1 "github.com/publication-shop/api/user/service/v1"
-	"github.com/publication-shop/app/shop/interface/internal/conf"
+	cartv1 "github.com/xuanyiying/publication-shop/api/cart/service/v1"
+	catalogv1 "github.com/xuanyiying/publication-shop/api/catalog/service/v1"
+	orderv1 "github.com/xuanyiying/publication-shop/api/order/service/v1"
+	paymentv1 "github.com/xuanyiying/publication-shop/api/payment/service/v1"
+	userv1 "github.com/xuanyiying/publication-shop/api/user/service/v1"
+	"github.com/xuanyiying/publication-shop/app/shop/interface/internal/conf"
 
 	consul "github.com/go-kratos/kratos/contrib/registry/consul/v2"
 	"github.com/go-kratos/kratos/v2/log"

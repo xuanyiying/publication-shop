@@ -9,7 +9,7 @@ import (
 
 	"entgo.io/ent"
 	"entgo.io/ent/dialect/sql"
-	"github.com/publication-shop/app/catalog/ent/publicationinfo"
+	"github.com/xuanyiying/publication-shop/app/catalog/ent/publicationinfo"
 )
 
 // PublicationInfo is the model entity for the PublicationInfo schema.

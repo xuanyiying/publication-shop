@@ -10,8 +10,8 @@ import (
 
 	"entgo.io/ent/dialect/sql/sqlgraph"
 	"entgo.io/ent/schema/field"
-	"github.com/publication-shop/app/user/service/internal/data/ent/address"
-	"github.com/publication-shop/app/user/service/internal/data/ent/user"
+	"github.com/xuanyiying/publication-shop/app/user/service/internal/data/ent/address"
+	"github.com/xuanyiying/publication-shop/app/user/service/internal/data/ent/user"
 )
 
 // AddressCreate is the builder for creating a Address entity.

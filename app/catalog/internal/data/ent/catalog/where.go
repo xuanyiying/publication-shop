@@ -4,7 +4,7 @@ package catalog
 
 import (
 	"entgo.io/ent/dialect/sql"
-	"github.com/publication-shop/app/catalog/ent/predicate"
+	"github.com/xuanyiying/publication-shop/app/catalog/ent/predicate"
 )
 
 // ID filters vertices based on their ID field.

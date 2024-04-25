@@ -3,8 +3,8 @@ package service
 import (
 	"github.com/go-kratos/kratos/v2/log"
 	"github.com/google/wire"
-	v1 "github.com/publication-shop/api/payment/service/v1"
-	"github.com/publication-shop/app/payment/service/internal/biz"
+	v1 "github.com/xuanyiying/publication-shop/api/payment/service/v1"
+	"github.com/xuanyiying/publication-shop/app/payment/service/internal/biz"
 )
 
 // ProviderSet is service providers.

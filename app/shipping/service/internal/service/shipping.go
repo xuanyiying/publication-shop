@@ -2,8 +2,8 @@ package service
 
 import (
 	"context"
-	v1 "github.com/publication-shop/api/shipping/service/v1"
-	"github.com/publication-shop/app/shipping/service/internal/biz"
+	v1 "github.com/xuanyiying/publication-shop/api/shipping/service/v1"
+	"github.com/xuanyiying/publication-shop/app/shipping/service/internal/biz"
 )
 
 func (s *ShippingService) ShipOrder(ctx context.Context, req *v1.ShipOrderReq) (*v1.ShipOrderReply, error) {

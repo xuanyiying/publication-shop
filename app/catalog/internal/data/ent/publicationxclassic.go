@@ -8,7 +8,7 @@ import (
 
 	"entgo.io/ent"
 	"entgo.io/ent/dialect/sql"
-	"github.com/publication-shop/app/catalog/ent/publicationxclassic"
+	"github.com/xuanyiying/publication-shop/app/catalog/ent/publicationxclassic"
 )
 
 // PublicationXClassic is the model entity for the PublicationXClassic schema.

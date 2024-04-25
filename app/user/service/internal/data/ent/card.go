@@ -8,8 +8,8 @@ import (
 	"time"
 
 	"entgo.io/ent/dialect/sql"
-	"github.com/publication-shop/app/user/service/internal/data/ent/card"
-	"github.com/publication-shop/app/user/service/internal/data/ent/user"
+	"github.com/xuanyiying/publication-shop/app/user/service/internal/data/ent/card"
+	"github.com/xuanyiying/publication-shop/app/user/service/internal/data/ent/user"
 )
 
 // Card is the model entity for the Card schema.
