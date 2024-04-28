@@ -1549,7 +1549,7 @@ func (x *DeleteCardReply) GetOk() bool {
 	return false
 }
 
-type ListPublicationReq struct {
+type ListBookReq struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
@@ -1558,8 +1558,8 @@ type ListPublicationReq struct {
 	PageSize int64 `protobuf:"varint,2,opt,name=page_size,json=pageSize,proto3" json:"page_size,omitempty"`
 }
 
-func (x *ListPublicationReq) Reset() {
-	*x = ListPublicationReq{}
+func (x *ListBookReq) Reset() {
+	*x = ListBookReq{}
 	if protoimpl.UnsafeEnabled {
 		mi := &file_v1_shop_admin_proto_msgTypes[28]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -1567,13 +1567,13 @@ func (x *ListPublicationReq) Reset() {
 	}
 }
 
-func (x *ListPublicationReq) String() string {
+func (x *ListBookReq) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*ListPublicationReq) ProtoMessage() {}
+func (*ListBookReq) ProtoMessage() {}
 
-func (x *ListPublicationReq) ProtoReflect() protoreflect.Message {
+func (x *ListBookReq) ProtoReflect() protoreflect.Message {
 	mi := &file_v1_shop_admin_proto_msgTypes[28]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -1585,35 +1585,35 @@ func (x *ListPublicationReq) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use ListPublicationReq.ProtoReflect.Descriptor instead.
-func (*ListPublicationReq) Descriptor() ([]byte, []int) {
+// Deprecated: Use ListBookReq.ProtoReflect.Descriptor instead.
+func (*ListBookReq) Descriptor() ([]byte, []int) {
 	return file_v1_shop_admin_proto_rawDescGZIP(), []int{28}
 }
 
-func (x *ListPublicationReq) GetPageNum() int64 {
+func (x *ListBookReq) GetPageNum() int64 {
 	if x != nil {
 		return x.PageNum
 	}
 	return 0
 }
 
-func (x *ListPublicationReq) GetPageSize() int64 {
+func (x *ListBookReq) GetPageSize() int64 {
 	if x != nil {
 		return x.PageSize
 	}
 	return 0
 }
 
-type ListPublicationReply struct {
+type ListBookReply struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Results []*ListPublicationReply_Publication `protobuf:"bytes,1,rep,name=results,proto3" json:"results,omitempty"`
+	Results []*ListBookReply_Book `protobuf:"bytes,1,rep,name=results,proto3" json:"results,omitempty"`
 }
 
-func (x *ListPublicationReply) Reset() {
-	*x = ListPublicationReply{}
+func (x *ListBookReply) Reset() {
+	*x = ListBookReply{}
 	if protoimpl.UnsafeEnabled {
 		mi := &file_v1_shop_admin_proto_msgTypes[29]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -1621,13 +1621,13 @@ func (x *ListPublicationReply) Reset() {
 	}
 }
 
-func (x *ListPublicationReply) String() string {
+func (x *ListBookReply) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*ListPublicationReply) ProtoMessage() {}
+func (*ListBookReply) ProtoMessage() {}
 
-func (x *ListPublicationReply) ProtoReflect() protoreflect.Message {
+func (x *ListBookReply) ProtoReflect() protoreflect.Message {
 	mi := &file_v1_shop_admin_proto_msgTypes[29]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -1639,19 +1639,19 @@ func (x *ListPublicationReply) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use ListPublicationReply.ProtoReflect.Descriptor instead.
-func (*ListPublicationReply) Descriptor() ([]byte, []int) {
+// Deprecated: Use ListBookReply.ProtoReflect.Descriptor instead.
+func (*ListBookReply) Descriptor() ([]byte, []int) {
 	return file_v1_shop_admin_proto_rawDescGZIP(), []int{29}
 }
 
-func (x *ListPublicationReply) GetResults() []*ListPublicationReply_Publication {
+func (x *ListBookReply) GetResults() []*ListBookReply_Book {
 	if x != nil {
 		return x.Results
 	}
 	return nil
 }
 
-type GetPublicationReq struct {
+type GetBookReq struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
@@ -1659,8 +1659,8 @@ type GetPublicationReq struct {
 	Id int64 `protobuf:"varint,1,opt,name=id,proto3" json:"id,omitempty"`
 }
 
-func (x *GetPublicationReq) Reset() {
-	*x = GetPublicationReq{}
+func (x *GetBookReq) Reset() {
+	*x = GetBookReq{}
 	if protoimpl.UnsafeEnabled {
 		mi := &file_v1_shop_admin_proto_msgTypes[30]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -1668,13 +1668,13 @@ func (x *GetPublicationReq) Reset() {
 	}
 }
 
-func (x *GetPublicationReq) String() string {
+func (x *GetBookReq) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*GetPublicationReq) ProtoMessage() {}
+func (*GetBookReq) ProtoMessage() {}
 
-func (x *GetPublicationReq) ProtoReflect() protoreflect.Message {
+func (x *GetBookReq) ProtoReflect() protoreflect.Message {
 	mi := &file_v1_shop_admin_proto_msgTypes[30]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -1686,32 +1686,32 @@ func (x *GetPublicationReq) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use GetPublicationReq.ProtoReflect.Descriptor instead.
-func (*GetPublicationReq) Descriptor() ([]byte, []int) {
+// Deprecated: Use GetBookReq.ProtoReflect.Descriptor instead.
+func (*GetBookReq) Descriptor() ([]byte, []int) {
 	return file_v1_shop_admin_proto_rawDescGZIP(), []int{30}
 }
 
-func (x *GetPublicationReq) GetId() int64 {
+func (x *GetBookReq) GetId() int64 {
 	if x != nil {
 		return x.Id
 	}
 	return 0
 }
 
-type GetPublicationReply struct {
+type GetBookReply struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Id          int64                        `protobuf:"varint,1,opt,name=id,proto3" json:"id,omitempty"`
-	Name        string                       `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`
-	Description string                       `protobuf:"bytes,3,opt,name=description,proto3" json:"description,omitempty"`
-	Count       int64                        `protobuf:"varint,4,opt,name=count,proto3" json:"count,omitempty"`
-	Image       []*GetPublicationReply_Image `protobuf:"bytes,5,rep,name=image,proto3" json:"image,omitempty"`
+	Id          int64                 `protobuf:"varint,1,opt,name=id,proto3" json:"id,omitempty"`
+	Name        string                `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`
+	Description string                `protobuf:"bytes,3,opt,name=description,proto3" json:"description,omitempty"`
+	Count       int64                 `protobuf:"varint,4,opt,name=count,proto3" json:"count,omitempty"`
+	Image       []*GetBookReply_Image `protobuf:"bytes,5,rep,name=image,proto3" json:"image,omitempty"`
 }
 
-func (x *GetPublicationReply) Reset() {
-	*x = GetPublicationReply{}
+func (x *GetBookReply) Reset() {
+	*x = GetBookReply{}
 	if protoimpl.UnsafeEnabled {
 		mi := &file_v1_shop_admin_proto_msgTypes[31]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -1719,13 +1719,13 @@ func (x *GetPublicationReply) Reset() {
 	}
 }
 
-func (x *GetPublicationReply) String() string {
+func (x *GetBookReply) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*GetPublicationReply) ProtoMessage() {}
+func (*GetBookReply) ProtoMessage() {}
 
-func (x *GetPublicationReply) ProtoReflect() protoreflect.Message {
+func (x *GetBookReply) ProtoReflect() protoreflect.Message {
 	mi := &file_v1_shop_admin_proto_msgTypes[31]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -1737,40 +1737,40 @@ func (x *GetPublicationReply) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use GetPublicationReply.ProtoReflect.Descriptor instead.
-func (*GetPublicationReply) Descriptor() ([]byte, []int) {
+// Deprecated: Use GetBookReply.ProtoReflect.Descriptor instead.
+func (*GetBookReply) Descriptor() ([]byte, []int) {
 	return file_v1_shop_admin_proto_rawDescGZIP(), []int{31}
 }
 
-func (x *GetPublicationReply) GetId() int64 {
+func (x *GetBookReply) GetId() int64 {
 	if x != nil {
 		return x.Id
 	}
 	return 0
 }
 
-func (x *GetPublicationReply) GetName() string {
+func (x *GetBookReply) GetName() string {
 	if x != nil {
 		return x.Name
 	}
 	return ""
 }
 
-func (x *GetPublicationReply) GetDescription() string {
+func (x *GetBookReply) GetDescription() string {
 	if x != nil {
 		return x.Description
 	}
 	return ""
 }
 
-func (x *GetPublicationReply) GetCount() int64 {
+func (x *GetBookReply) GetCount() int64 {
 	if x != nil {
 		return x.Count
 	}
 	return 0
 }
 
-func (x *GetPublicationReply) GetImage() []*GetPublicationReply_Image {
+func (x *GetBookReply) GetImage() []*GetBookReply_Image {
 	if x != nil {
 		return x.Image
 	}
@@ -2191,19 +2191,19 @@ func (*GetOrderReply) Descriptor() ([]byte, []int) {
 	return file_v1_shop_admin_proto_rawDescGZIP(), []int{41}
 }
 
-type CreatePublicationReq struct {
+type CreateBookReq struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Name        string                        `protobuf:"bytes,1,opt,name=name,proto3" json:"name,omitempty"`
-	Description string                        `protobuf:"bytes,2,opt,name=description,proto3" json:"description,omitempty"`
-	Count       int64                         `protobuf:"varint,3,opt,name=count,proto3" json:"count,omitempty"`
-	Image       []*CreatePublicationReq_Image `protobuf:"bytes,4,rep,name=image,proto3" json:"image,omitempty"`
+	Name        string                 `protobuf:"bytes,1,opt,name=name,proto3" json:"name,omitempty"`
+	Description string                 `protobuf:"bytes,2,opt,name=description,proto3" json:"description,omitempty"`
+	Count       int64                  `protobuf:"varint,3,opt,name=count,proto3" json:"count,omitempty"`
+	Image       []*CreateBookReq_Image `protobuf:"bytes,4,rep,name=image,proto3" json:"image,omitempty"`
 }
 
-func (x *CreatePublicationReq) Reset() {
-	*x = CreatePublicationReq{}
+func (x *CreateBookReq) Reset() {
+	*x = CreateBookReq{}
 	if protoimpl.UnsafeEnabled {
 		mi := &file_v1_shop_admin_proto_msgTypes[42]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -2211,13 +2211,13 @@ func (x *CreatePublicationReq) Reset() {
 	}
 }
 
-func (x *CreatePublicationReq) String() string {
+func (x *CreateBookReq) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*CreatePublicationReq) ProtoMessage() {}
+func (*CreateBookReq) ProtoMessage() {}
 
-func (x *CreatePublicationReq) ProtoReflect() protoreflect.Message {
+func (x *CreateBookReq) ProtoReflect() protoreflect.Message {
 	mi := &file_v1_shop_admin_proto_msgTypes[42]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -2229,47 +2229,47 @@ func (x *CreatePublicationReq) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use CreatePublicationReq.ProtoReflect.Descriptor instead.
-func (*CreatePublicationReq) Descriptor() ([]byte, []int) {
+// Deprecated: Use CreateBookReq.ProtoReflect.Descriptor instead.
+func (*CreateBookReq) Descriptor() ([]byte, []int) {
 	return file_v1_shop_admin_proto_rawDescGZIP(), []int{42}
 }
 
-func (x *CreatePublicationReq) GetName() string {
+func (x *CreateBookReq) GetName() string {
 	if x != nil {
 		return x.Name
 	}
 	return ""
 }
 
-func (x *CreatePublicationReq) GetDescription() string {
+func (x *CreateBookReq) GetDescription() string {
 	if x != nil {
 		return x.Description
 	}
 	return ""
 }
 
-func (x *CreatePublicationReq) GetCount() int64 {
+func (x *CreateBookReq) GetCount() int64 {
 	if x != nil {
 		return x.Count
 	}
 	return 0
 }
 
-func (x *CreatePublicationReq) GetImage() []*CreatePublicationReq_Image {
+func (x *CreateBookReq) GetImage() []*CreateBookReq_Image {
 	if x != nil {
 		return x.Image
 	}
 	return nil
 }
 
-type CreatePublicationReply struct {
+type CreateBookReply struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 }
 
-func (x *CreatePublicationReply) Reset() {
-	*x = CreatePublicationReply{}
+func (x *CreateBookReply) Reset() {
+	*x = CreateBookReply{}
 	if protoimpl.UnsafeEnabled {
 		mi := &file_v1_shop_admin_proto_msgTypes[43]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -2277,13 +2277,13 @@ func (x *CreatePublicationReply) Reset() {
 	}
 }
 
-func (x *CreatePublicationReply) String() string {
+func (x *CreateBookReply) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*CreatePublicationReply) ProtoMessage() {}
+func (*CreateBookReply) ProtoMessage() {}
 
-func (x *CreatePublicationReply) ProtoReflect() protoreflect.Message {
+func (x *CreateBookReply) ProtoReflect() protoreflect.Message {
 	mi := &file_v1_shop_admin_proto_msgTypes[43]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -2295,25 +2295,25 @@ func (x *CreatePublicationReply) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use CreatePublicationReply.ProtoReflect.Descriptor instead.
-func (*CreatePublicationReply) Descriptor() ([]byte, []int) {
+// Deprecated: Use CreateBookReply.ProtoReflect.Descriptor instead.
+func (*CreateBookReply) Descriptor() ([]byte, []int) {
 	return file_v1_shop_admin_proto_rawDescGZIP(), []int{43}
 }
 
-type UpdatePublicationReq struct {
+type UpdateBookReq struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Id          int64                         `protobuf:"varint,1,opt,name=id,proto3" json:"id,omitempty"`
-	Name        string                        `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`
-	Description string                        `protobuf:"bytes,3,opt,name=description,proto3" json:"description,omitempty"`
-	Count       int64                         `protobuf:"varint,4,opt,name=count,proto3" json:"count,omitempty"`
-	Image       []*UpdatePublicationReq_Image `protobuf:"bytes,5,rep,name=image,proto3" json:"image,omitempty"`
+	Id          int64                  `protobuf:"varint,1,opt,name=id,proto3" json:"id,omitempty"`
+	Name        string                 `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`
+	Description string                 `protobuf:"bytes,3,opt,name=description,proto3" json:"description,omitempty"`
+	Count       int64                  `protobuf:"varint,4,opt,name=count,proto3" json:"count,omitempty"`
+	Image       []*UpdateBookReq_Image `protobuf:"bytes,5,rep,name=image,proto3" json:"image,omitempty"`
 }
 
-func (x *UpdatePublicationReq) Reset() {
-	*x = UpdatePublicationReq{}
+func (x *UpdateBookReq) Reset() {
+	*x = UpdateBookReq{}
 	if protoimpl.UnsafeEnabled {
 		mi := &file_v1_shop_admin_proto_msgTypes[44]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -2321,13 +2321,13 @@ func (x *UpdatePublicationReq) Reset() {
 	}
 }
 
-func (x *UpdatePublicationReq) String() string {
+func (x *UpdateBookReq) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*UpdatePublicationReq) ProtoMessage() {}
+func (*UpdateBookReq) ProtoMessage() {}
 
-func (x *UpdatePublicationReq) ProtoReflect() protoreflect.Message {
+func (x *UpdateBookReq) ProtoReflect() protoreflect.Message {
 	mi := &file_v1_shop_admin_proto_msgTypes[44]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -2339,54 +2339,54 @@ func (x *UpdatePublicationReq) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use UpdatePublicationReq.ProtoReflect.Descriptor instead.
-func (*UpdatePublicationReq) Descriptor() ([]byte, []int) {
+// Deprecated: Use UpdateBookReq.ProtoReflect.Descriptor instead.
+func (*UpdateBookReq) Descriptor() ([]byte, []int) {
 	return file_v1_shop_admin_proto_rawDescGZIP(), []int{44}
 }
 
-func (x *UpdatePublicationReq) GetId() int64 {
+func (x *UpdateBookReq) GetId() int64 {
 	if x != nil {
 		return x.Id
 	}
 	return 0
 }
 
-func (x *UpdatePublicationReq) GetName() string {
+func (x *UpdateBookReq) GetName() string {
 	if x != nil {
 		return x.Name
 	}
 	return ""
 }
 
-func (x *UpdatePublicationReq) GetDescription() string {
+func (x *UpdateBookReq) GetDescription() string {
 	if x != nil {
 		return x.Description
 	}
 	return ""
 }
 
-func (x *UpdatePublicationReq) GetCount() int64 {
+func (x *UpdateBookReq) GetCount() int64 {
 	if x != nil {
 		return x.Count
 	}
 	return 0
 }
 
-func (x *UpdatePublicationReq) GetImage() []*UpdatePublicationReq_Image {
+func (x *UpdateBookReq) GetImage() []*UpdateBookReq_Image {
 	if x != nil {
 		return x.Image
 	}
 	return nil
 }
 
-type UpdatePublicationReply struct {
+type UpdateBookReply struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 }
 
-func (x *UpdatePublicationReply) Reset() {
-	*x = UpdatePublicationReply{}
+func (x *UpdateBookReply) Reset() {
+	*x = UpdateBookReply{}
 	if protoimpl.UnsafeEnabled {
 		mi := &file_v1_shop_admin_proto_msgTypes[45]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -2394,13 +2394,13 @@ func (x *UpdatePublicationReply) Reset() {
 	}
 }
 
-func (x *UpdatePublicationReply) String() string {
+func (x *UpdateBookReply) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*UpdatePublicationReply) ProtoMessage() {}
+func (*UpdateBookReply) ProtoMessage() {}
 
-func (x *UpdatePublicationReply) ProtoReflect() protoreflect.Message {
+func (x *UpdateBookReply) ProtoReflect() protoreflect.Message {
 	mi := &file_v1_shop_admin_proto_msgTypes[45]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -2412,12 +2412,12 @@ func (x *UpdatePublicationReply) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use UpdatePublicationReply.ProtoReflect.Descriptor instead.
-func (*UpdatePublicationReply) Descriptor() ([]byte, []int) {
+// Deprecated: Use UpdateBookReply.ProtoReflect.Descriptor instead.
+func (*UpdateBookReply) Descriptor() ([]byte, []int) {
 	return file_v1_shop_admin_proto_rawDescGZIP(), []int{45}
 }
 
-type DeletePublicationReq struct {
+type DeleteBookReq struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
@@ -2425,8 +2425,8 @@ type DeletePublicationReq struct {
 	Id int64 `protobuf:"varint,1,opt,name=id,proto3" json:"id,omitempty"`
 }
 
-func (x *DeletePublicationReq) Reset() {
-	*x = DeletePublicationReq{}
+func (x *DeleteBookReq) Reset() {
+	*x = DeleteBookReq{}
 	if protoimpl.UnsafeEnabled {
 		mi := &file_v1_shop_admin_proto_msgTypes[46]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -2434,13 +2434,13 @@ func (x *DeletePublicationReq) Reset() {
 	}
 }
 
-func (x *DeletePublicationReq) String() string {
+func (x *DeleteBookReq) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*DeletePublicationReq) ProtoMessage() {}
+func (*DeleteBookReq) ProtoMessage() {}
 
-func (x *DeletePublicationReq) ProtoReflect() protoreflect.Message {
+func (x *DeleteBookReq) ProtoReflect() protoreflect.Message {
 	mi := &file_v1_shop_admin_proto_msgTypes[46]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -2452,26 +2452,26 @@ func (x *DeletePublicationReq) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use DeletePublicationReq.ProtoReflect.Descriptor instead.
-func (*DeletePublicationReq) Descriptor() ([]byte, []int) {
+// Deprecated: Use DeleteBookReq.ProtoReflect.Descriptor instead.
+func (*DeleteBookReq) Descriptor() ([]byte, []int) {
 	return file_v1_shop_admin_proto_rawDescGZIP(), []int{46}
 }
 
-func (x *DeletePublicationReq) GetId() int64 {
+func (x *DeleteBookReq) GetId() int64 {
 	if x != nil {
 		return x.Id
 	}
 	return 0
 }
 
-type DeletePublicationReply struct {
+type DeleteBookReply struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 }
 
-func (x *DeletePublicationReply) Reset() {
-	*x = DeletePublicationReply{}
+func (x *DeleteBookReply) Reset() {
+	*x = DeleteBookReply{}
 	if protoimpl.UnsafeEnabled {
 		mi := &file_v1_shop_admin_proto_msgTypes[47]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -2479,13 +2479,13 @@ func (x *DeletePublicationReply) Reset() {
 	}
 }
 
-func (x *DeletePublicationReply) String() string {
+func (x *DeleteBookReply) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*DeletePublicationReply) ProtoMessage() {}
+func (*DeleteBookReply) ProtoMessage() {}
 
-func (x *DeletePublicationReply) ProtoReflect() protoreflect.Message {
+func (x *DeleteBookReply) ProtoReflect() protoreflect.Message {
 	mi := &file_v1_shop_admin_proto_msgTypes[47]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -2497,8 +2497,8 @@ func (x *DeletePublicationReply) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use DeletePublicationReply.ProtoReflect.Descriptor instead.
-func (*DeletePublicationReply) Descriptor() ([]byte, []int) {
+// Deprecated: Use DeleteBookReply.ProtoReflect.Descriptor instead.
+func (*DeleteBookReply) Descriptor() ([]byte, []int) {
 	return file_v1_shop_admin_proto_rawDescGZIP(), []int{47}
 }
 
@@ -2668,20 +2668,20 @@ func (x *ListCardReply_Card) GetExpires() string {
 	return ""
 }
 
-type ListPublicationReply_Publication struct {
+type ListBookReply_Book struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Id          int64                                     `protobuf:"varint,1,opt,name=id,proto3" json:"id,omitempty"`
-	Name        string                                    `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`
-	Description string                                    `protobuf:"bytes,3,opt,name=description,proto3" json:"description,omitempty"`
-	Count       int64                                     `protobuf:"varint,4,opt,name=count,proto3" json:"count,omitempty"`
-	Image       []*ListPublicationReply_Publication_Image `protobuf:"bytes,5,rep,name=image,proto3" json:"image,omitempty"`
+	Id          int64                       `protobuf:"varint,1,opt,name=id,proto3" json:"id,omitempty"`
+	Name        string                      `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`
+	Description string                      `protobuf:"bytes,3,opt,name=description,proto3" json:"description,omitempty"`
+	Count       int64                       `protobuf:"varint,4,opt,name=count,proto3" json:"count,omitempty"`
+	Image       []*ListBookReply_Book_Image `protobuf:"bytes,5,rep,name=image,proto3" json:"image,omitempty"`
 }
 
-func (x *ListPublicationReply_Publication) Reset() {
-	*x = ListPublicationReply_Publication{}
+func (x *ListBookReply_Book) Reset() {
+	*x = ListBookReply_Book{}
 	if protoimpl.UnsafeEnabled {
 		mi := &file_v1_shop_admin_proto_msgTypes[50]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -2689,13 +2689,13 @@ func (x *ListPublicationReply_Publication) Reset() {
 	}
 }
 
-func (x *ListPublicationReply_Publication) String() string {
+func (x *ListBookReply_Book) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*ListPublicationReply_Publication) ProtoMessage() {}
+func (*ListBookReply_Book) ProtoMessage() {}
 
-func (x *ListPublicationReply_Publication) ProtoReflect() protoreflect.Message {
+func (x *ListBookReply_Book) ProtoReflect() protoreflect.Message {
 	mi := &file_v1_shop_admin_proto_msgTypes[50]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -2707,47 +2707,47 @@ func (x *ListPublicationReply_Publication) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use ListPublicationReply_Publication.ProtoReflect.Descriptor instead.
-func (*ListPublicationReply_Publication) Descriptor() ([]byte, []int) {
+// Deprecated: Use ListBookReply_Book.ProtoReflect.Descriptor instead.
+func (*ListBookReply_Book) Descriptor() ([]byte, []int) {
 	return file_v1_shop_admin_proto_rawDescGZIP(), []int{29, 0}
 }
 
-func (x *ListPublicationReply_Publication) GetId() int64 {
+func (x *ListBookReply_Book) GetId() int64 {
 	if x != nil {
 		return x.Id
 	}
 	return 0
 }
 
-func (x *ListPublicationReply_Publication) GetName() string {
+func (x *ListBookReply_Book) GetName() string {
 	if x != nil {
 		return x.Name
 	}
 	return ""
 }
 
-func (x *ListPublicationReply_Publication) GetDescription() string {
+func (x *ListBookReply_Book) GetDescription() string {
 	if x != nil {
 		return x.Description
 	}
 	return ""
 }
 
-func (x *ListPublicationReply_Publication) GetCount() int64 {
+func (x *ListBookReply_Book) GetCount() int64 {
 	if x != nil {
 		return x.Count
 	}
 	return 0
 }
 
-func (x *ListPublicationReply_Publication) GetImage() []*ListPublicationReply_Publication_Image {
+func (x *ListBookReply_Book) GetImage() []*ListBookReply_Book_Image {
 	if x != nil {
 		return x.Image
 	}
 	return nil
 }
 
-type ListPublicationReply_Publication_Image struct {
+type ListBookReply_Book_Image struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
@@ -2755,8 +2755,8 @@ type ListPublicationReply_Publication_Image struct {
 	Url string `protobuf:"bytes,1,opt,name=url,proto3" json:"url,omitempty"`
 }
 
-func (x *ListPublicationReply_Publication_Image) Reset() {
-	*x = ListPublicationReply_Publication_Image{}
+func (x *ListBookReply_Book_Image) Reset() {
+	*x = ListBookReply_Book_Image{}
 	if protoimpl.UnsafeEnabled {
 		mi := &file_v1_shop_admin_proto_msgTypes[51]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -2764,13 +2764,13 @@ func (x *ListPublicationReply_Publication_Image) Reset() {
 	}
 }
 
-func (x *ListPublicationReply_Publication_Image) String() string {
+func (x *ListBookReply_Book_Image) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*ListPublicationReply_Publication_Image) ProtoMessage() {}
+func (*ListBookReply_Book_Image) ProtoMessage() {}
 
-func (x *ListPublicationReply_Publication_Image) ProtoReflect() protoreflect.Message {
+func (x *ListBookReply_Book_Image) ProtoReflect() protoreflect.Message {
 	mi := &file_v1_shop_admin_proto_msgTypes[51]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -2782,19 +2782,19 @@ func (x *ListPublicationReply_Publication_Image) ProtoReflect() protoreflect.Mes
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use ListPublicationReply_Publication_Image.ProtoReflect.Descriptor instead.
-func (*ListPublicationReply_Publication_Image) Descriptor() ([]byte, []int) {
+// Deprecated: Use ListBookReply_Book_Image.ProtoReflect.Descriptor instead.
+func (*ListBookReply_Book_Image) Descriptor() ([]byte, []int) {
 	return file_v1_shop_admin_proto_rawDescGZIP(), []int{29, 0, 0}
 }
 
-func (x *ListPublicationReply_Publication_Image) GetUrl() string {
+func (x *ListBookReply_Book_Image) GetUrl() string {
 	if x != nil {
 		return x.Url
 	}
 	return ""
 }
 
-type GetPublicationReply_Image struct {
+type GetBookReply_Image struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
@@ -2802,8 +2802,8 @@ type GetPublicationReply_Image struct {
 	Url string `protobuf:"bytes,1,opt,name=url,proto3" json:"url,omitempty"`
 }
 
-func (x *GetPublicationReply_Image) Reset() {
-	*x = GetPublicationReply_Image{}
+func (x *GetBookReply_Image) Reset() {
+	*x = GetBookReply_Image{}
 	if protoimpl.UnsafeEnabled {
 		mi := &file_v1_shop_admin_proto_msgTypes[52]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -2811,13 +2811,13 @@ func (x *GetPublicationReply_Image) Reset() {
 	}
 }
 
-func (x *GetPublicationReply_Image) String() string {
+func (x *GetBookReply_Image) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*GetPublicationReply_Image) ProtoMessage() {}
+func (*GetBookReply_Image) ProtoMessage() {}
 
-func (x *GetPublicationReply_Image) ProtoReflect() protoreflect.Message {
+func (x *GetBookReply_Image) ProtoReflect() protoreflect.Message {
 	mi := &file_v1_shop_admin_proto_msgTypes[52]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -2829,19 +2829,19 @@ func (x *GetPublicationReply_Image) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use GetPublicationReply_Image.ProtoReflect.Descriptor instead.
-func (*GetPublicationReply_Image) Descriptor() ([]byte, []int) {
+// Deprecated: Use GetBookReply_Image.ProtoReflect.Descriptor instead.
+func (*GetBookReply_Image) Descriptor() ([]byte, []int) {
 	return file_v1_shop_admin_proto_rawDescGZIP(), []int{31, 0}
 }
 
-func (x *GetPublicationReply_Image) GetUrl() string {
+func (x *GetBookReply_Image) GetUrl() string {
 	if x != nil {
 		return x.Url
 	}
 	return ""
 }
 
-type CreatePublicationReq_Image struct {
+type CreateBookReq_Image struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
@@ -2849,8 +2849,8 @@ type CreatePublicationReq_Image struct {
 	Url string `protobuf:"bytes,1,opt,name=url,proto3" json:"url,omitempty"`
 }
 
-func (x *CreatePublicationReq_Image) Reset() {
-	*x = CreatePublicationReq_Image{}
+func (x *CreateBookReq_Image) Reset() {
+	*x = CreateBookReq_Image{}
 	if protoimpl.UnsafeEnabled {
 		mi := &file_v1_shop_admin_proto_msgTypes[53]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -2858,13 +2858,13 @@ func (x *CreatePublicationReq_Image) Reset() {
 	}
 }
 
-func (x *CreatePublicationReq_Image) String() string {
+func (x *CreateBookReq_Image) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*CreatePublicationReq_Image) ProtoMessage() {}
+func (*CreateBookReq_Image) ProtoMessage() {}
 
-func (x *CreatePublicationReq_Image) ProtoReflect() protoreflect.Message {
+func (x *CreateBookReq_Image) ProtoReflect() protoreflect.Message {
 	mi := &file_v1_shop_admin_proto_msgTypes[53]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -2876,19 +2876,19 @@ func (x *CreatePublicationReq_Image) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use CreatePublicationReq_Image.ProtoReflect.Descriptor instead.
-func (*CreatePublicationReq_Image) Descriptor() ([]byte, []int) {
+// Deprecated: Use CreateBookReq_Image.ProtoReflect.Descriptor instead.
+func (*CreateBookReq_Image) Descriptor() ([]byte, []int) {
 	return file_v1_shop_admin_proto_rawDescGZIP(), []int{42, 0}
 }
 
-func (x *CreatePublicationReq_Image) GetUrl() string {
+func (x *CreateBookReq_Image) GetUrl() string {
 	if x != nil {
 		return x.Url
 	}
 	return ""
 }
 
-type UpdatePublicationReq_Image struct {
+type UpdateBookReq_Image struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
@@ -2896,8 +2896,8 @@ type UpdatePublicationReq_Image struct {
 	Url string `protobuf:"bytes,1,opt,name=url,proto3" json:"url,omitempty"`
 }
 
-func (x *UpdatePublicationReq_Image) Reset() {
-	*x = UpdatePublicationReq_Image{}
+func (x *UpdateBookReq_Image) Reset() {
+	*x = UpdateBookReq_Image{}
 	if protoimpl.UnsafeEnabled {
 		mi := &file_v1_shop_admin_proto_msgTypes[54]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -2905,13 +2905,13 @@ func (x *UpdatePublicationReq_Image) Reset() {
 	}
 }
 
-func (x *UpdatePublicationReq_Image) String() string {
+func (x *UpdateBookReq_Image) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*UpdatePublicationReq_Image) ProtoMessage() {}
+func (*UpdateBookReq_Image) ProtoMessage() {}
 
-func (x *UpdatePublicationReq_Image) ProtoReflect() protoreflect.Message {
+func (x *UpdateBookReq_Image) ProtoReflect() protoreflect.Message {
 	mi := &file_v1_shop_admin_proto_msgTypes[54]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -2923,12 +2923,12 @@ func (x *UpdatePublicationReq_Image) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use UpdatePublicationReq_Image.ProtoReflect.Descriptor instead.
-func (*UpdatePublicationReq_Image) Descriptor() ([]byte, []int) {
+// Deprecated: Use UpdateBookReq_Image.ProtoReflect.Descriptor instead.
+func (*UpdateBookReq_Image) Descriptor() ([]byte, []int) {
 	return file_v1_shop_admin_proto_rawDescGZIP(), []int{44, 0}
 }
 
-func (x *UpdatePublicationReq_Image) GetUrl() string {
+func (x *UpdateBookReq_Image) GetUrl() string {
 	if x != nil {
 		return x.Url
 	}
@@ -3236,86 +3236,86 @@ func file_v1_shop_admin_proto_rawDescGZIP() []byte {
 
 var file_v1_shop_admin_proto_msgTypes = make([]protoimpl.MessageInfo, 55)
 var file_v1_shop_admin_proto_goTypes = []interface{}{
-	(*RegisterReq)(nil),                            // 0: shop.admin.v1.RegisterReq
-	(*RegisterReply)(nil),                          // 1: shop.admin.v1.RegisterReply
-	(*LoginReq)(nil),                               // 2: shop.admin.v1.LoginReq
-	(*LoginReply)(nil),                             // 3: shop.admin.v1.LoginReply
-	(*LogoutReq)(nil),                              // 4: shop.admin.v1.LogoutReq
-	(*LogoutReply)(nil),                            // 5: shop.admin.v1.LogoutReply
-	(*GetUserReq)(nil),                             // 6: shop.admin.v1.GetUserReq
-	(*GetUserReply)(nil),                           // 7: shop.admin.v1.GetUserReply
-	(*ListUserReq)(nil),                            // 8: shop.admin.v1.ListUserReq
-	(*ListUserReply)(nil),                          // 9: shop.admin.v1.ListUserReply
-	(*CreateUserReq)(nil),                          // 10: shop.admin.v1.CreateUserReq
-	(*CreateUserReply)(nil),                        // 11: shop.admin.v1.CreateUserReply
-	(*VerifyPasswordReq)(nil),                      // 12: shop.admin.v1.VerifyPasswordReq
-	(*VerifyPasswordReply)(nil),                    // 13: shop.admin.v1.VerifyPasswordReply
-	(*ListAddressReq)(nil),                         // 14: shop.admin.v1.ListAddressReq
-	(*ListAddressReply)(nil),                       // 15: shop.admin.v1.ListAddressReply
-	(*CreateAddressReq)(nil),                       // 16: shop.admin.v1.CreateAddressReq
-	(*CreateAddressReply)(nil),                     // 17: shop.admin.v1.CreateAddressReply
-	(*GetAddressReq)(nil),                          // 18: shop.admin.v1.GetAddressReq
-	(*GetAddressReply)(nil),                        // 19: shop.admin.v1.GetAddressReply
-	(*ListCardReq)(nil),                            // 20: shop.admin.v1.ListCardReq
-	(*ListCardReply)(nil),                          // 21: shop.admin.v1.ListCardReply
-	(*CreateCardReq)(nil),                          // 22: shop.admin.v1.CreateCardReq
-	(*CreateCardReply)(nil),                        // 23: shop.admin.v1.CreateCardReply
-	(*GetCardReq)(nil),                             // 24: shop.admin.v1.GetCardReq
-	(*GetCardReply)(nil),                           // 25: shop.admin.v1.GetCardReply
-	(*DeleteCardReq)(nil),                          // 26: shop.admin.v1.DeleteCardReq
-	(*DeleteCardReply)(nil),                        // 27: shop.admin.v1.DeleteCardReply
-	(*ListPublicationReq)(nil),                     // 28: shop.admin.v1.ListPublicationReq
-	(*ListPublicationReply)(nil),                   // 29: shop.admin.v1.ListPublicationReply
-	(*GetPublicationReq)(nil),                      // 30: shop.admin.v1.GetPublicationReq
-	(*GetPublicationReply)(nil),                    // 31: shop.admin.v1.GetPublicationReply
-	(*ListCartItemReq)(nil),                        // 32: shop.admin.v1.ListCartItemReq
-	(*ListCartItemReply)(nil),                      // 33: shop.admin.v1.ListCartItemReply
-	(*AddCartItemReq)(nil),                         // 34: shop.admin.v1.AddCartItemReq
-	(*AddCartItemReply)(nil),                       // 35: shop.admin.v1.AddCartItemReply
-	(*CreateOrderReq)(nil),                         // 36: shop.admin.v1.CreateOrderReq
-	(*CreateOrderReply)(nil),                       // 37: shop.admin.v1.CreateOrderReply
-	(*ListOrderReq)(nil),                           // 38: shop.admin.v1.ListOrderReq
-	(*ListOrderReply)(nil),                         // 39: shop.admin.v1.ListOrderReply
-	(*GetOrderReq)(nil),                            // 40: shop.admin.v1.GetOrderReq
-	(*GetOrderReply)(nil),                          // 41: shop.admin.v1.GetOrderReply
-	(*CreatePublicationReq)(nil),                   // 42: shop.admin.v1.CreatePublicationReq
-	(*CreatePublicationReply)(nil),                 // 43: shop.admin.v1.CreatePublicationReply
-	(*UpdatePublicationReq)(nil),                   // 44: shop.admin.v1.UpdatePublicationReq
-	(*UpdatePublicationReply)(nil),                 // 45: shop.admin.v1.UpdatePublicationReply
-	(*DeletePublicationReq)(nil),                   // 46: shop.admin.v1.DeletePublicationReq
-	(*DeletePublicationReply)(nil),                 // 47: shop.admin.v1.DeletePublicationReply
-	(*ListAddressReply_Address)(nil),               // 48: shop.admin.v1.ListAddressReply.Address
-	(*ListCardReply_Card)(nil),                     // 49: shop.admin.v1.ListCardReply.Card
-	(*ListPublicationReply_Publication)(nil),       // 50: shop.admin.v1.ListPublicationReply.Publication
-	(*ListPublicationReply_Publication_Image)(nil), // 51: shop.admin.v1.ListPublicationReply.Publication.Image
-	(*GetPublicationReply_Image)(nil),              // 52: shop.admin.v1.GetPublicationReply.Image
-	(*CreatePublicationReq_Image)(nil),             // 53: shop.admin.v1.CreatePublicationReq.Image
-	(*UpdatePublicationReq_Image)(nil),             // 54: shop.admin.v1.UpdatePublicationReq.Image
+	(*RegisterReq)(nil),              // 0: shop.admin.v1.RegisterReq
+	(*RegisterReply)(nil),            // 1: shop.admin.v1.RegisterReply
+	(*LoginReq)(nil),                 // 2: shop.admin.v1.LoginReq
+	(*LoginReply)(nil),               // 3: shop.admin.v1.LoginReply
+	(*LogoutReq)(nil),                // 4: shop.admin.v1.LogoutReq
+	(*LogoutReply)(nil),              // 5: shop.admin.v1.LogoutReply
+	(*GetUserReq)(nil),               // 6: shop.admin.v1.GetUserReq
+	(*GetUserReply)(nil),             // 7: shop.admin.v1.GetUserReply
+	(*ListUserReq)(nil),              // 8: shop.admin.v1.ListUserReq
+	(*ListUserReply)(nil),            // 9: shop.admin.v1.ListUserReply
+	(*CreateUserReq)(nil),            // 10: shop.admin.v1.CreateUserReq
+	(*CreateUserReply)(nil),          // 11: shop.admin.v1.CreateUserReply
+	(*VerifyPasswordReq)(nil),        // 12: shop.admin.v1.VerifyPasswordReq
+	(*VerifyPasswordReply)(nil),      // 13: shop.admin.v1.VerifyPasswordReply
+	(*ListAddressReq)(nil),           // 14: shop.admin.v1.ListAddressReq
+	(*ListAddressReply)(nil),         // 15: shop.admin.v1.ListAddressReply
+	(*CreateAddressReq)(nil),         // 16: shop.admin.v1.CreateAddressReq
+	(*CreateAddressReply)(nil),       // 17: shop.admin.v1.CreateAddressReply
+	(*GetAddressReq)(nil),            // 18: shop.admin.v1.GetAddressReq
+	(*GetAddressReply)(nil),          // 19: shop.admin.v1.GetAddressReply
+	(*ListCardReq)(nil),              // 20: shop.admin.v1.ListCardReq
+	(*ListCardReply)(nil),            // 21: shop.admin.v1.ListCardReply
+	(*CreateCardReq)(nil),            // 22: shop.admin.v1.CreateCardReq
+	(*CreateCardReply)(nil),          // 23: shop.admin.v1.CreateCardReply
+	(*GetCardReq)(nil),               // 24: shop.admin.v1.GetCardReq
+	(*GetCardReply)(nil),             // 25: shop.admin.v1.GetCardReply
+	(*DeleteCardReq)(nil),            // 26: shop.admin.v1.DeleteCardReq
+	(*DeleteCardReply)(nil),          // 27: shop.admin.v1.DeleteCardReply
+	(*ListBookReq)(nil),              // 28: shop.admin.v1.ListBookReq
+	(*ListBookReply)(nil),            // 29: shop.admin.v1.ListBookReply
+	(*GetBookReq)(nil),               // 30: shop.admin.v1.GetBookReq
+	(*GetBookReply)(nil),             // 31: shop.admin.v1.GetBookReply
+	(*ListCartItemReq)(nil),          // 32: shop.admin.v1.ListCartItemReq
+	(*ListCartItemReply)(nil),        // 33: shop.admin.v1.ListCartItemReply
+	(*AddCartItemReq)(nil),           // 34: shop.admin.v1.AddCartItemReq
+	(*AddCartItemReply)(nil),         // 35: shop.admin.v1.AddCartItemReply
+	(*CreateOrderReq)(nil),           // 36: shop.admin.v1.CreateOrderReq
+	(*CreateOrderReply)(nil),         // 37: shop.admin.v1.CreateOrderReply
+	(*ListOrderReq)(nil),             // 38: shop.admin.v1.ListOrderReq
+	(*ListOrderReply)(nil),           // 39: shop.admin.v1.ListOrderReply
+	(*GetOrderReq)(nil),              // 40: shop.admin.v1.GetOrderReq
+	(*GetOrderReply)(nil),            // 41: shop.admin.v1.GetOrderReply
+	(*CreateBookReq)(nil),            // 42: shop.admin.v1.CreateBookReq
+	(*CreateBookReply)(nil),          // 43: shop.admin.v1.CreateBookReply
+	(*UpdateBookReq)(nil),            // 44: shop.admin.v1.UpdateBookReq
+	(*UpdateBookReply)(nil),          // 45: shop.admin.v1.UpdateBookReply
+	(*DeleteBookReq)(nil),            // 46: shop.admin.v1.DeleteBookReq
+	(*DeleteBookReply)(nil),          // 47: shop.admin.v1.DeleteBookReply
+	(*ListAddressReply_Address)(nil), // 48: shop.admin.v1.ListAddressReply.Address
+	(*ListCardReply_Card)(nil),       // 49: shop.admin.v1.ListCardReply.Card
+	(*ListBookReply_Book)(nil),       // 50: shop.admin.v1.ListBookReply.Book
+	(*ListBookReply_Book_Image)(nil), // 51: shop.admin.v1.ListBookReply.Book.Image
+	(*GetBookReply_Image)(nil),       // 52: shop.admin.v1.GetBookReply.Image
+	(*CreateBookReq_Image)(nil),      // 53: shop.admin.v1.CreateBookReq.Image
+	(*UpdateBookReq_Image)(nil),      // 54: shop.admin.v1.UpdateBookReq.Image
 }
 var file_v1_shop_admin_proto_depIdxs = []int32{
 	48, // 0: shop.admin.v1.ListAddressReply.results:type_name -> shop.admin.v1.ListAddressReply.Address
 	49, // 1: shop.admin.v1.ListCardReply.results:type_name -> shop.admin.v1.ListCardReply.Card
-	50, // 2: shop.admin.v1.ListPublicationReply.results:type_name -> shop.admin.v1.ListPublicationReply.Publication
-	52, // 3: shop.admin.v1.GetPublicationReply.image:type_name -> shop.admin.v1.GetPublicationReply.Image
-	53, // 4: shop.admin.v1.CreatePublicationReq.image:type_name -> shop.admin.v1.CreatePublicationReq.Image
-	54, // 5: shop.admin.v1.UpdatePublicationReq.image:type_name -> shop.admin.v1.UpdatePublicationReq.Image
-	51, // 6: shop.admin.v1.ListPublicationReply.Publication.image:type_name -> shop.admin.v1.ListPublicationReply.Publication.Image
+	50, // 2: shop.admin.v1.ListBookReply.results:type_name -> shop.admin.v1.ListBookReply.Book
+	52, // 3: shop.admin.v1.GetBookReply.image:type_name -> shop.admin.v1.GetBookReply.Image
+	53, // 4: shop.admin.v1.CreateBookReq.image:type_name -> shop.admin.v1.CreateBookReq.Image
+	54, // 5: shop.admin.v1.UpdateBookReq.image:type_name -> shop.admin.v1.UpdateBookReq.Image
+	51, // 6: shop.admin.v1.ListBookReply.Book.image:type_name -> shop.admin.v1.ListBookReply.Book.Image
 	2,  // 7: shop.admin.v1.ShopAdmin.Login:input_type -> shop.admin.v1.LoginReq
 	4,  // 8: shop.admin.v1.ShopAdmin.Logout:input_type -> shop.admin.v1.LogoutReq
-	28, // 9: shop.admin.v1.ShopAdmin.ListPublication:input_type -> shop.admin.v1.ListPublicationReq
-	42, // 10: shop.admin.v1.ShopAdmin.CreatePublication:input_type -> shop.admin.v1.CreatePublicationReq
-	44, // 11: shop.admin.v1.ShopAdmin.UpdatePublication:input_type -> shop.admin.v1.UpdatePublicationReq
-	46, // 12: shop.admin.v1.ShopAdmin.DeletePublication:input_type -> shop.admin.v1.DeletePublicationReq
+	28, // 9: shop.admin.v1.ShopAdmin.ListBook:input_type -> shop.admin.v1.ListBookReq
+	42, // 10: shop.admin.v1.ShopAdmin.CreateBook:input_type -> shop.admin.v1.CreateBookReq
+	44, // 11: shop.admin.v1.ShopAdmin.UpdateBook:input_type -> shop.admin.v1.UpdateBookReq
+	46, // 12: shop.admin.v1.ShopAdmin.DeleteBook:input_type -> shop.admin.v1.DeleteBookReq
 	38, // 13: shop.admin.v1.ShopAdmin.ListOrder:input_type -> shop.admin.v1.ListOrderReq
 	40, // 14: shop.admin.v1.ShopAdmin.GetOrder:input_type -> shop.admin.v1.GetOrderReq
 	8,  // 15: shop.admin.v1.ShopAdmin.ListUser:input_type -> shop.admin.v1.ListUserReq
 	6,  // 16: shop.admin.v1.ShopAdmin.GetUser:input_type -> shop.admin.v1.GetUserReq
 	3,  // 17: shop.admin.v1.ShopAdmin.Login:output_type -> shop.admin.v1.LoginReply
 	5,  // 18: shop.admin.v1.ShopAdmin.Logout:output_type -> shop.admin.v1.LogoutReply
-	29, // 19: shop.admin.v1.ShopAdmin.ListPublication:output_type -> shop.admin.v1.ListPublicationReply
-	43, // 20: shop.admin.v1.ShopAdmin.CreatePublication:output_type -> shop.admin.v1.CreatePublicationReply
-	45, // 21: shop.admin.v1.ShopAdmin.UpdatePublication:output_type -> shop.admin.v1.UpdatePublicationReply
-	47, // 22: shop.admin.v1.ShopAdmin.DeletePublication:output_type -> shop.admin.v1.DeletePublicationReply
+	29, // 19: shop.admin.v1.ShopAdmin.ListBook:output_type -> shop.admin.v1.ListBookReply
+	43, // 20: shop.admin.v1.ShopAdmin.CreateBook:output_type -> shop.admin.v1.CreateBookReply
+	45, // 21: shop.admin.v1.ShopAdmin.UpdateBook:output_type -> shop.admin.v1.UpdateBookReply
+	47, // 22: shop.admin.v1.ShopAdmin.DeleteBook:output_type -> shop.admin.v1.DeleteBookReply
 	39, // 23: shop.admin.v1.ShopAdmin.ListOrder:output_type -> shop.admin.v1.ListOrderReply
 	41, // 24: shop.admin.v1.ShopAdmin.GetOrder:output_type -> shop.admin.v1.GetOrderReply
 	9,  // 25: shop.admin.v1.ShopAdmin.ListUser:output_type -> shop.admin.v1.ListUserReply
@@ -3670,7 +3670,7 @@ func file_v1_shop_admin_proto_init() {
 			}
 		}
 		file_v1_shop_admin_proto_msgTypes[28].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*ListPublicationReq); i {
+			switch v := v.(*ListBookReq); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -3682,7 +3682,7 @@ func file_v1_shop_admin_proto_init() {
 			}
 		}
 		file_v1_shop_admin_proto_msgTypes[29].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*ListPublicationReply); i {
+			switch v := v.(*ListBookReply); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -3694,7 +3694,7 @@ func file_v1_shop_admin_proto_init() {
 			}
 		}
 		file_v1_shop_admin_proto_msgTypes[30].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*GetPublicationReq); i {
+			switch v := v.(*GetBookReq); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -3706,7 +3706,7 @@ func file_v1_shop_admin_proto_init() {
 			}
 		}
 		file_v1_shop_admin_proto_msgTypes[31].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*GetPublicationReply); i {
+			switch v := v.(*GetBookReply); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -3838,7 +3838,7 @@ func file_v1_shop_admin_proto_init() {
 			}
 		}
 		file_v1_shop_admin_proto_msgTypes[42].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*CreatePublicationReq); i {
+			switch v := v.(*CreateBookReq); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -3850,7 +3850,7 @@ func file_v1_shop_admin_proto_init() {
 			}
 		}
 		file_v1_shop_admin_proto_msgTypes[43].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*CreatePublicationReply); i {
+			switch v := v.(*CreateBookReply); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -3862,7 +3862,7 @@ func file_v1_shop_admin_proto_init() {
 			}
 		}
 		file_v1_shop_admin_proto_msgTypes[44].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*UpdatePublicationReq); i {
+			switch v := v.(*UpdateBookReq); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -3874,7 +3874,7 @@ func file_v1_shop_admin_proto_init() {
 			}
 		}
 		file_v1_shop_admin_proto_msgTypes[45].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*UpdatePublicationReply); i {
+			switch v := v.(*UpdateBookReply); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -3886,7 +3886,7 @@ func file_v1_shop_admin_proto_init() {
 			}
 		}
 		file_v1_shop_admin_proto_msgTypes[46].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*DeletePublicationReq); i {
+			switch v := v.(*DeleteBookReq); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -3898,7 +3898,7 @@ func file_v1_shop_admin_proto_init() {
 			}
 		}
 		file_v1_shop_admin_proto_msgTypes[47].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*DeletePublicationReply); i {
+			switch v := v.(*DeleteBookReply); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -3934,7 +3934,7 @@ func file_v1_shop_admin_proto_init() {
 			}
 		}
 		file_v1_shop_admin_proto_msgTypes[50].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*ListPublicationReply_Publication); i {
+			switch v := v.(*ListBookReply_Book); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -3946,7 +3946,7 @@ func file_v1_shop_admin_proto_init() {
 			}
 		}
 		file_v1_shop_admin_proto_msgTypes[51].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*ListPublicationReply_Publication_Image); i {
+			switch v := v.(*ListBookReply_Book_Image); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -3958,7 +3958,7 @@ func file_v1_shop_admin_proto_init() {
 			}
 		}
 		file_v1_shop_admin_proto_msgTypes[52].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*GetPublicationReply_Image); i {
+			switch v := v.(*GetBookReply_Image); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -3970,7 +3970,7 @@ func file_v1_shop_admin_proto_init() {
 			}
 		}
 		file_v1_shop_admin_proto_msgTypes[53].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*CreatePublicationReq_Image); i {
+			switch v := v.(*CreateBookReq_Image); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -3982,7 +3982,7 @@ func file_v1_shop_admin_proto_init() {
 			}
 		}
 		file_v1_shop_admin_proto_msgTypes[54].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*UpdatePublicationReq_Image); i {
+			switch v := v.(*UpdateBookReq_Image); i {
 			case 0:
 				return &v.state
 			case 1:

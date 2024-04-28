@@ -24,10 +24,10 @@ type ShopInterfaceHTTPServer interface {
 	CreateOrder(context.Context, *CreateOrderReq) (*CreateOrderReply, error)
 	DeleteCard(context.Context, *DeleteCardReq) (*DeleteCardReply, error)
 	GetAddress(context.Context, *GetAddressReq) (*GetAddressReply, error)
-	GetPublication(context.Context, *GetPublicationReq) (*GetPublicationReply, error)
+	GetBook(context.Context, *GetBookReq) (*GetBookReply, error)
 	GetCard(context.Context, *GetCardReq) (*GetCardReply, error)
 	ListAddress(context.Context, *ListAddressReq) (*ListAddressReply, error)
-	ListPublication(context.Context, *ListPublicationReq) (*ListPublicationReply, error)
+	ListBook(context.Context, *ListBookReq) (*ListBookReply, error)
 	ListCard(context.Context, *ListCardReq) (*ListCardReply, error)
 	ListCartItem(context.Context, *ListCartItemReq) (*ListCartItemReply, error)
 	ListOrder(context.Context, *ListOrderReq) (*ListOrderReply, error)
@@ -48,8 +48,8 @@ func RegisterShopInterfaceHTTPServer(s *http.Server, srv ShopInterfaceHTTPServer
 	r.POST("/v1/user/cards", _ShopInterface_CreateCard0_HTTP_Handler(srv))
 	r.GET("/v1/user/cards/{id}", _ShopInterface_GetCard0_HTTP_Handler(srv))
 	r.DELETE("/v1/user/cards/{id}", _ShopInterface_DeleteCard0_HTTP_Handler(srv))
-	r.GET("/v1/catalog/Publications", _ShopInterface_ListPublication0_HTTP_Handler(srv))
-	r.GET("/v1/catalog/Publications/{id}", _ShopInterface_GetPublication0_HTTP_Handler(srv))
+	r.GET("/v1/catalog/Books", _ShopInterface_ListBook0_HTTP_Handler(srv))
+	r.GET("/v1/catalog/Books/{id}", _ShopInterface_GetBook0_HTTP_Handler(srv))
 	r.GET("/v1/cart", _ShopInterface_ListCartItem0_HTTP_Handler(srv))
 	r.POST("/v1/cart", _ShopInterface_AddCartItem0_HTTP_Handler(srv))
 	r.POST("/v1/orders", _ShopInterface_CreateOrder0_HTTP_Handler(srv))
@@ -255,43 +255,43 @@ func _ShopInterface_DeleteCard0_HTTP_Handler(srv ShopInterfaceHTTPServer) func(c
 	}
 }
 
-func _ShopInterface_ListPublication0_HTTP_Handler(srv ShopInterfaceHTTPServer) func(ctx http.Context) error {
+func _ShopInterface_ListBook0_HTTP_Handler(srv ShopInterfaceHTTPServer) func(ctx http.Context) error {
 	return func(ctx http.Context) error {
-		var in ListPublicationReq
+		var in ListBookReq
 		if err := ctx.BindQuery(&in); err != nil {
 			return err
 		}
-		http.SetOperation(ctx, "/shop.interface.v1.ShopInterface/ListPublication")
+		http.SetOperation(ctx, "/shop.interface.v1.ShopInterface/ListBook")
 		h := ctx.Middleware(func(ctx context.Context, req interface{}) (interface{}, error) {
-			return srv.ListPublication(ctx, req.(*ListPublicationReq))
+			return srv.ListBook(ctx, req.(*ListBookReq))
 		})
 		out, err := h(ctx, &in)
 		if err != nil {
 			return err
 		}
-		reply := out.(*ListPublicationReply)
+		reply := out.(*ListBookReply)
 		return ctx.Result(200, reply)
 	}
 }
 
-func _ShopInterface_GetPublication0_HTTP_Handler(srv ShopInterfaceHTTPServer) func(ctx http.Context) error {
+func _ShopInterface_GetBook0_HTTP_Handler(srv ShopInterfaceHTTPServer) func(ctx http.Context) error {
 	return func(ctx http.Context) error {
-		var in GetPublicationReq
+		var in GetBookReq
 		if err := ctx.BindQuery(&in); err != nil {
 			return err
 		}
 		if err := ctx.BindVars(&in); err != nil {
 			return err
 		}
-		http.SetOperation(ctx, "/shop.interface.v1.ShopInterface/GetPublication")
+		http.SetOperation(ctx, "/shop.interface.v1.ShopInterface/GetBook")
 		h := ctx.Middleware(func(ctx context.Context, req interface{}) (interface{}, error) {
-			return srv.GetPublication(ctx, req.(*GetPublicationReq))
+			return srv.GetBook(ctx, req.(*GetBookReq))
 		})
 		out, err := h(ctx, &in)
 		if err != nil {
 			return err
 		}
-		reply := out.(*GetPublicationReply)
+		reply := out.(*GetBookReply)
 		return ctx.Result(200, reply)
 	}
 }
@@ -379,10 +379,10 @@ type ShopInterfaceHTTPClient interface {
 	CreateOrder(ctx context.Context, req *CreateOrderReq, opts ...http.CallOption) (rsp *CreateOrderReply, err error)
 	DeleteCard(ctx context.Context, req *DeleteCardReq, opts ...http.CallOption) (rsp *DeleteCardReply, err error)
 	GetAddress(ctx context.Context, req *GetAddressReq, opts ...http.CallOption) (rsp *GetAddressReply, err error)
-	GetPublication(ctx context.Context, req *GetPublicationReq, opts ...http.CallOption) (rsp *GetPublicationReply, err error)
+	GetBook(ctx context.Context, req *GetBookReq, opts ...http.CallOption) (rsp *GetBookReply, err error)
 	GetCard(ctx context.Context, req *GetCardReq, opts ...http.CallOption) (rsp *GetCardReply, err error)
 	ListAddress(ctx context.Context, req *ListAddressReq, opts ...http.CallOption) (rsp *ListAddressReply, err error)
-	ListPublication(ctx context.Context, req *ListPublicationReq, opts ...http.CallOption) (rsp *ListPublicationReply, err error)
+	ListBook(ctx context.Context, req *ListBookReq, opts ...http.CallOption) (rsp *ListBookReply, err error)
 	ListCard(ctx context.Context, req *ListCardReq, opts ...http.CallOption) (rsp *ListCardReply, err error)
 	ListCartItem(ctx context.Context, req *ListCartItemReq, opts ...http.CallOption) (rsp *ListCartItemReply, err error)
 	ListOrder(ctx context.Context, req *ListOrderReq, opts ...http.CallOption) (rsp *ListOrderReply, err error)
@@ -477,11 +477,11 @@ func (c *ShopInterfaceHTTPClientImpl) GetAddress(ctx context.Context, in *GetAdd
 	return &out, err
 }
 
-func (c *ShopInterfaceHTTPClientImpl) GetPublication(ctx context.Context, in *GetPublicationReq, opts ...http.CallOption) (*GetPublicationReply, error) {
-	var out GetPublicationReply
-	pattern := "/v1/catalog/Publications/{id}"
+func (c *ShopInterfaceHTTPClientImpl) GetBook(ctx context.Context, in *GetBookReq, opts ...http.CallOption) (*GetBookReply, error) {
+	var out GetBookReply
+	pattern := "/v1/catalog/Books/{id}"
 	path := binding.EncodeURL(pattern, in, true)
-	opts = append(opts, http.Operation("/shop.interface.v1.ShopInterface/GetPublication"))
+	opts = append(opts, http.Operation("/shop.interface.v1.ShopInterface/GetBook"))
 	opts = append(opts, http.PathTemplate(pattern))
 	err := c.cc.Invoke(ctx, "GET", path, nil, &out, opts...)
 	if err != nil {
@@ -516,11 +516,11 @@ func (c *ShopInterfaceHTTPClientImpl) ListAddress(ctx context.Context, in *ListA
 	return &out, err
 }
 
-func (c *ShopInterfaceHTTPClientImpl) ListPublication(ctx context.Context, in *ListPublicationReq, opts ...http.CallOption) (*ListPublicationReply, error) {
-	var out ListPublicationReply
-	pattern := "/v1/catalog/Publications"
+func (c *ShopInterfaceHTTPClientImpl) ListBook(ctx context.Context, in *ListBookReq, opts ...http.CallOption) (*ListBookReply, error) {
+	var out ListBookReply
+	pattern := "/v1/catalog/Books"
 	path := binding.EncodeURL(pattern, in, true)
-	opts = append(opts, http.Operation("/shop.interface.v1.ShopInterface/ListPublication"))
+	opts = append(opts, http.Operation("/shop.interface.v1.ShopInterface/ListBook"))
 	opts = append(opts, http.PathTemplate(pattern))
 	err := c.cc.Invoke(ctx, "GET", path, nil, &out, opts...)
 	if err != nil {

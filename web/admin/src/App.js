@@ -11,7 +11,7 @@ import {
 
 import {Layout, Menu, Avatar, Dropdown} from "antd";
 import Dashboard from "./pages/Dashboard";
-import PublicationList from "./pages/PublicationList";
+import BookList from "./pages/BookList";
 import CustomerList from "./pages/CustomerList";
 import OrderList from "./pages/OrderList";
 
@@ -22,7 +22,7 @@ import {
     TeamOutlined,
     UserOutlined,
 } from '@ant-design/icons';
-import PublicationDetail from "./pages/PublicationDetail";
+import BookDetail from "./pages/BookDetail";
 import CustomerDetail from "./pages/CustomerDetail";
 import OrderDetail from "./pages/OrderDetail";
 import {renderRoutes, matchRoutes} from "react-router-config";
@@ -39,15 +39,15 @@ function Main(props) {
             component: Dashboard,
         },
         {
-            name: "Publications",
+            name: "Books",
             icon: <AppstoreOutlined/>,
             exact: true,
-            path: "/Publications",
-            component: PublicationList,
+            path: "/Books",
+            component: BookList,
         },
         {
-            path: "/Publications/:id",
-            component: PublicationDetail
+            path: "/Books/:id",
+            component: BookDetail
         },
         {
             name: "Customers",

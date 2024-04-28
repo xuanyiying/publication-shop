@@ -16,14 +16,14 @@
     "application/json"
   ],
   "paths": {
-    "/admin/v1/catalog/Publications": {
+    "/admin/v1/catalog/Books": {
       "get": {
-        "operationId": "ShopAdmin_ListPublication",
+        "operationId": "ShopAdmin_ListBook",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/v1ListPublicationReply"
+              "$ref": "#/definitions/v1ListBookReply"
             }
           },
           "default": {
@@ -54,12 +54,12 @@
         ]
       },
       "post": {
-        "operationId": "ShopAdmin_CreatePublication",
+        "operationId": "ShopAdmin_CreateBook",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/v1CreatePublicationReply"
+              "$ref": "#/definitions/v1CreateBookReply"
             }
           },
           "default": {
@@ -75,7 +75,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/v1CreatePublicationReq"
+              "$ref": "#/definitions/v1CreateBookReq"
             }
           }
         ],
@@ -84,14 +84,14 @@
         ]
       }
     },
-    "/admin/v1/catalog/Publications/{id}": {
+    "/admin/v1/catalog/Books/{id}": {
       "delete": {
-        "operationId": "ShopAdmin_DeletePublication",
+        "operationId": "ShopAdmin_DeleteBook",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/v1DeletePublicationReply"
+              "$ref": "#/definitions/v1DeleteBookReply"
             }
           },
           "default": {
@@ -115,12 +115,12 @@
         ]
       },
       "put": {
-        "operationId": "ShopAdmin_UpdatePublication",
+        "operationId": "ShopAdmin_UpdateBook",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/v1UpdatePublicationReply"
+              "$ref": "#/definitions/v1UpdateBookReply"
             }
           },
           "default": {
@@ -158,7 +158,7 @@
                 "image": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/definitions/v1UpdatePublicationReqImage"
+                    "$ref": "#/definitions/v1UpdateBookReqImage"
                   }
                 }
               }
@@ -311,7 +311,7 @@
     }
   },
   "definitions": {
-    "ListPublicationReplyPublication": {
+    "ListBookReplyBook": {
       "type": "object",
       "properties": {
         "id": {
@@ -331,12 +331,12 @@
         "image": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/ListPublicationReplyPublicationImage"
+            "$ref": "#/definitions/ListBookReplyBookImage"
           }
         }
       }
     },
-    "ListPublicationReplyPublicationImage": {
+    "ListBookReplyBookImage": {
       "type": "object",
       "properties": {
         "url": {
@@ -374,10 +374,10 @@
         }
       }
     },
-    "v1CreatePublicationReply": {
+    "v1CreateBookReply": {
       "type": "object"
     },
-    "v1CreatePublicationReq": {
+    "v1CreateBookReq": {
       "type": "object",
       "properties": {
         "name": {
@@ -393,12 +393,12 @@
         "image": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/v1CreatePublicationReqImage"
+            "$ref": "#/definitions/v1CreateBookReqImage"
           }
         }
       }
     },
-    "v1CreatePublicationReqImage": {
+    "v1CreateBookReqImage": {
       "type": "object",
       "properties": {
         "url": {
@@ -406,7 +406,7 @@
         }
       }
     },
-    "v1DeletePublicationReply": {
+    "v1DeleteBookReply": {
       "type": "object"
     },
     "v1GetOrderReply": {
@@ -424,13 +424,13 @@
         }
       }
     },
-    "v1ListPublicationReply": {
+    "v1ListBookReply": {
       "type": "object",
       "properties": {
         "results": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/ListPublicationReplyPublication"
+            "$ref": "#/definitions/ListBookReplyBook"
           }
         }
       }
@@ -466,10 +466,10 @@
     "v1LogoutReq": {
       "type": "object"
     },
-    "v1UpdatePublicationReply": {
+    "v1UpdateBookReply": {
       "type": "object"
     },
-    "v1UpdatePublicationReqImage": {
+    "v1UpdateBookReqImage": {
       "type": "object",
       "properties": {
         "url": {

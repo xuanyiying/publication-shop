@@ -83,7 +83,7 @@ func NewRegistrar(conf *conf.Registry) registry.Registrar {
 func NewUserServiceClient(r registry.Discovery, tp *tracesdk.TracerProvider) userv1.UserClient {
 	conn, err := grpc.DialInsecure(
 		context.Background(),
-		grpc.WithEndpoint("discovery:///Publication.user.service"),
+		grpc.WithEndpoint("discovery:///Book.user.service"),
 		grpc.WithDiscovery(r),
 		grpc.WithMiddleware(
 			tracing.Client(tracing.WithTracerProvider(tp)),
@@ -100,7 +100,7 @@ func NewUserServiceClient(r registry.Discovery, tp *tracesdk.TracerProvider) use
 func NewCartServiceClient(r registry.Discovery, tp *tracesdk.TracerProvider) cartv1.CartClient {
 	conn, err := grpc.DialInsecure(
 		context.Background(),
-		grpc.WithEndpoint("discovery:///Publication.cart.service"),
+		grpc.WithEndpoint("discovery:///Book.cart.service"),
 		grpc.WithDiscovery(r),
 		grpc.WithMiddleware(
 			tracing.Client(tracing.WithTracerProvider(tp)),
@@ -116,7 +116,7 @@ func NewCartServiceClient(r registry.Discovery, tp *tracesdk.TracerProvider) car
 func NewCatalogServiceClient(r registry.Discovery, tp *tracesdk.TracerProvider) catalogv1.CatalogClient {
 	conn, err := grpc.DialInsecure(
 		context.Background(),
-		grpc.WithEndpoint("discovery:///Publication.catalog.service"),
+		grpc.WithEndpoint("discovery:///Book.catalog.service"),
 		grpc.WithDiscovery(r),
 		grpc.WithMiddleware(
 			tracing.Client(tracing.WithTracerProvider(tp)),
@@ -132,7 +132,7 @@ func NewCatalogServiceClient(r registry.Discovery, tp *tracesdk.TracerProvider) 
 func NewOrderServiceClient(r registry.Discovery, tp *tracesdk.TracerProvider) orderv1.OrderClient {
 	conn, err := grpc.DialInsecure(
 		context.Background(),
-		grpc.WithEndpoint("discovery:///Publication.order.service"),
+		grpc.WithEndpoint("discovery:///Book.order.service"),
 		grpc.WithDiscovery(r),
 		grpc.WithMiddleware(
 			tracing.Client(tracing.WithTracerProvider(tp)),
@@ -148,7 +148,7 @@ func NewOrderServiceClient(r registry.Discovery, tp *tracesdk.TracerProvider) or
 func NewPaymentServiceClient(r registry.Discovery, tp *tracesdk.TracerProvider) paymentv1.PaymentClient {
 	conn, err := grpc.DialInsecure(
 		context.Background(),
-		grpc.WithEndpoint("discovery:///Publication.payment.service"),
+		grpc.WithEndpoint("discovery:///Book.payment.service"),
 		grpc.WithDiscovery(r),
 		grpc.WithMiddleware(
 			tracing.Client(tracing.WithTracerProvider(tp)),

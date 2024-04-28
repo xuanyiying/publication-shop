@@ -5,43 +5,43 @@ import (
 	"github.com/xuanyiying/publication-shop/api/shop/interface/v1"
 )
 
-func (s *ShopInterface) ListPublication(ctx context.Context, req *v1.ListPublicationReq) (*v1.ListPublicationReply, error) {
-	rv, err := s.cc.ListPublication(ctx, req.PageNum, req.PageSize)
+func (s *ShopInterface) ListBook(ctx context.Context, req *v1.ListBookReq) (*v1.ListBookReply, error) {
+	rv, err := s.cc.ListBook(ctx, req.PageNum, req.PageSize)
 	if err != nil {
 		return nil, err
 	}
-	reply := &v1.ListPublicationReply{
-		Results: make([]*v1.ListPublicationReply_Publication, 0),
+	reply := &v1.ListBookReply{
+		Results: make([]*v1.ListBookReply_Book, 0),
 	}
 	for _, x := range rv {
-		item := &v1.ListPublicationReply_Publication{
+		item := &v1.ListBookReply_Book{
 			Id:          x.Id,
 			Name:        x.Name,
 			Description: x.Description,
 			Count:       x.Count,
-			Image:       make([]*v1.ListPublicationReply_Publication_Image, 0),
+			Image:       make([]*v1.ListBookReply_Book_Image, 0),
 		}
 		for _, img := range x.Images {
-			item.Image = append(item.Image, &v1.ListPublicationReply_Publication_Image{Url: img.URL})
+			item.Image = append(item.Image, &v1.ListBookReply_Book_Image{Url: img.URL})
 		}
 		reply.Results = append(reply.Results, item)
 	}
 	return reply, nil
 }
-func (s *ShopInterface) GetPublication(ctx context.Context, req *v1.GetPublicationReq) (*v1.GetPublicationReply, error) {
-	x, err := s.cc.GetPublication(ctx, req.Id)
+func (s *ShopInterface) GetBook(ctx context.Context, req *v1.GetBookReq) (*v1.GetBookReply, error) {
+	x, err := s.cc.GetBook(ctx, req.Id)
 	if err != nil {
 		return nil, err
 	}
-	reply := &v1.GetPublicationReply{
+	reply := &v1.GetBookReply{
 		Id:          x.Id,
 		Name:        x.Name,
 		Description: x.Description,
 		Count:       x.Count,
-		Image:       make([]*v1.GetPublicationReply_Image, 0),
+		Image:       make([]*v1.GetBookReply_Image, 0),
 	}
 	for _, img := range x.Images {
-		reply.Image = append(reply.Image, &v1.GetPublicationReply_Image{Url: img.URL})
+		reply.Image = append(reply.Image, &v1.GetBookReply_Image{Url: img.URL})
 	}
 	return reply, nil
 }

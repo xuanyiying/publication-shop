@@ -1,0 +1,89 @@
+syntax = "proto3";
+
+package book.service.v1;
+
+import "google/api/annotations.proto";
+
+option go_package = "api/order/service/v1;v1";
+
+
+service Book {
+  rpc ListBook (ListBookReq) returns (ListBookReply) {
+  }
+
+  rpc CreateBook (CreateBookReq) returns (CreateBookReply) {
+  }
+
+  rpc GetBook (GetBookReq) returns (GetBookReply) {
+  }
+
+  rpc UpdateBook (UpdateBookReq) returns (UpdateBookReply) {
+  }
+}
+
+message ListBookReq {
+  int64 book_id = 1;
+  string isbn = 2;
+  int64 page_num = 3;
+  int64 page_size = 4;
+  string keyword = 5;
+  string order_by = 6;
+  string order_type = 7;
+}
+
+message ListBookReply {
+  message Book {
+    int64 book_id = 1;
+    string isbn = 2;
+    string title = 3;
+    string author = 4;
+    string description = 5;
+    string imageUrl = 6;
+    string publisher = 7;
+    string publishDate = 8;
+    string category = 9;
+    string language = 10;
+    string price = 11;
+  }
+  repeated Book orders = 1;
+}
+
+message CreateBookReq {
+  int64 book_id = 1;
+}
+
+message CreateBookReply {
+  int64 id = 1;
+  int64 book_id = 2;
+}
+
+message GetBookReq {
+  int64 id = 1;
+  string isbn = 2;
+  string keyword = 3;
+  string title = 4;
+}
+
+message GetBookReply {
+  int64 book_id = 1;
+  string isbn = 2;
+  string title = 3;
+  string author = 4;
+  string description = 5;
+  string imageUrl = 6;
+  string publisher = 7;
+  string publishDate = 8;
+  string category = 9;
+  string language = 10;
+  string price = 11;
+}
+
+message UpdateBookReq {
+  int64 id = 1;
+  string isbn = 2;
+  string quantity = 3;
+}
+
+message UpdateBookReply {
+  int64 id = 1;
+}

@@ -1,5 +1,0 @@
-package biz
-
-func NewCatalogService() {
-
-}

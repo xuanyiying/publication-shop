@@ -24,7 +24,7 @@ spec:
         io.kompose.service: payment-service
     spec:
       containers:
-        - image: go-kratos/Publication-payment-service:0.1.0
+        - image: go-kratos/Book-payment-service:0.1.0
           name: payment-service
           resources: {}
       hostname: cart-service

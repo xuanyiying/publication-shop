@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from "react";
 import {Avatar, Button, List, PageHeader, Pagination, Skeleton} from "antd";
-import {listPublication} from "../../api/catalog";
+import {listBook} from "../../api/catalog";
 import {Link, useRouteMatch} from "react-router-dom";
 
 export default function OrderList() {
@@ -8,44 +8,44 @@ export default function OrderList() {
     let {path, url} = useRouteMatch();
 
     useEffect(() => {
-        // listPublication().then((res) => {
-        //     setPublicationList(res.data.results)
+        // listBook().then((res) => {
+        //     setBookList(res.data.results)
         // });
 
         setOrderList([
             {
                 "id": 1,
-                "name": "cool Publication1",
+                "name": "cool Book1",
                 "price": "5.99",
                 "images": ["https://images.unsplash.com/photo-1588704487282-e7c55e0448bc?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=668&q=80"],
             },
             {
                 "id": 2,
-                "name": "cool Publication2",
+                "name": "cool Book2",
                 "price": "6.99",
                 "images": ["https://images.unsplash.com/photo-1588704487282-e7c55e0448bc?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=668&q=80"],
             },
             {
                 "id": 3,
-                "name": "cool Publication3",
+                "name": "cool Book3",
                 "price": "7.99",
                 "images": ["https://images.unsplash.com/photo-1588704487282-e7c55e0448bc?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=668&q=80"],
             },
             {
                 "id": 4,
-                "name": "cool Publication4",
+                "name": "cool Book4",
                 "price": "8.99",
                 "images": ["https://images.unsplash.com/photo-1588704487282-e7c55e0448bc?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=668&q=80"],
             },
             {
                 "id": 5,
-                "name": "cool Publication5",
+                "name": "cool Book5",
                 "price": "9.99",
                 "images": ["https://images.unsplash.com/photo-1588704487282-e7c55e0448bc?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=668&q=80"],
             },
             {
                 "id": 6,
-                "name": "cool Publication6",
+                "name": "cool Book6",
                 "price": "10.99",
                 "images": ["https://images.unsplash.com/photo-1588704487282-e7c55e0448bc?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=668&q=80"],
             },

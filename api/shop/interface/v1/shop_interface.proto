@@ -73,15 +73,15 @@ service ShopInterface {
         };
     }
 
-    rpc ListPublication (ListPublicationReq) returns (ListPublicationReply) {
+    rpc ListBook (ListBookReq) returns (ListBookReply) {
         option (google.api.http) = {
-            get: "/v1/catalog/Publications"
+            get: "/v1/catalog/Books"
         };
     }
 
-    rpc GetPublication (GetPublicationReq) returns (GetPublicationReply) {
+    rpc GetBook (GetBookReq) returns (GetBookReply) {
         option (google.api.http) = {
-            get: "/v1/catalog/Publications/{id}"
+            get: "/v1/catalog/Books/{id}"
         };
     }
 
@@ -263,13 +263,13 @@ message DeleteCardReply {
     bool ok = 1;
 }
 
-message ListPublicationReq {
+message ListBookReq {
     int64 page_num = 1;
     int64 page_size = 2;
 }
 
-message ListPublicationReply {
-    message Publication {
+message ListBookReply {
+    message Book {
         message Image {
             string url = 1;
         }
@@ -279,14 +279,14 @@ message ListPublicationReply {
         int64 count = 4;
         repeated Image image = 5;
     }
-    repeated Publication results = 1;
+    repeated Book results = 1;
 }
 
-message GetPublicationReq {
+message GetBookReq {
     int64 id = 1;
 }
 
-message GetPublicationReply {
+message GetBookReply {
     message Image {
         string url = 1;
     }

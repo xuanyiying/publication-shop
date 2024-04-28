@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"golang.org/x/sync/singleflight"
 
-	ctV1 "github.com/xuanyiying/publication-shop/api/catalog/service/v1"
+	ctV1 "github.com/xuanyiying/publication-shop/api/book/service/v1"
 	"github.com/xuanyiying/publication-shop/app/shop/interface/internal/biz"
 
 	"github.com/go-kratos/kratos/v2/log"
@@ -19,17 +19,17 @@ type catalogRepo struct {
 	sg   *singleflight.Group
 }
 
-func NewPublicationRepo(data *Data, logger log.Logger) biz.CatalogRepo {
+func NewBookRepo(data *Data, logger log.Logger) biz.CatalogRepo {
 	return &catalogRepo{
 		data: data,
-		log:  log.NewHelper(log.With(logger, "module", "data/Publication")),
+		log:  log.NewHelper(log.With(logger, "module", "data/Book")),
 		sg:   &singleflight.Group{},
 	}
 }
 
-func (r *catalogRepo) GetPublication(ctx context.Context, id int64) (*biz.Publication, error) {
-	result, err, _ := r.sg.Do(fmt.Sprintf("get_Publication_by_id_%d", id), func() (interface{}, error) {
-		reply, err := r.data.bc.GetPublication(ctx, &ctV1.GetPublicationReq{
+func (r *catalogRepo) GetBook(ctx context.Context, id int64) (*biz.Book, error) {
+	result, err, _ := r.sg.Do(fmt.Sprintf("get_Book_by_id_%d", id), func() (interface{}, error) {
+		reply, err := r.data.bc.GetBook(ctx, &ctV1.GetBookReq{
 			Id: id,
 		})
 		if err != nil {
@@ -39,7 +39,7 @@ func (r *catalogRepo) GetPublication(ctx context.Context, id int64) (*biz.Public
 		for _, x := range reply.Image {
 			images = append(images, biz.Image{URL: x.Url})
 		}
-		return &biz.Publication{
+		return &biz.Book{
 			Id:          reply.Id,
 			Name:        reply.Name,
 			Description: reply.Description,
@@ -50,24 +50,24 @@ func (r *catalogRepo) GetPublication(ctx context.Context, id int64) (*biz.Public
 	if err != nil {
 		return nil, err
 	}
-	return result.(*biz.Publication), nil
+	return result.(*biz.Book), nil
 }
 
-func (r *catalogRepo) ListPublication(ctx context.Context, pageNum, pageSize int64) ([]*biz.Publication, error) {
-	reply, err := r.data.bc.ListPublication(ctx, &ctV1.ListPublicationReq{
+func (r *catalogRepo) ListBook(ctx context.Context, pageNum, pageSize int64) ([]*biz.Book, error) {
+	reply, err := r.data.bc.ListBook(ctx, &ctV1.ListBookReq{
 		PageNum:  pageNum,
 		PageSize: pageSize,
 	})
 	if err != nil {
 		return nil, err
 	}
-	rv := make([]*biz.Publication, 0)
+	rv := make([]*biz.Book, 0)
 	for _, x := range reply.Results {
 		images := make([]biz.Image, 0)
 		for _, img := range x.Image {
 			images = append(images, biz.Image{URL: img.Url})
 		}
-		rv = append(rv, &biz.Publication{
+		rv = append(rv, &biz.Book{
 			Id:          x.Id,
 			Description: x.Description,
 			Count:       x.Count,

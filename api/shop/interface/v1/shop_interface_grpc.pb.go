@@ -28,8 +28,8 @@ type ShopInterfaceClient interface {
 	CreateCard(ctx context.Context, in *CreateCardReq, opts ...grpc.CallOption) (*CreateCardReply, error)
 	GetCard(ctx context.Context, in *GetCardReq, opts ...grpc.CallOption) (*GetCardReply, error)
 	DeleteCard(ctx context.Context, in *DeleteCardReq, opts ...grpc.CallOption) (*DeleteCardReply, error)
-	ListPublication(ctx context.Context, in *ListPublicationReq, opts ...grpc.CallOption) (*ListPublicationReply, error)
-	GetPublication(ctx context.Context, in *GetPublicationReq, opts ...grpc.CallOption) (*GetPublicationReply, error)
+	ListBook(ctx context.Context, in *ListBookReq, opts ...grpc.CallOption) (*ListBookReply, error)
+	GetBook(ctx context.Context, in *GetBookReq, opts ...grpc.CallOption) (*GetBookReply, error)
 	ListCartItem(ctx context.Context, in *ListCartItemReq, opts ...grpc.CallOption) (*ListCartItemReply, error)
 	AddCartItem(ctx context.Context, in *AddCartItemReq, opts ...grpc.CallOption) (*AddCartItemReply, error)
 	CreateOrder(ctx context.Context, in *CreateOrderReq, opts ...grpc.CallOption) (*CreateOrderReply, error)
@@ -134,18 +134,18 @@ func (c *shopInterfaceClient) DeleteCard(ctx context.Context, in *DeleteCardReq,
 	return out, nil
 }
 
-func (c *shopInterfaceClient) ListPublication(ctx context.Context, in *ListPublicationReq, opts ...grpc.CallOption) (*ListPublicationReply, error) {
-	out := new(ListPublicationReply)
-	err := c.cc.Invoke(ctx, "/shop.interface.v1.ShopInterface/ListPublication", in, out, opts...)
+func (c *shopInterfaceClient) ListBook(ctx context.Context, in *ListBookReq, opts ...grpc.CallOption) (*ListBookReply, error) {
+	out := new(ListBookReply)
+	err := c.cc.Invoke(ctx, "/shop.interface.v1.ShopInterface/ListBook", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *shopInterfaceClient) GetPublication(ctx context.Context, in *GetPublicationReq, opts ...grpc.CallOption) (*GetPublicationReply, error) {
-	out := new(GetPublicationReply)
-	err := c.cc.Invoke(ctx, "/shop.interface.v1.ShopInterface/GetPublication", in, out, opts...)
+func (c *shopInterfaceClient) GetBook(ctx context.Context, in *GetBookReq, opts ...grpc.CallOption) (*GetBookReply, error) {
+	out := new(GetBookReply)
+	err := c.cc.Invoke(ctx, "/shop.interface.v1.ShopInterface/GetBook", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -202,8 +202,8 @@ type ShopInterfaceServer interface {
 	CreateCard(context.Context, *CreateCardReq) (*CreateCardReply, error)
 	GetCard(context.Context, *GetCardReq) (*GetCardReply, error)
 	DeleteCard(context.Context, *DeleteCardReq) (*DeleteCardReply, error)
-	ListPublication(context.Context, *ListPublicationReq) (*ListPublicationReply, error)
-	GetPublication(context.Context, *GetPublicationReq) (*GetPublicationReply, error)
+	ListBook(context.Context, *ListBookReq) (*ListBookReply, error)
+	GetBook(context.Context, *GetBookReq) (*GetBookReply, error)
 	ListCartItem(context.Context, *ListCartItemReq) (*ListCartItemReply, error)
 	AddCartItem(context.Context, *AddCartItemReq) (*AddCartItemReply, error)
 	CreateOrder(context.Context, *CreateOrderReq) (*CreateOrderReply, error)
@@ -245,11 +245,11 @@ func (UnimplementedShopInterfaceServer) GetCard(context.Context, *GetCardReq) (*
 func (UnimplementedShopInterfaceServer) DeleteCard(context.Context, *DeleteCardReq) (*DeleteCardReply, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method DeleteCard not implemented")
 }
-func (UnimplementedShopInterfaceServer) ListPublication(context.Context, *ListPublicationReq) (*ListPublicationReply, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method ListPublication not implemented")
+func (UnimplementedShopInterfaceServer) ListBook(context.Context, *ListBookReq) (*ListBookReply, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method ListBook not implemented")
 }
-func (UnimplementedShopInterfaceServer) GetPublication(context.Context, *GetPublicationReq) (*GetPublicationReply, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method GetPublication not implemented")
+func (UnimplementedShopInterfaceServer) GetBook(context.Context, *GetBookReq) (*GetBookReply, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetBook not implemented")
 }
 func (UnimplementedShopInterfaceServer) ListCartItem(context.Context, *ListCartItemReq) (*ListCartItemReply, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method ListCartItem not implemented")
@@ -456,38 +456,38 @@ func _ShopInterface_DeleteCard_Handler(srv interface{}, ctx context.Context, dec
 	return interceptor(ctx, in, info, handler)
 }
 
-func _ShopInterface_ListPublication_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(ListPublicationReq)
+func _ShopInterface_ListBook_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ListBookReq)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(ShopInterfaceServer).ListPublication(ctx, in)
+		return srv.(ShopInterfaceServer).ListBook(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/shop.interface.v1.ShopInterface/ListPublication",
+		FullMethod: "/shop.interface.v1.ShopInterface/ListBook",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ShopInterfaceServer).ListPublication(ctx, req.(*ListPublicationReq))
+		return srv.(ShopInterfaceServer).ListBook(ctx, req.(*ListBookReq))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _ShopInterface_GetPublication_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(GetPublicationReq)
+func _ShopInterface_GetBook_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetBookReq)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(ShopInterfaceServer).GetPublication(ctx, in)
+		return srv.(ShopInterfaceServer).GetBook(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/shop.interface.v1.ShopInterface/GetPublication",
+		FullMethod: "/shop.interface.v1.ShopInterface/GetBook",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ShopInterfaceServer).GetPublication(ctx, req.(*GetPublicationReq))
+		return srv.(ShopInterfaceServer).GetBook(ctx, req.(*GetBookReq))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -612,12 +612,12 @@ var ShopInterface_ServiceDesc = grpc.ServiceDesc{
 			Handler:    _ShopInterface_DeleteCard_Handler,
 		},
 		{
-			MethodName: "ListPublication",
-			Handler:    _ShopInterface_ListPublication_Handler,
+			MethodName: "ListBook",
+			Handler:    _ShopInterface_ListBook_Handler,
 		},
 		{
-			MethodName: "GetPublication",
-			Handler:    _ShopInterface_GetPublication_Handler,
+			MethodName: "GetBook",
+			Handler:    _ShopInterface_GetBook_Handler,
 		},
 		{
 			MethodName: "ListCartItem",

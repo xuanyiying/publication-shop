@@ -5,7 +5,7 @@ export default function ProductCard(props) {
     let history = useHistory();
 
     return (
-        <div className="w-full md:w-1/3 xl:w-1/4 p-6 flex flex-col cursor-pointer" onClick={()=>{history.push('/Publication/'+props.data.id)}}>
+        <div className="w-full md:w-1/3 xl:w-1/4 p-6 flex flex-col cursor-pointer" onClick={()=>{history.push('/Book/'+props.data.id)}}>
                 <img className="hover:grow hover:shadow-lg object-cover h-full w-full"
                      src={props.data.images[0]}/>
                     <div className="pt-3 flex items-center justify-between">

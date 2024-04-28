@@ -10,7 +10,7 @@ type Image struct {
 	URL string
 }
 
-type Publication struct {
+type Book struct {
 	Id          int64
 	Name        string
 	Description string
@@ -19,8 +19,8 @@ type Publication struct {
 }
 
 type CatalogRepo interface {
-	GetPublication(ctx context.Context, id int64) (*Publication, error)
-	ListPublication(ctx context.Context, pageNum, pageSize int64) ([]*Publication, error)
+	GetBook(ctx context.Context, id int64) (*Book, error)
+	ListBook(ctx context.Context, pageNum, pageSize int64) ([]*Book, error)
 }
 
 type CatalogUseCase struct {
@@ -29,13 +29,13 @@ type CatalogUseCase struct {
 }
 
 func NewCatalogUseCase(repo CatalogRepo, logger log.Logger) *CatalogUseCase {
-	return &CatalogUseCase{repo: repo, log: log.NewHelper(log.With(logger, "module", "usecase/Publication"))}
+	return &CatalogUseCase{repo: repo, log: log.NewHelper(log.With(logger, "module", "usecase/Book"))}
 }
 
-func (uc *CatalogUseCase) GetPublication(ctx context.Context, id int64) (*Publication, error) {
-	return uc.repo.GetPublication(ctx, id)
+func (uc *CatalogUseCase) GetBook(ctx context.Context, id int64) (*Book, error) {
+	return uc.repo.GetBook(ctx, id)
 }
 
-func (uc *CatalogUseCase) ListPublication(ctx context.Context, pageNum, pageSize int64) ([]*Publication, error) {
-	return uc.repo.ListPublication(ctx, pageNum, pageSize)
+func (uc *CatalogUseCase) ListBook(ctx context.Context, pageNum, pageSize int64) ([]*Book, error) {
+	return uc.repo.ListBook(ctx, pageNum, pageSize)
 }

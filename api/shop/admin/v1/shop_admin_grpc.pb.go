@@ -20,10 +20,10 @@ const _ = grpc.SupportPackageIsVersion7
 type ShopAdminClient interface {
 	Login(ctx context.Context, in *LoginReq, opts ...grpc.CallOption) (*LoginReply, error)
 	Logout(ctx context.Context, in *LogoutReq, opts ...grpc.CallOption) (*LogoutReply, error)
-	ListPublication(ctx context.Context, in *ListPublicationReq, opts ...grpc.CallOption) (*ListPublicationReply, error)
-	CreatePublication(ctx context.Context, in *CreatePublicationReq, opts ...grpc.CallOption) (*CreatePublicationReply, error)
-	UpdatePublication(ctx context.Context, in *UpdatePublicationReq, opts ...grpc.CallOption) (*UpdatePublicationReply, error)
-	DeletePublication(ctx context.Context, in *DeletePublicationReq, opts ...grpc.CallOption) (*DeletePublicationReply, error)
+	ListBook(ctx context.Context, in *ListBookReq, opts ...grpc.CallOption) (*ListBookReply, error)
+	CreateBook(ctx context.Context, in *CreateBookReq, opts ...grpc.CallOption) (*CreateBookReply, error)
+	UpdateBook(ctx context.Context, in *UpdateBookReq, opts ...grpc.CallOption) (*UpdateBookReply, error)
+	DeleteBook(ctx context.Context, in *DeleteBookReq, opts ...grpc.CallOption) (*DeleteBookReply, error)
 	ListOrder(ctx context.Context, in *ListOrderReq, opts ...grpc.CallOption) (*ListOrderReply, error)
 	GetOrder(ctx context.Context, in *GetOrderReq, opts ...grpc.CallOption) (*GetOrderReply, error)
 	ListUser(ctx context.Context, in *ListUserReq, opts ...grpc.CallOption) (*ListUserReply, error)
@@ -56,36 +56,36 @@ func (c *shopAdminClient) Logout(ctx context.Context, in *LogoutReq, opts ...grp
 	return out, nil
 }
 
-func (c *shopAdminClient) ListPublication(ctx context.Context, in *ListPublicationReq, opts ...grpc.CallOption) (*ListPublicationReply, error) {
-	out := new(ListPublicationReply)
-	err := c.cc.Invoke(ctx, "/shop.admin.v1.ShopAdmin/ListPublication", in, out, opts...)
+func (c *shopAdminClient) ListBook(ctx context.Context, in *ListBookReq, opts ...grpc.CallOption) (*ListBookReply, error) {
+	out := new(ListBookReply)
+	err := c.cc.Invoke(ctx, "/shop.admin.v1.ShopAdmin/ListBook", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *shopAdminClient) CreatePublication(ctx context.Context, in *CreatePublicationReq, opts ...grpc.CallOption) (*CreatePublicationReply, error) {
-	out := new(CreatePublicationReply)
-	err := c.cc.Invoke(ctx, "/shop.admin.v1.ShopAdmin/CreatePublication", in, out, opts...)
+func (c *shopAdminClient) CreateBook(ctx context.Context, in *CreateBookReq, opts ...grpc.CallOption) (*CreateBookReply, error) {
+	out := new(CreateBookReply)
+	err := c.cc.Invoke(ctx, "/shop.admin.v1.ShopAdmin/CreateBook", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *shopAdminClient) UpdatePublication(ctx context.Context, in *UpdatePublicationReq, opts ...grpc.CallOption) (*UpdatePublicationReply, error) {
-	out := new(UpdatePublicationReply)
-	err := c.cc.Invoke(ctx, "/shop.admin.v1.ShopAdmin/UpdatePublication", in, out, opts...)
+func (c *shopAdminClient) UpdateBook(ctx context.Context, in *UpdateBookReq, opts ...grpc.CallOption) (*UpdateBookReply, error) {
+	out := new(UpdateBookReply)
+	err := c.cc.Invoke(ctx, "/shop.admin.v1.ShopAdmin/UpdateBook", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *shopAdminClient) DeletePublication(ctx context.Context, in *DeletePublicationReq, opts ...grpc.CallOption) (*DeletePublicationReply, error) {
-	out := new(DeletePublicationReply)
-	err := c.cc.Invoke(ctx, "/shop.admin.v1.ShopAdmin/DeletePublication", in, out, opts...)
+func (c *shopAdminClient) DeleteBook(ctx context.Context, in *DeleteBookReq, opts ...grpc.CallOption) (*DeleteBookReply, error) {
+	out := new(DeleteBookReply)
+	err := c.cc.Invoke(ctx, "/shop.admin.v1.ShopAdmin/DeleteBook", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -134,10 +134,10 @@ func (c *shopAdminClient) GetUser(ctx context.Context, in *GetUserReq, opts ...g
 type ShopAdminServer interface {
 	Login(context.Context, *LoginReq) (*LoginReply, error)
 	Logout(context.Context, *LogoutReq) (*LogoutReply, error)
-	ListPublication(context.Context, *ListPublicationReq) (*ListPublicationReply, error)
-	CreatePublication(context.Context, *CreatePublicationReq) (*CreatePublicationReply, error)
-	UpdatePublication(context.Context, *UpdatePublicationReq) (*UpdatePublicationReply, error)
-	DeletePublication(context.Context, *DeletePublicationReq) (*DeletePublicationReply, error)
+	ListBook(context.Context, *ListBookReq) (*ListBookReply, error)
+	CreateBook(context.Context, *CreateBookReq) (*CreateBookReply, error)
+	UpdateBook(context.Context, *UpdateBookReq) (*UpdateBookReply, error)
+	DeleteBook(context.Context, *DeleteBookReq) (*DeleteBookReply, error)
 	ListOrder(context.Context, *ListOrderReq) (*ListOrderReply, error)
 	GetOrder(context.Context, *GetOrderReq) (*GetOrderReply, error)
 	ListUser(context.Context, *ListUserReq) (*ListUserReply, error)
@@ -155,17 +155,17 @@ func (UnimplementedShopAdminServer) Login(context.Context, *LoginReq) (*LoginRep
 func (UnimplementedShopAdminServer) Logout(context.Context, *LogoutReq) (*LogoutReply, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method Logout not implemented")
 }
-func (UnimplementedShopAdminServer) ListPublication(context.Context, *ListPublicationReq) (*ListPublicationReply, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method ListPublication not implemented")
+func (UnimplementedShopAdminServer) ListBook(context.Context, *ListBookReq) (*ListBookReply, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method ListBook not implemented")
 }
-func (UnimplementedShopAdminServer) CreatePublication(context.Context, *CreatePublicationReq) (*CreatePublicationReply, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method CreatePublication not implemented")
+func (UnimplementedShopAdminServer) CreateBook(context.Context, *CreateBookReq) (*CreateBookReply, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CreateBook not implemented")
 }
-func (UnimplementedShopAdminServer) UpdatePublication(context.Context, *UpdatePublicationReq) (*UpdatePublicationReply, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method UpdatePublication not implemented")
+func (UnimplementedShopAdminServer) UpdateBook(context.Context, *UpdateBookReq) (*UpdateBookReply, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method UpdateBook not implemented")
 }
-func (UnimplementedShopAdminServer) DeletePublication(context.Context, *DeletePublicationReq) (*DeletePublicationReply, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method DeletePublication not implemented")
+func (UnimplementedShopAdminServer) DeleteBook(context.Context, *DeleteBookReq) (*DeleteBookReply, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method DeleteBook not implemented")
 }
 func (UnimplementedShopAdminServer) ListOrder(context.Context, *ListOrderReq) (*ListOrderReply, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method ListOrder not implemented")
@@ -228,74 +228,74 @@ func _ShopAdmin_Logout_Handler(srv interface{}, ctx context.Context, dec func(in
 	return interceptor(ctx, in, info, handler)
 }
 
-func _ShopAdmin_ListPublication_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(ListPublicationReq)
+func _ShopAdmin_ListBook_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ListBookReq)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(ShopAdminServer).ListPublication(ctx, in)
+		return srv.(ShopAdminServer).ListBook(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/shop.admin.v1.ShopAdmin/ListPublication",
+		FullMethod: "/shop.admin.v1.ShopAdmin/ListBook",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ShopAdminServer).ListPublication(ctx, req.(*ListPublicationReq))
+		return srv.(ShopAdminServer).ListBook(ctx, req.(*ListBookReq))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _ShopAdmin_CreatePublication_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(CreatePublicationReq)
+func _ShopAdmin_CreateBook_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CreateBookReq)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(ShopAdminServer).CreatePublication(ctx, in)
+		return srv.(ShopAdminServer).CreateBook(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/shop.admin.v1.ShopAdmin/CreatePublication",
+		FullMethod: "/shop.admin.v1.ShopAdmin/CreateBook",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ShopAdminServer).CreatePublication(ctx, req.(*CreatePublicationReq))
+		return srv.(ShopAdminServer).CreateBook(ctx, req.(*CreateBookReq))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _ShopAdmin_UpdatePublication_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(UpdatePublicationReq)
+func _ShopAdmin_UpdateBook_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UpdateBookReq)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(ShopAdminServer).UpdatePublication(ctx, in)
+		return srv.(ShopAdminServer).UpdateBook(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/shop.admin.v1.ShopAdmin/UpdatePublication",
+		FullMethod: "/shop.admin.v1.ShopAdmin/UpdateBook",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ShopAdminServer).UpdatePublication(ctx, req.(*UpdatePublicationReq))
+		return srv.(ShopAdminServer).UpdateBook(ctx, req.(*UpdateBookReq))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _ShopAdmin_DeletePublication_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(DeletePublicationReq)
+func _ShopAdmin_DeleteBook_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(DeleteBookReq)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(ShopAdminServer).DeletePublication(ctx, in)
+		return srv.(ShopAdminServer).DeleteBook(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/shop.admin.v1.ShopAdmin/DeletePublication",
+		FullMethod: "/shop.admin.v1.ShopAdmin/DeleteBook",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ShopAdminServer).DeletePublication(ctx, req.(*DeletePublicationReq))
+		return srv.(ShopAdminServer).DeleteBook(ctx, req.(*DeleteBookReq))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -388,20 +388,20 @@ var ShopAdmin_ServiceDesc = grpc.ServiceDesc{
 			Handler:    _ShopAdmin_Logout_Handler,
 		},
 		{
-			MethodName: "ListPublication",
-			Handler:    _ShopAdmin_ListPublication_Handler,
+			MethodName: "ListBook",
+			Handler:    _ShopAdmin_ListBook_Handler,
 		},
 		{
-			MethodName: "CreatePublication",
-			Handler:    _ShopAdmin_CreatePublication_Handler,
+			MethodName: "CreateBook",
+			Handler:    _ShopAdmin_CreateBook_Handler,
 		},
 		{
-			MethodName: "UpdatePublication",
-			Handler:    _ShopAdmin_UpdatePublication_Handler,
+			MethodName: "UpdateBook",
+			Handler:    _ShopAdmin_UpdateBook_Handler,
 		},
 		{
-			MethodName: "DeletePublication",
-			Handler:    _ShopAdmin_DeletePublication_Handler,
+			MethodName: "DeleteBook",
+			Handler:    _ShopAdmin_DeleteBook_Handler,
 		},
 		{
 			MethodName: "ListOrder",

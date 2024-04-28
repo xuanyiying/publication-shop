@@ -19,12 +19,12 @@ type catalogRepo struct {
 func NewCatalogRepo(data *Data, logger log.Logger) biz.CatalogRepo {
 	return &catalogRepo{
 		data: data,
-		log:  log.NewHelper(log.With(logger, "module", "data/Publication")),
+		log:  log.NewHelper(log.With(logger, "module", "data/Book")),
 	}
 }
 
-func (r *catalogRepo) GetPublication(ctx context.Context, id int64) (*biz.Publication, error) {
-	reply, err := r.data.bc.GetPublication(ctx, &catalogv1.GetPublicationReq{
+func (r *catalogRepo) GetBook(ctx context.Context, id int64) (*biz.Book, error) {
+	reply, err := r.data.bc.GetBook(ctx, &catalogv1.GetBookReq{
 		Id: id,
 	})
 	if err != nil {
@@ -34,7 +34,7 @@ func (r *catalogRepo) GetPublication(ctx context.Context, id int64) (*biz.Public
 	for _, x := range reply.Image {
 		images = append(images, biz.Image{URL: x.Url})
 	}
-	return &biz.Publication{
+	return &biz.Book{
 		Id:          reply.Id,
 		Name:        reply.Name,
 		Description: reply.Description,
@@ -43,21 +43,21 @@ func (r *catalogRepo) GetPublication(ctx context.Context, id int64) (*biz.Public
 	}, err
 }
 
-func (r *catalogRepo) ListPublication(ctx context.Context, pageNum, pageSize int64) ([]*biz.Publication, error) {
-	reply, err := r.data.bc.ListPublication(ctx, &catalogv1.ListPublicationReq{
+func (r *catalogRepo) ListBook(ctx context.Context, pageNum, pageSize int64) ([]*biz.Book, error) {
+	reply, err := r.data.bc.ListBook(ctx, &catalogv1.ListBookReq{
 		PageNum:  pageNum,
 		PageSize: pageSize,
 	})
 	if err != nil {
 		return nil, err
 	}
-	rv := make([]*biz.Publication, 0)
+	rv := make([]*biz.Book, 0)
 	for _, x := range reply.Results {
 		images := make([]biz.Image, 0)
 		for _, img := range x.Image {
 			images = append(images, biz.Image{URL: img.Url})
 		}
-		rv = append(rv, &biz.Publication{
+		rv = append(rv, &biz.Book{
 			Id:          x.Id,
 			Description: x.Description,
 			Count:       x.Count,
@@ -67,12 +67,12 @@ func (r *catalogRepo) ListPublication(ctx context.Context, pageNum, pageSize int
 	return rv, err
 }
 
-func (r *catalogRepo) CreatePublication(ctx context.Context, b *biz.Publication) (*biz.Publication, error) {
-	images := make([]*catalogv1.CreatePublicationReq_Image, 0)
+func (r *catalogRepo) CreateBook(ctx context.Context, b *biz.Book) (*biz.Book, error) {
+	images := make([]*catalogv1.CreateBookReq_Image, 0)
 	for _, x := range b.Images {
-		images = append(images, &catalogv1.CreatePublicationReq_Image{Url: x.URL})
+		images = append(images, &catalogv1.CreateBookReq_Image{Url: x.URL})
 	}
-	reply, err := r.data.bc.CreatePublication(ctx, &catalogv1.CreatePublicationReq{
+	reply, err := r.data.bc.CreateBook(ctx, &catalogv1.CreateBookReq{
 		Name:        b.Name,
 		Description: b.Description,
 		Count:       b.Count,
@@ -82,17 +82,17 @@ func (r *catalogRepo) CreatePublication(ctx context.Context, b *biz.Publication)
 		return nil, err
 	}
 
-	return &biz.Publication{
+	return &biz.Book{
 		Id: reply.Id,
 	}, err
 }
 
-func (r *catalogRepo) UpdatePublication(ctx context.Context, b *biz.Publication) (*biz.Publication, error) {
-	images := make([]*catalogv1.UpdatePublicationReq_Image, 0)
+func (r *catalogRepo) UpdateBook(ctx context.Context, b *biz.Book) (*biz.Book, error) {
+	images := make([]*catalogv1.UpdateBookReq_Image, 0)
 	for _, x := range b.Images {
-		images = append(images, &catalogv1.UpdatePublicationReq_Image{Url: x.URL})
+		images = append(images, &catalogv1.UpdateBookReq_Image{Url: x.URL})
 	}
-	reply, err := r.data.bc.UpdatePublication(ctx, &catalogv1.UpdatePublicationReq{
+	reply, err := r.data.bc.UpdateBook(ctx, &catalogv1.UpdateBookReq{
 		Name:        b.Name,
 		Description: b.Description,
 		Count:       b.Count,
@@ -102,7 +102,7 @@ func (r *catalogRepo) UpdatePublication(ctx context.Context, b *biz.Publication)
 		return nil, err
 	}
 
-	return &biz.Publication{
+	return &biz.Book{
 		Id: reply.Id,
 	}, err
 }

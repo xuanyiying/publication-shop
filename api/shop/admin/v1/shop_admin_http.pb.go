@@ -18,26 +18,26 @@ var _ = binding.EncodeURL
 const _ = http.SupportPackageIsVersion1
 
 type ShopAdminHTTPServer interface {
-	CreatePublication(context.Context, *CreatePublicationReq) (*CreatePublicationReply, error)
-	DeletePublication(context.Context, *DeletePublicationReq) (*DeletePublicationReply, error)
+	CreateBook(context.Context, *CreateBookReq) (*CreateBookReply, error)
+	DeleteBook(context.Context, *DeleteBookReq) (*DeleteBookReply, error)
 	GetOrder(context.Context, *GetOrderReq) (*GetOrderReply, error)
 	GetUser(context.Context, *GetUserReq) (*GetUserReply, error)
-	ListPublication(context.Context, *ListPublicationReq) (*ListPublicationReply, error)
+	ListBook(context.Context, *ListBookReq) (*ListBookReply, error)
 	ListOrder(context.Context, *ListOrderReq) (*ListOrderReply, error)
 	ListUser(context.Context, *ListUserReq) (*ListUserReply, error)
 	Login(context.Context, *LoginReq) (*LoginReply, error)
 	Logout(context.Context, *LogoutReq) (*LogoutReply, error)
-	UpdatePublication(context.Context, *UpdatePublicationReq) (*UpdatePublicationReply, error)
+	UpdateBook(context.Context, *UpdateBookReq) (*UpdateBookReply, error)
 }
 
 func RegisterShopAdminHTTPServer(s *http.Server, srv ShopAdminHTTPServer) {
 	r := s.Route("/")
 	r.POST("/admin/v1/login", _ShopAdmin_Login0_HTTP_Handler(srv))
 	r.POST("/admin/v1/logout", _ShopAdmin_Logout0_HTTP_Handler(srv))
-	r.GET("/admin/v1/catalog/Publications", _ShopAdmin_ListPublication0_HTTP_Handler(srv))
-	r.POST("/admin/v1/catalog/Publications", _ShopAdmin_CreatePublication0_HTTP_Handler(srv))
-	r.PUT("/admin/v1/catalog/Publications/{id}", _ShopAdmin_UpdatePublication0_HTTP_Handler(srv))
-	r.DELETE("/admin/v1/catalog/Publications/{id}", _ShopAdmin_DeletePublication0_HTTP_Handler(srv))
+	r.GET("/admin/v1/catalog/Books", _ShopAdmin_ListBook0_HTTP_Handler(srv))
+	r.POST("/admin/v1/catalog/Books", _ShopAdmin_CreateBook0_HTTP_Handler(srv))
+	r.PUT("/admin/v1/catalog/Books/{id}", _ShopAdmin_UpdateBook0_HTTP_Handler(srv))
+	r.DELETE("/admin/v1/catalog/Books/{id}", _ShopAdmin_DeleteBook0_HTTP_Handler(srv))
 	r.GET("/admin/v1/orders", _ShopAdmin_ListOrder0_HTTP_Handler(srv))
 	r.GET("/admin/v1/orders", _ShopAdmin_GetOrder0_HTTP_Handler(srv))
 	r.GET("/admin/v1/users", _ShopAdmin_ListUser0_HTTP_Handler(srv))
@@ -82,84 +82,84 @@ func _ShopAdmin_Logout0_HTTP_Handler(srv ShopAdminHTTPServer) func(ctx http.Cont
 	}
 }
 
-func _ShopAdmin_ListPublication0_HTTP_Handler(srv ShopAdminHTTPServer) func(ctx http.Context) error {
+func _ShopAdmin_ListBook0_HTTP_Handler(srv ShopAdminHTTPServer) func(ctx http.Context) error {
 	return func(ctx http.Context) error {
-		var in ListPublicationReq
+		var in ListBookReq
 		if err := ctx.BindQuery(&in); err != nil {
 			return err
 		}
-		http.SetOperation(ctx, "/shop.admin.v1.ShopAdmin/ListPublication")
+		http.SetOperation(ctx, "/shop.admin.v1.ShopAdmin/ListBook")
 		h := ctx.Middleware(func(ctx context.Context, req interface{}) (interface{}, error) {
-			return srv.ListPublication(ctx, req.(*ListPublicationReq))
+			return srv.ListBook(ctx, req.(*ListBookReq))
 		})
 		out, err := h(ctx, &in)
 		if err != nil {
 			return err
 		}
-		reply := out.(*ListPublicationReply)
+		reply := out.(*ListBookReply)
 		return ctx.Result(200, reply)
 	}
 }
 
-func _ShopAdmin_CreatePublication0_HTTP_Handler(srv ShopAdminHTTPServer) func(ctx http.Context) error {
+func _ShopAdmin_CreateBook0_HTTP_Handler(srv ShopAdminHTTPServer) func(ctx http.Context) error {
 	return func(ctx http.Context) error {
-		var in CreatePublicationReq
+		var in CreateBookReq
 		if err := ctx.Bind(&in); err != nil {
 			return err
 		}
-		http.SetOperation(ctx, "/shop.admin.v1.ShopAdmin/CreatePublication")
+		http.SetOperation(ctx, "/shop.admin.v1.ShopAdmin/CreateBook")
 		h := ctx.Middleware(func(ctx context.Context, req interface{}) (interface{}, error) {
-			return srv.CreatePublication(ctx, req.(*CreatePublicationReq))
+			return srv.CreateBook(ctx, req.(*CreateBookReq))
 		})
 		out, err := h(ctx, &in)
 		if err != nil {
 			return err
 		}
-		reply := out.(*CreatePublicationReply)
+		reply := out.(*CreateBookReply)
 		return ctx.Result(200, reply)
 	}
 }
 
-func _ShopAdmin_UpdatePublication0_HTTP_Handler(srv ShopAdminHTTPServer) func(ctx http.Context) error {
+func _ShopAdmin_UpdateBook0_HTTP_Handler(srv ShopAdminHTTPServer) func(ctx http.Context) error {
 	return func(ctx http.Context) error {
-		var in UpdatePublicationReq
+		var in UpdateBookReq
 		if err := ctx.Bind(&in); err != nil {
 			return err
 		}
 		if err := ctx.BindVars(&in); err != nil {
 			return err
 		}
-		http.SetOperation(ctx, "/shop.admin.v1.ShopAdmin/UpdatePublication")
+		http.SetOperation(ctx, "/shop.admin.v1.ShopAdmin/UpdateBook")
 		h := ctx.Middleware(func(ctx context.Context, req interface{}) (interface{}, error) {
-			return srv.UpdatePublication(ctx, req.(*UpdatePublicationReq))
+			return srv.UpdateBook(ctx, req.(*UpdateBookReq))
 		})
 		out, err := h(ctx, &in)
 		if err != nil {
 			return err
 		}
-		reply := out.(*UpdatePublicationReply)
+		reply := out.(*UpdateBookReply)
 		return ctx.Result(200, reply)
 	}
 }
 
-func _ShopAdmin_DeletePublication0_HTTP_Handler(srv ShopAdminHTTPServer) func(ctx http.Context) error {
+func _ShopAdmin_DeleteBook0_HTTP_Handler(srv ShopAdminHTTPServer) func(ctx http.Context) error {
 	return func(ctx http.Context) error {
-		var in DeletePublicationReq
+		var in DeleteBookReq
 		if err := ctx.BindQuery(&in); err != nil {
 			return err
 		}
 		if err := ctx.BindVars(&in); err != nil {
 			return err
 		}
-		http.SetOperation(ctx, "/shop.admin.v1.ShopAdmin/DeletePublication")
+		http.SetOperation(ctx, "/shop.admin.v1.ShopAdmin/DeleteBook")
 		h := ctx.Middleware(func(ctx context.Context, req interface{}) (interface{}, error) {
-			return srv.DeletePublication(ctx, req.(*DeletePublicationReq))
+			return srv.DeleteBook(ctx, req.(*DeleteBookReq))
 		})
 		out, err := h(ctx, &in)
 		if err != nil {
 			return err
 		}
-		reply := out.(*DeletePublicationReply)
+		reply := out.(*DeleteBookReply)
 		return ctx.Result(200, reply)
 	}
 }
@@ -244,16 +244,16 @@ func _ShopAdmin_GetUser0_HTTP_Handler(srv ShopAdminHTTPServer) func(ctx http.Con
 }
 
 type ShopAdminHTTPClient interface {
-	CreatePublication(ctx context.Context, req *CreatePublicationReq, opts ...http.CallOption) (rsp *CreatePublicationReply, err error)
-	DeletePublication(ctx context.Context, req *DeletePublicationReq, opts ...http.CallOption) (rsp *DeletePublicationReply, err error)
+	CreateBook(ctx context.Context, req *CreateBookReq, opts ...http.CallOption) (rsp *CreateBookReply, err error)
+	DeleteBook(ctx context.Context, req *DeleteBookReq, opts ...http.CallOption) (rsp *DeleteBookReply, err error)
 	GetOrder(ctx context.Context, req *GetOrderReq, opts ...http.CallOption) (rsp *GetOrderReply, err error)
 	GetUser(ctx context.Context, req *GetUserReq, opts ...http.CallOption) (rsp *GetUserReply, err error)
-	ListPublication(ctx context.Context, req *ListPublicationReq, opts ...http.CallOption) (rsp *ListPublicationReply, err error)
+	ListBook(ctx context.Context, req *ListBookReq, opts ...http.CallOption) (rsp *ListBookReply, err error)
 	ListOrder(ctx context.Context, req *ListOrderReq, opts ...http.CallOption) (rsp *ListOrderReply, err error)
 	ListUser(ctx context.Context, req *ListUserReq, opts ...http.CallOption) (rsp *ListUserReply, err error)
 	Login(ctx context.Context, req *LoginReq, opts ...http.CallOption) (rsp *LoginReply, err error)
 	Logout(ctx context.Context, req *LogoutReq, opts ...http.CallOption) (rsp *LogoutReply, err error)
-	UpdatePublication(ctx context.Context, req *UpdatePublicationReq, opts ...http.CallOption) (rsp *UpdatePublicationReply, err error)
+	UpdateBook(ctx context.Context, req *UpdateBookReq, opts ...http.CallOption) (rsp *UpdateBookReply, err error)
 }
 
 type ShopAdminHTTPClientImpl struct {
@@ -264,11 +264,11 @@ func NewShopAdminHTTPClient(client *http.Client) ShopAdminHTTPClient {
 	return &ShopAdminHTTPClientImpl{client}
 }
 
-func (c *ShopAdminHTTPClientImpl) CreatePublication(ctx context.Context, in *CreatePublicationReq, opts ...http.CallOption) (*CreatePublicationReply, error) {
-	var out CreatePublicationReply
-	pattern := "/admin/v1/catalog/Publications"
+func (c *ShopAdminHTTPClientImpl) CreateBook(ctx context.Context, in *CreateBookReq, opts ...http.CallOption) (*CreateBookReply, error) {
+	var out CreateBookReply
+	pattern := "/admin/v1/catalog/Books"
 	path := binding.EncodeURL(pattern, in, false)
-	opts = append(opts, http.Operation("/shop.admin.v1.ShopAdmin/CreatePublication"))
+	opts = append(opts, http.Operation("/shop.admin.v1.ShopAdmin/CreateBook"))
 	opts = append(opts, http.PathTemplate(pattern))
 	err := c.cc.Invoke(ctx, "POST", path, in, &out, opts...)
 	if err != nil {
@@ -277,11 +277,11 @@ func (c *ShopAdminHTTPClientImpl) CreatePublication(ctx context.Context, in *Cre
 	return &out, err
 }
 
-func (c *ShopAdminHTTPClientImpl) DeletePublication(ctx context.Context, in *DeletePublicationReq, opts ...http.CallOption) (*DeletePublicationReply, error) {
-	var out DeletePublicationReply
-	pattern := "/admin/v1/catalog/Publications/{id}"
+func (c *ShopAdminHTTPClientImpl) DeleteBook(ctx context.Context, in *DeleteBookReq, opts ...http.CallOption) (*DeleteBookReply, error) {
+	var out DeleteBookReply
+	pattern := "/admin/v1/catalog/Books/{id}"
 	path := binding.EncodeURL(pattern, in, true)
-	opts = append(opts, http.Operation("/shop.admin.v1.ShopAdmin/DeletePublication"))
+	opts = append(opts, http.Operation("/shop.admin.v1.ShopAdmin/DeleteBook"))
 	opts = append(opts, http.PathTemplate(pattern))
 	err := c.cc.Invoke(ctx, "DELETE", path, nil, &out, opts...)
 	if err != nil {
@@ -316,11 +316,11 @@ func (c *ShopAdminHTTPClientImpl) GetUser(ctx context.Context, in *GetUserReq, o
 	return &out, err
 }
 
-func (c *ShopAdminHTTPClientImpl) ListPublication(ctx context.Context, in *ListPublicationReq, opts ...http.CallOption) (*ListPublicationReply, error) {
-	var out ListPublicationReply
-	pattern := "/admin/v1/catalog/Publications"
+func (c *ShopAdminHTTPClientImpl) ListBook(ctx context.Context, in *ListBookReq, opts ...http.CallOption) (*ListBookReply, error) {
+	var out ListBookReply
+	pattern := "/admin/v1/catalog/Books"
 	path := binding.EncodeURL(pattern, in, true)
-	opts = append(opts, http.Operation("/shop.admin.v1.ShopAdmin/ListPublication"))
+	opts = append(opts, http.Operation("/shop.admin.v1.ShopAdmin/ListBook"))
 	opts = append(opts, http.PathTemplate(pattern))
 	err := c.cc.Invoke(ctx, "GET", path, nil, &out, opts...)
 	if err != nil {
@@ -381,11 +381,11 @@ func (c *ShopAdminHTTPClientImpl) Logout(ctx context.Context, in *LogoutReq, opt
 	return &out, err
 }
 
-func (c *ShopAdminHTTPClientImpl) UpdatePublication(ctx context.Context, in *UpdatePublicationReq, opts ...http.CallOption) (*UpdatePublicationReply, error) {
-	var out UpdatePublicationReply
-	pattern := "/admin/v1/catalog/Publications/{id}"
+func (c *ShopAdminHTTPClientImpl) UpdateBook(ctx context.Context, in *UpdateBookReq, opts ...http.CallOption) (*UpdateBookReply, error) {
+	var out UpdateBookReply
+	pattern := "/admin/v1/catalog/Books/{id}"
 	path := binding.EncodeURL(pattern, in, false)
-	opts = append(opts, http.Operation("/shop.admin.v1.ShopAdmin/UpdatePublication"))
+	opts = append(opts, http.Operation("/shop.admin.v1.ShopAdmin/UpdateBook"))
 	opts = append(opts, http.PathTemplate(pattern))
 	err := c.cc.Invoke(ctx, "PUT", path, in, &out, opts...)
 	if err != nil {

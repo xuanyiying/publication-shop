@@ -84,14 +84,14 @@
         ]
       }
     },
-    "/v1/catalog/Publications": {
+    "/v1/catalog/Books": {
       "get": {
-        "operationId": "ShopInterface_ListPublication",
+        "operationId": "ShopInterface_ListBook",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/v1ListPublicationReply"
+              "$ref": "#/definitions/v1ListBookReply"
             }
           },
           "default": {
@@ -122,14 +122,14 @@
         ]
       }
     },
-    "/v1/catalog/Publications/{id}": {
+    "/v1/catalog/Books/{id}": {
       "get": {
-        "operationId": "ShopInterface_GetPublication",
+        "operationId": "ShopInterface_GetBook",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/v1GetPublicationReply"
+              "$ref": "#/definitions/v1GetBookReply"
             }
           },
           "default": {
@@ -559,7 +559,7 @@
         }
       }
     },
-    "ListPublicationReplyPublication": {
+    "ListBookReplyBook": {
       "type": "object",
       "properties": {
         "id": {
@@ -579,12 +579,12 @@
         "image": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/ListPublicationReplyPublicationImage"
+            "$ref": "#/definitions/ListBookReplyBookImage"
           }
         }
       }
     },
-    "ListPublicationReplyPublicationImage": {
+    "ListBookReplyBookImage": {
       "type": "object",
       "properties": {
         "url": {
@@ -765,7 +765,7 @@
         }
       }
     },
-    "v1GetPublicationReply": {
+    "v1GetBookReply": {
       "type": "object",
       "properties": {
         "id": {
@@ -785,12 +785,12 @@
         "image": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/v1GetPublicationReplyImage"
+            "$ref": "#/definitions/v1GetBookReplyImage"
           }
         }
       }
     },
-    "v1GetPublicationReplyImage": {
+    "v1GetBookReplyImage": {
       "type": "object",
       "properties": {
         "url": {
@@ -827,13 +827,13 @@
         }
       }
     },
-    "v1ListPublicationReply": {
+    "v1ListBookReply": {
       "type": "object",
       "properties": {
         "results": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/ListPublicationReplyPublication"
+            "$ref": "#/definitions/ListBookReplyBook"
           }
         }
       }

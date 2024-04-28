@@ -32,7 +32,7 @@ func initApp(confServer *conf.Server, registry *conf.Registry, confData *conf.Da
 	userRepo := data.NewUserRepo(dataData, logger)
 	authUseCase := biz.NewAuthUseCase(auth, userRepo)
 	userUseCase := biz.NewUserUseCase(userRepo, logger, authUseCase)
-	catalogRepo := data.NewPublicationRepo(dataData, logger)
+	catalogRepo := data.NewBookRepo(dataData, logger)
 	catalogUseCase := biz.NewCatalogUseCase(catalogRepo, logger)
 	shopInterface := service.NewShopInterface(userUseCase, catalogUseCase, authUseCase, logger)
 	httpServer := server.NewHTTPServer(confServer, auth, logger, tracerProvider, shopInterface)

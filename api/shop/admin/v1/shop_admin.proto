@@ -22,29 +22,29 @@ service ShopAdmin {
         };
     }
 
-    rpc ListPublication (ListPublicationReq) returns (ListPublicationReply) {
+    rpc ListBook (ListBookReq) returns (ListBookReply) {
         option (google.api.http) = {
-            get: "/admin/v1/catalog/Publications"
+            get: "/admin/v1/catalog/Books"
         };
     }
 
-    rpc CreatePublication (CreatePublicationReq) returns (CreatePublicationReply) {
+    rpc CreateBook (CreateBookReq) returns (CreateBookReply) {
         option (google.api.http) = {
-            post: "/admin/v1/catalog/Publications"
+            post: "/admin/v1/catalog/Books"
             body: "*"
         };
     }
 
-    rpc UpdatePublication (UpdatePublicationReq) returns (UpdatePublicationReply) {
+    rpc UpdateBook (UpdateBookReq) returns (UpdateBookReply) {
         option (google.api.http) = {
-            put: "/admin/v1/catalog/Publications/{id}"
+            put: "/admin/v1/catalog/Books/{id}"
             body: "*"
         };
     }
 
-    rpc DeletePublication (DeletePublicationReq) returns (DeletePublicationReply) {
+    rpc DeleteBook (DeleteBookReq) returns (DeleteBookReply) {
         option (google.api.http) = {
-            delete: "/admin/v1/catalog/Publications/{id}"
+            delete: "/admin/v1/catalog/Books/{id}"
         };
     }
 
@@ -234,13 +234,13 @@ message DeleteCardReply {
     bool ok = 1;
 }
 
-message ListPublicationReq {
+message ListBookReq {
     int64 page_num = 1;
     int64 page_size = 2;
 }
 
-message ListPublicationReply {
-    message Publication {
+message ListBookReply {
+    message Book {
         message Image {
             string url = 1;
         }
@@ -250,14 +250,14 @@ message ListPublicationReply {
         int64 count = 4;
         repeated Image image = 5;
     }
-    repeated Publication results = 1;
+    repeated Book results = 1;
 }
 
-message GetPublicationReq {
+message GetBookReq {
     int64 id = 1;
 }
 
-message GetPublicationReply {
+message GetBookReply {
     message Image {
         string url = 1;
     }
@@ -310,7 +310,7 @@ message GetOrderReply {
 
 }
 
-message CreatePublicationReq {
+message CreateBookReq {
     message Image {
         string url = 1;
     }
@@ -320,11 +320,11 @@ message CreatePublicationReq {
     repeated Image image = 4;
 }
 
-message CreatePublicationReply {
+message CreateBookReply {
 
 }
 
-message UpdatePublicationReq {
+message UpdateBookReq {
     message Image {
         string url = 1;
     }
@@ -335,15 +335,15 @@ message UpdatePublicationReq {
     repeated Image image = 5;
 }
 
-message UpdatePublicationReply {
+message UpdateBookReply {
 
 }
 
-message DeletePublicationReq {
+message DeleteBookReq {
     int64 id = 1;
 }
 
-message DeletePublicationReply {
+message DeleteBookReply {
 
 }
 
