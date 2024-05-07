@@ -177,7 +177,7 @@ create table orders
     order_id          bigint auto_increment comment '订单ID，主键'
         primary key,
     order_number      varchar(50)                                                                           null comment '订单编号',
-    transaction_id    bigint                                                                                not null comment '交易ID',
+    tx_id    bigint                                                                                not null comment '交易ID',
     order_status      enum ('pending', 'processing', 'shipped', 'delivered', 'cancelled') default 'pending' not null comment '订单状态',
     delivered_address varchar(255)                                                                          null comment '配送地址',
     shipping_cost     decimal(10, 2)                                                                        null comment '运费',
@@ -197,7 +197,7 @@ create table payments
     payment_number varchar(100)                                         not null comment '支付流水号',
     order_id       bigint                                               not null comment '订单ID，外键约束确保其与实际订单表关联',
     payment_method varchar(50)                                          not null comment '支付方式',
-    transaction_id varchar(100)                                         null comment '交易ID',
+    tx_id varchar(100)                                         null comment '交易ID',
     payment_at     datetime                                             not null comment '支付日期',
     amount_paid    decimal(10, 2)                                       not null comment '实付金额',
     payment_status enum ('unpaid', 'paid', 'refunded') default 'unpaid' not null comment '支付状态',
@@ -232,25 +232,25 @@ create table reviews
 
 create table transactions
 (
-    transaction_id     bigint auto_increment comment '交易ID，主键'
+    tx_id     bigint auto_increment comment '交易ID，主键'
         primary key,
-    transaction_number varchar(50)                                                          not null comment '交易编号',
-    transaction_type   enum ('buy', 'sell')                                                 not null comment '交易类型（买或卖）',
+    tx_number varchar(50)                                                          not null comment '交易编号',
+    tx_type   enum ('buy', 'sell')                                                 not null comment '交易类型（买或卖）',
     user_id            bigint                                                               not null comment '用户ID',
     quantity           bigint                                                               not null comment '交易数量',
-    transaction_status enum ('pending', 'completed', 'cancelled') default 'pending'         not null comment '交易状态',
-    transaction_date   datetime                                   default CURRENT_TIMESTAMP null comment '交易日期',
-    transaction_amount decimal(10, 2)                                                       null comment '交易金额',
+    tx_status enum ('pending', 'completed', 'cancelled') default 'pending'         not null comment '交易状态',
+    tx_date   datetime                                   default CURRENT_TIMESTAMP null comment '交易日期',
+    tx_amount decimal(10, 2)                                                       null comment '交易金额',
     payment_id         bigint                                                               null comment '支付ID'
 )
     comment '交易表';
 
-create table transaction_items
+create table tx_items
 (
-    transaction_item_id bigint auto_increment comment '交易明细ID，主键'
+    tx_item_id bigint auto_increment comment '交易明细ID，主键'
         primary key,
-    transaction_type    enum ('buy', 'sell') not null comment '交易类型（买或卖）',
-    transaction_id      bigint               not null comment '交易ID',
+    tx_type    enum ('buy', 'sell') not null comment '交易类型（买或卖）',
+    tx_id      bigint               not null comment '交易ID',
     book_id             bigint               not null comment '书籍ID',
     quantity            int                  not null comment '交易数量',
     price               decimal(10, 2)       not null comment '交易价格',

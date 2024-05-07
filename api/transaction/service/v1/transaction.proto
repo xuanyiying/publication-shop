@@ -1,0 +1,107 @@
+syntax = "proto3";
+
+import public "google/protobuf/duration.proto";
+package api.transaction.service.v1;
+
+option go_package = "api.transaction.service.v1;v1";
+
+service Transaction {
+    rpc CreateTx (CreateTxReq) returns (CreateTxResp);
+    rpc UpdateTx (UpdateTxReq) returns (UpdateTxResp);
+    rpc DeleteTx (DeleteTxReq) returns (DeleteTxResp);
+    rpc GetTx (GetTxReq) returns (TxResp);
+    rpc ListTx (ListTxReq) returns (ListTxResp);
+    rpc GetTxByTxNo (GetTxReq) returns (TxResp);
+    rpc ListTxByTxType (ListTxReq) returns (ListTxResp);
+    rpc ListTxByUserId (ListTxReq) returns (ListTxResp);
+    rpc ListTxByPaymentId (ListTxReq) returns (ListTxResp);
+    rpc ListTxByTxStatus (ListTxReq) returns (ListTxResp);
+    rpc ListTxByTxDateRange (ListTxDateRangeReq) returns (ListTxResp);
+    
+}
+
+message CreateTxReq {
+    string txNo = 1;
+    string txType = 2;
+    int64 userId = 3;
+    int32 quantity = 4;
+    string txStatus = 5;
+    float txAmount = 6;
+}
+
+message CreateTxResp {
+    int64 txId = 1;
+}
+
+message UpdateTxReq {
+    int64 txId = 1;
+    string txNo = 2;
+    string txType = 3;
+    int64 userId = 4;
+    int32 quantity = 5;
+    string txStatus = 6;
+    float txAmount = 7;
+    google.protobuf.Duration txDate = 8;
+    int64 paymentId = 9;
+}
+
+message UpdateTxResp {
+    int64 txId = 1;
+}
+
+message DeleteTxReq {
+    int64 txId = 1;
+}
+
+message DeleteTxResp {
+    int64 txId = 1;
+}
+
+message GetTxReq {
+    int64 txId = 1;
+}
+
+message TxResp {
+    int64 txId = 1;
+    string txNo = 2;
+    string txType = 3;
+    int64 userId = 4;
+    int32 quantity = 5;
+    string txStatus = 6;
+    float txAmount = 7;
+    google.protobuf.Duration txDate = 8;
+    int64 paymentId = 9;
+    repeated TxItemResp txItems = 10;
+}
+
+
+message TxItemResp {
+    int64 txItemId = 1; // 交易明细ID，主键
+    string txType = 2; // 交易类型（买或卖）
+    int64 txId = 3; // 交易ID
+    int64 bookId = 4; // 书籍ID
+    int32 quantity = 5; // 交易数量
+    string price = 6; // 交易价格
+    string isbn = 7; // ISBN
+    string title = 8; // 书名
+    string author = 9; // 主编
+    int64 publisherId = 10; // 出版社ID
+    string imageUrl = 11; // 图片URL
+}
+
+message ListTxReq {
+    string keyword = 1;
+    string txType = 2;
+    int64 userId = 3;
+    int64 paymentId = 4;
+    int64 txStatus = 5;
+    ListTxDateRangeReq txDateRange = 6;
+}
+message ListTxDateRangeReq{
+    int64 leftDate = 1;
+    int64 rightTxDate = 2;
+}
+message ListTxResp {
+    // 注意：这里需要定义返回的列表，例如：
+    repeated TxResp transactions = 1;
+}
