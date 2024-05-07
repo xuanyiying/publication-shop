@@ -3,8 +3,8 @@ package data
 import (
 	"context"
 
+	bookv1 "github.com/xuanyiying/publication-shop/api/book/service/v1"
 	cartv1 "github.com/xuanyiying/publication-shop/api/cart/service/v1"
-	catalogv1 "github.com/xuanyiying/publication-shop/api/catalog/service/v1"
 	orderv1 "github.com/xuanyiying/publication-shop/api/order/service/v1"
 	paymentv1 "github.com/xuanyiying/publication-shop/api/payment/service/v1"
 	userv1 "github.com/xuanyiying/publication-shop/api/user/service/v1"
@@ -42,7 +42,7 @@ type Data struct {
 	log *log.Helper
 	uc  userv1.UserClient
 	cc  cartv1.CartClient
-	bc  catalogv1.CatalogClient
+	bc  bookv1.BookClient
 }
 
 // NewData .
@@ -51,7 +51,7 @@ func NewData(
 	logger log.Logger,
 	uc userv1.UserClient,
 	cc cartv1.CartClient,
-	bc catalogv1.CatalogClient,
+	bc bookv1.BookClient,
 ) (*Data, error) {
 	l := log.NewHelper(log.With(logger, "module", "data"))
 	return &Data{log: l, uc: uc, cc: cc, bc: bc}, nil
@@ -117,7 +117,7 @@ func NewCartServiceClient(r registry.Discovery, tp *tracesdk.TracerProvider) car
 	return cartv1.NewCartClient(conn)
 }
 
-func NewCatalogServiceClient(r registry.Discovery, tp *tracesdk.TracerProvider) catalogv1.CatalogClient {
+func NewCatalogServiceClient(r registry.Discovery, tp *tracesdk.TracerProvider) bookv1.BookClient {
 	conn, err := grpc.DialInsecure(
 		context.Background(),
 		grpc.WithEndpoint("discovery:///Book.catalog.service"),
@@ -130,7 +130,7 @@ func NewCatalogServiceClient(r registry.Discovery, tp *tracesdk.TracerProvider) 
 	if err != nil {
 		panic(err)
 	}
-	return catalogv1.NewCatalogClient(conn)
+	return bookv1.NewBookClient(conn)
 }
 
 func NewOrderServiceClient(r registry.Discovery, tp *tracesdk.TracerProvider) orderv1.OrderClient {

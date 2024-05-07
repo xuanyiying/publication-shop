@@ -176,7 +176,7 @@ create table orders
 (
     order_id          bigint auto_increment comment '订单ID，主键'
         primary key,
-    order_number      varchar(50)                                                                           null comment '订单编号',
+    order_no      varchar(50)                                                                           null comment '订单编号',
     tx_id    bigint                                                                                not null comment '交易ID',
     order_status      enum ('pending', 'processing', 'shipped', 'delivered', 'cancelled') default 'pending' not null comment '订单状态',
     delivered_address varchar(255)                                                                          null comment '配送地址',

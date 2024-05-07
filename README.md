@@ -35,3 +35,8 @@ An online shop application, mono-repo microservices demo for kratos.
 └── docs
 
 ```
+
+entimport 
+```api
+ go run ariga.io/entimport/cmd/entimport -dsn "mysql://root:root@tcp(localhost:3306)/book_store" -tables "orders,transactions,tx_items,order_items" -schema-path ent
+```
