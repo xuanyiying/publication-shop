@@ -6,11 +6,11 @@
 package main
 
 import (
-	"transaction/internal/biz"
-	"transaction/internal/conf"
-	"transaction/internal/data"
-	"transaction/internal/server"
-	"transaction/internal/service"
+	"github.com/xuanyiying/publication-shop/app/transaction/internal/biz"
+	"github.com/xuanyiying/publication-shop/app/transaction/internal/conf"
+	"github.com/xuanyiying/publication-shop/app/transaction/internal/data"
+	"github.com/xuanyiying/publication-shop/app/transaction/internal/server"
+	"github.com/xuanyiying/publication-shop/app/transaction/internal/service"
 
 	"github.com/go-kratos/kratos/v2"
 	"github.com/go-kratos/kratos/v2/log"

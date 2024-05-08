@@ -1,9 +1,9 @@
 package server
 
 import (
-	v1 "transaction/api/helloworld/v1"
-	"transaction/internal/conf"
-	"transaction/internal/service"
+	v1 "github.com/xuanyiying/publication-shop/api/transaction/service/v1"
+	"github.com/xuanyiying/publication-shop/app/transaction/internal/conf"
+	"github.com/xuanyiying/publication-shop/app/transaction/internal/service"
 
 	"github.com/go-kratos/kratos/v2/log"
 	"github.com/go-kratos/kratos/v2/middleware/recovery"
@@ -11,7 +11,7 @@ import (
 )
 
 // NewHTTPServer new an HTTP server.
-func NewHTTPServer(c *conf.Server, greeter *service.GreeterService, logger log.Logger) *http.Server {
+func NewHTTPServer(c *conf.Server, tx *service.TransactionService, logger log.Logger) *http.Server {
 	var opts = []http.ServerOption{
 		http.Middleware(
 			recovery.Recovery(),
@@ -27,6 +27,6 @@ func NewHTTPServer(c *conf.Server, greeter *service.GreeterService, logger log.L
 		opts = append(opts, http.Timeout(c.Http.Timeout.AsDuration()))
 	}
 	srv := http.NewServer(opts...)
-	v1.RegisterGreeterHTTPServer(srv, greeter)
+	v1.RegisterTransactionHTTPServer(srv, tx)
 	return srv
 }

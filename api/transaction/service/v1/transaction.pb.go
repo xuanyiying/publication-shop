@@ -2,7 +2,7 @@
 // versions:
 // 	protoc-gen-go v1.34.1
 // 	protoc        v5.26.1
-// source: api/transaction/service/v1/transaction.proto
+// source: api/github.com/xuanyiying/publication-shop/app/transaction/service/v1/transaction.proto
 
 package v1
 

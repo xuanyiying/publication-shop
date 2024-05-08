@@ -7,11 +7,11 @@
 package main
 
 import (
-	"transaction/internal/biz"
-	"transaction/internal/conf"
-	"transaction/internal/data"
-	"transaction/internal/server"
-	"transaction/internal/service"
+	"github.com/xuanyiying/publication-shop/app/transaction/internal/biz"
+	"github.com/xuanyiying/publication-shop/app/transaction/internal/conf"
+	"github.com/xuanyiying/publication-shop/app/transaction/internal/data"
+	"github.com/xuanyiying/publication-shop/app/transaction/internal/server"
+	"github.com/xuanyiying/publication-shop/app/transaction/internal/service"
 
 	"github.com/go-kratos/kratos/v2"
 	"github.com/go-kratos/kratos/v2/log"
@@ -25,11 +25,11 @@ func wireApp(confServer *conf.Server, confData *conf.Data, logger log.Logger) (*
 	if err != nil {
 		return nil, nil, err
 	}
-	greeterRepo := data.NewGreeterRepo(dataData, logger)
-	greeterUsecase := biz.NewGreeterUsecase(greeterRepo, logger)
-	greeterService := service.NewGreeterService(greeterUsecase)
-	grpcServer := server.NewGRPCServer(confServer, greeterService, logger)
-	httpServer := server.NewHTTPServer(confServer, greeterService, logger)
+	txRepo := data.NewTransactionRepo(dataData, logger)
+	txUsecase := biz.NewTransactionUsecase(txRepo, logger)
+	txService := service.NewTransactionService(txUsecase)
+	grpcServer := server.NewGRPCServer(confServer, txService, logger)
+	httpServer := server.NewHTTPServer(confServer, txService, logger)
 	app := newApp(logger, grpcServer, httpServer)
 	return app, func() {
 		cleanup()

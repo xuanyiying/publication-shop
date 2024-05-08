@@ -149,7 +149,7 @@ create table categories
 (
     catalog_id        bigint auto_increment comment '分类ID'
         primary key,
-    description      varchar(512)  not null comment '分类描述',
+    description       varchar(512) not null comment '分类描述',
     catalog_name      varchar(100) null comment '分类名称',
     parent_catalog_id varchar(10)  not null comment '父编码'
 )
@@ -176,8 +176,8 @@ create table orders
 (
     order_id          bigint auto_increment comment '订单ID，主键'
         primary key,
-    order_no      varchar(50)                                                                           null comment '订单编号',
-    tx_id    bigint                                                                                not null comment '交易ID',
+    order_no          varchar(50)                                                                           null comment '订单编号',
+    tx_id             bigint                                                                                not null comment '交易ID',
     order_status      enum ('pending', 'processing', 'shipped', 'delivered', 'cancelled') default 'pending' not null comment '订单状态',
     delivered_address varchar(255)                                                                          null comment '配送地址',
     shipping_cost     decimal(10, 2)                                                                        null comment '运费',
@@ -197,7 +197,7 @@ create table payments
     payment_number varchar(100)                                         not null comment '支付流水号',
     order_id       bigint                                               not null comment '订单ID，外键约束确保其与实际订单表关联',
     payment_method varchar(50)                                          not null comment '支付方式',
-    tx_id varchar(100)                                         null comment '交易ID',
+    tx_id          varchar(100)                                         null comment '交易ID',
     payment_at     datetime                                             not null comment '支付日期',
     amount_paid    decimal(10, 2)                                       not null comment '实付金额',
     payment_status enum ('unpaid', 'paid', 'refunded') default 'unpaid' not null comment '支付状态',
@@ -232,33 +232,33 @@ create table reviews
 
 create table transactions
 (
-    tx_id     bigint auto_increment comment '交易ID，主键'
+    tx_id      bigint auto_increment comment '交易ID，主键'
         primary key,
-    tx_number varchar(50)                                                          not null comment '交易编号',
-    tx_type   enum ('buy', 'sell')                                                 not null comment '交易类型（买或卖）',
-    user_id            bigint                                                               not null comment '用户ID',
-    quantity           bigint                                                               not null comment '交易数量',
-    tx_status enum ('pending', 'completed', 'cancelled') default 'pending'         not null comment '交易状态',
-    tx_date   datetime                                   default CURRENT_TIMESTAMP null comment '交易日期',
-    tx_amount decimal(10, 2)                                                       null comment '交易金额',
-    payment_id         bigint                                                               null comment '支付ID'
+    tx_number  varchar(50)                                                          not null comment '交易编号',
+    tx_type    enum ('buy', 'sell')                                                 not null comment '交易类型（买或卖）',
+    user_id    bigint                                                               not null comment '用户ID',
+    quantity   bigint                                                               not null comment '交易数量',
+    tx_status  enum ('pending', 'completed', 'cancelled') default 'pending'         not null comment '交易状态',
+    tx_date    datetime                                   default CURRENT_TIMESTAMP null comment '交易日期',
+    tx_amount  decimal(10, 2)                                                       null comment '交易金额',
+    payment_id bigint                                                               null comment '支付ID'
 )
     comment '交易表';
 
 create table tx_items
 (
-    tx_item_id bigint auto_increment comment '交易明细ID，主键'
+    tx_item_id   bigint auto_increment comment '交易明细ID，主键'
         primary key,
-    tx_type    enum ('buy', 'sell') not null comment '交易类型（买或卖）',
-    tx_id      bigint               not null comment '交易ID',
-    book_id             bigint               not null comment '书籍ID',
-    quantity            int                  not null comment '交易数量',
-    price               decimal(10, 2)       not null comment '交易价格',
-    isbn                varchar(13)          not null comment 'ISBN',
-    title               varchar(255)         not null comment '书名',
-    author              varchar(100)         not null comment '主编',
-    publisher_id        bigint               null comment '出版社ID',
-    image_url           varchar(255)         null comment '图片URL'
+    tx_type      enum ('buy', 'sell') not null comment '交易类型（买或卖）',
+    tx_id        bigint               not null comment '交易ID',
+    book_id      bigint               not null comment '书籍ID',
+    quantity     int                  not null comment '交易数量',
+    price        decimal(10, 2)       not null comment '交易价格',
+    isbn         varchar(13)          not null comment 'ISBN',
+    title        varchar(255)         not null comment '书名',
+    author       varchar(100)         not null comment '主编',
+    publisher_id bigint               null comment '出版社ID',
+    image_url    varchar(255)         null comment '图片URL'
 )
     comment '交易项目表';
 
@@ -285,3 +285,31 @@ create table users
 )
     comment '用户表';
 
+
+-- 购物车表
+CREATE TABLE carts
+(
+    cart_id    BIGINT AUTO_INCREMENT PRIMARY KEY,
+    user_id    BIGINT NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (user_id) REFERENCES users (user_id) ON DELETE CASCADE
+) comment '购物车表';
+
+
+-- 购物车明细表
+CREATE TABLE cart_items
+(
+    item_id     BIGINT AUTO_INCREMENT PRIMARY KEY,
+    cart_id     BIGINT  NOT NULL,
+    book_id     BIGINT  NOT NULL,
+    is_selected BOOLEAN NOT NULL DEFAULT TRUE,
+    price       DECIMAL(10, 2) NOT NULL,
+    isbn        VARCHAR(13) NOT NULL,
+    title       VARCHAR(255) NOT NULL,
+    author      VARCHAR(100) NOT NULL,
+    image_url   VARCHAR(255),
+    quantity    INT     NOT NULL DEFAULT 1, -- 书籍数量，默认为1
+    added_at    TIMESTAMP        DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (cart_id) REFERENCES carts (cart_id) ON DELETE CASCADE,
+    FOREIGN KEY (book_id) REFERENCES books (book_id) ON DELETE CASCADE
+) comment '购物车明细表';
