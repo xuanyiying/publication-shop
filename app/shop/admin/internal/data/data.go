@@ -4,6 +4,7 @@ import (
 	"github.com/go-kratos/kratos/v2/log"
 	"github.com/go-kratos/kratos/v2/middleware/recovery"
 	"github.com/go-kratos/kratos/v2/middleware/tracing"
+	v1 "github.com/xuanyiying/publication-shop/api/book/service/v1"
 	"github.com/xuanyiying/publication-shop/app/shop/admin/internal/conf"
 
 	"context"
@@ -42,6 +43,7 @@ type Data struct {
 	uc  userv1.UserClient
 	cc  cartv1.CartClient
 	bc  catalogv1.CatalogClient
+	bkc v1.BookClient
 }
 
 // NewData .

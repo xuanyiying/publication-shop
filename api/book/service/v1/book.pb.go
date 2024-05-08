@@ -484,11 +484,10 @@ type GetBookReq struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
-
-	BookId  int64  `protobuf:"varint,1,opt,name=bookId,proto3" json:"bookId,omitempty"`
-	Isbn    string `protobuf:"bytes,2,opt,name=isbn,proto3" json:"isbn,omitempty"`
-	Keyword string `protobuf:"bytes,3,opt,name=keyword,proto3" json:"keyword,omitempty"`
-	Title   string `protobuf:"bytes,4,opt,name=title,proto3" json:"title,omitempty"`
+	BookId        int64  `protobuf:"varint,1,opt,name=bookId,proto3" json:"bookId,omitempty"`
+	Isbn          string `protobuf:"bytes,2,opt,name=isbn,proto3" json:"isbn,omitempty"`
+	Keyword       string `protobuf:"bytes,3,opt,name=keyword,proto3" json:"keyword,omitempty"`
+	Title         string `protobuf:"bytes,4,opt,name=title,proto3" json:"title,omitempty"`
 }
 
 func (x *GetBookReq) Reset() {

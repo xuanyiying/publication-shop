@@ -4,7 +4,7 @@ import (
 	"flag"
 	"os"
 
-	"github.com/xuanyiying/publication-shop/app/github.com/xuanyiying/publication-shop/app/transaction/internal/conf"
+	"github.com/xuanyiying/publication-shop/app/transaction/internal/conf"
 
 	"github.com/go-kratos/kratos/v2"
 	"github.com/go-kratos/kratos/v2/config"

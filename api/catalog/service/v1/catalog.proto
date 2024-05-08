@@ -1,0 +1,30 @@
+syntax = "proto3";
+
+package api.catalog.service.v1;
+
+option go_package = "github.com/xuanyiying/publication-shop/api/catalog/service/v1;v1";
+option java_multiple_files = true;
+option java_package = "api.catalog.service.v1";
+
+service Catalog {
+	rpc CreateCatalog (CreateCatalogRequest) returns (CreateCatalogReply);
+	rpc UpdateCatalog (UpdateCatalogRequest) returns (UpdateCatalogReply);
+	rpc DeleteCatalog (DeleteCatalogRequest) returns (DeleteCatalogReply);
+	rpc GetCatalog (GetCatalogRequest) returns (GetCatalogReply);
+	rpc ListCatalog (ListCatalogRequest) returns (ListCatalogReply);
+}
+
+message CreateCatalogRequest {}
+message CreateCatalogReply {}
+
+message UpdateCatalogRequest {}
+message UpdateCatalogReply {}
+
+message DeleteCatalogRequest {}
+message DeleteCatalogReply {}
+
+message GetCatalogRequest {}
+message GetCatalogReply {}
+
+message ListCatalogRequest {}
+message ListCatalogReply {}

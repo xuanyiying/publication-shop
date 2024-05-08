@@ -1,7 +1,12 @@
 package data
 
 import (
+	"context"
+	"github.com/go-redis/redis/v8"
 	"github.com/xuanyiying/publication-shop/app/transaction/internal/conf"
+	"github.com/xuanyiying/publication-shop/app/transaction/internal/data/ent"
+	"github.com/xuanyiying/publication-shop/app/transaction/internal/data/ent/migrate"
+	"time"
 
 	"github.com/go-kratos/kratos/v2/log"
 	"github.com/google/wire"
@@ -12,13 +17,56 @@ var ProviderSet = wire.NewSet(NewData, NewTransactionRepo)
 
 // Data .
 type Data struct {
-	// TODO wrapped database client
+	db       *ent.Client
+	redisCli redis.Cmdable
+}
+
+func NewEntClient(conf *conf.Data, logger log.Logger) *ent.Client {
+	log := log.NewHelper(log.With(logger, "module", "transaction-service/data/ent"))
+
+	client, err := ent.Open(
+		conf.Database.Driver,
+		conf.Database.Source,
+	)
+	if err != nil {
+		log.Fatalf("failed opening connection to db: %v", err)
+	}
+	// Run the auto migration tool.
+	if err := client.Schema.Create(context.Background(), migrate.WithForeignKeys(false)); err != nil {
+		log.Fatalf("failed creating schema resources: %v", err)
+	}
+	return client
+}
+
+func NewRedisCmd(conf *conf.Data, logger log.Logger) redis.Cmdable {
+	log := log.NewHelper(log.With(logger, "module", "transaction-service/data/ent"))
+	client := redis.NewClient(&redis.Options{
+		Addr:         conf.Redis.Addr,
+		ReadTimeout:  conf.Redis.ReadTimeout.AsDuration(),
+		WriteTimeout: conf.Redis.WriteTimeout.AsDuration(),
+		DialTimeout:  time.Second * 2,
+		PoolSize:     10,
+	})
+	timeout, cancelFunc := context.WithTimeout(context.Background(), time.Second*2)
+	defer cancelFunc()
+	err := client.Ping(timeout).Err()
+	if err != nil {
+		log.Fatalf("redis connect error: %v", err)
+	}
+	return client
 }
 
 // NewData .
-func NewData(c *conf.Data, logger log.Logger) (*Data, func(), error) {
-	cleanup := func() {
-		log.NewHelper(logger).Info("closing the data resources")
+func NewData(entClient *ent.Client, redisCmd redis.Cmdable, logger log.Logger) (*Data, func(), error) {
+	log := log.NewHelper(log.With(logger, "module", "transaction-service/data"))
+
+	d := &Data{
+		db:       entClient,
+		redisCli: redisCmd,
 	}
-	return &Data{}, cleanup, nil
+	return d, func() {
+		if err := d.db.Close(); err != nil {
+			log.Error(err)
+		}
+	}, nil
 }

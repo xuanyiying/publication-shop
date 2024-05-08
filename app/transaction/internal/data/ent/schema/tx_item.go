@@ -13,7 +13,18 @@ type TxItem struct {
 }
 
 func (TxItem) Fields() []ent.Field {
-	return []ent.Field{field.Int("id").Comment("交易明细ID，主键").StorageKey("tx_item_id"), field.Enum("tx_type").Comment("交易类型（买或卖）").Values("buy", "sell"), field.Int("tx_id").Comment("交易ID"), field.Int("book_id").Comment("书籍ID"), field.Int32("quantity").Comment("交易数量"), field.Float("price").Comment("交易价格"), field.String("isbn").Comment("ISBN"), field.String("title").Comment("书名"), field.String("author").Comment("主编"), field.Int("publisher_id").Optional().Comment("出版社ID"), field.String("image_url").Optional().Comment("图片URL")}
+	return []ent.Field{
+		field.Int64("id").Comment("交易明细ID，主键").StorageKey("tx_item_id"),
+		field.Enum("tx_type").Comment("交易类型（买或卖）").Values("buy", "sell"),
+		field.Int64("tx_id").Comment("交易ID"),
+		field.Int64("book_id").Comment("书籍ID"),
+		field.Int("quantity").Comment("交易数量"),
+		field.Float("price").Comment("交易价格"),
+		field.String("isbn").Comment("ISBN"),
+		field.String("title").Comment("书名"),
+		field.String("author").Comment("主编"),
+		field.Int64("publisher_id").Optional().Comment("出版社ID"),
+		field.String("image_url").Optional().Comment("图片URL")}
 }
 func (TxItem) Edges() []ent.Edge {
 	return nil

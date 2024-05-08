@@ -2,6 +2,7 @@ package biz
 
 import (
 	"context"
+	"time"
 
 	_ "github.com/xuanyiying/publication-shop/api/transaction/service/v1"
 
@@ -16,7 +17,44 @@ var (
 
 // Transaction is a Transaction model.
 type Transaction struct {
-	Hello string
+	TxId      int64
+	TxNo      string
+	TxType    string
+	UserId    int64
+	Quantity  int
+	TxStatus  string
+	TxDate    time.Time
+	TxAmount  float64
+	PaymentId int64
+	TxItems   []*TxItem
+}
+type TxItem struct {
+	TxItemId    int64
+	TxType      string
+	TxId        int64
+	BookId      int64
+	Quantity    int
+	Price       float64
+	Isbn        string
+	Title       string
+	Author      string
+	PublisherId int64
+	ImageUrl    string
+}
+
+type Orders struct {
+	OrderId          int64
+	OrderNo          string
+	TxId             int64
+	OrderStatus      string
+	DeliveredAddress string
+	ShippingCost     float64
+	TotalAmount      float64
+	PlacedUserId     int64
+	PlacedAt         time.Time
+	ShippedAddress   string
+	ShippedAt        time.Time
+	PaymentId        int64
 }
 
 // TransactionRepo is a Greater repo.
@@ -41,6 +79,6 @@ func NewTransactionUsecase(repo TransactionRepo, logger log.Logger) *Transaction
 
 // CreateTransaction creates a Transaction, and returns the new Transaction.
 func (uc *TransactionUsecase) CreateTransaction(ctx context.Context, g *Transaction) (*Transaction, error) {
-	uc.log.WithContext(ctx).Infof("CreateTransaction: %v", g.Hello)
+	uc.log.WithContext(ctx).Infof("CreateTransaction: %v", g.TxId)
 	return uc.repo.Save(ctx, g)
 }
